@@ -1,0 +1,977 @@
+import React, { useState, useEffect, useMemo } from 'react';
+import { RightFormVerbsExercise, BoardName } from '../../types';
+import { RIGHT_FORM_VERBS_DATA } from '../../data/sscData';
+import { getRightFormVerbsTranslation } from '../../data/rightFormVerbsTranslations';
+import { BoardSelector } from '../BoardSelector';
+import { CelebrationModal } from '../CelebrationModal';
+import { HighlightedPassageReader } from '../HighlightedPassageReader';
+import { BookmarkButton } from '../BookmarkButton';
+import { VerbInfoCard } from '../VerbInfoCard';
+import {
+  CheckCircle2,
+  XCircle,
+  RotateCcw,
+  Sparkles,
+  Lightbulb,
+  Move,
+  Volume2,
+  Eye,
+  Bot,
+  Loader2,
+  BookOpen,
+  MessageSquare,
+  ChevronRight,
+  BookOpenCheck,
+  Languages,
+  ChevronDown,
+  ChevronUp,
+  Copy,
+  Check,
+} from 'lucide-react';
+
+interface RightFormVerbsItemProps {
+  onBackToMenu: () => void;
+}
+
+interface VerbAiEvaluation {
+  totalScore: number;
+  maxScore: number;
+  percentage: number;
+  grade?: string;
+  provider?: string;
+  overallFeedback: string;
+  banglaTips?: string;
+  gapEvaluations: Array<{
+    label: string;
+    studentAnswer: string;
+    correctAnswer: string;
+    isCorrect: boolean;
+    collocation?: string;
+    ruleExplanation?: string;
+    banglaRule?: string;
+    whyIncorrect?: string;
+  }>;
+  studySuggestions?: string[];
+  aiPowered?: boolean;
+}
+
+export const RightFormVerbsItem: React.FC<RightFormVerbsItemProps> = ({ onBackToMenu }) => {
+  const [selectedBoard, setSelectedBoard] = useState<BoardName>(
+    RIGHT_FORM_VERBS_DATA[0]?.board || 'Model Question 1'
+  );
+  const [exercise, setExercise] = useState<RightFormVerbsExercise>(RIGHT_FORM_VERBS_DATA[0]);
+  const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [isChecked, setIsChecked] = useState(false);
+  const [isAiChecking, setIsAiChecking] = useState(false);
+  const [selectedAiModel, setSelectedAiModel] = useState<'chatgpt' | 'gemini'>('chatgpt');
+  const [aiEvaluation, setAiEvaluation] = useState<VerbAiEvaluation | null>(null);
+  const [showCelebration, setShowCelebration] = useState(false);
+  const [score, setScore] = useState(0);
+  const [selectedVerb, setSelectedVerb] = useState<string | null>(null);
+  const [activeDetailVerb, setActiveDetailVerb] = useState<string | null>(null);
+  const [draggedVerb, setDraggedVerb] = useState<string | null>(null);
+  const [showAudioReader, setShowAudioReader] = useState<boolean>(false);
+  const [showPassageBangla, setShowPassageBangla] = useState<boolean>(false);
+  const [copiedBangla, setCopiedBangla] = useState<boolean>(false);
+  const [activeTab, setActiveTab] = useState<'aiFeedback' | 'rules'>('aiFeedback');
+
+  // Translation data for current exercise
+  const translationData = useMemo(() => {
+    if (!exercise) return null;
+    return getRightFormVerbsTranslation(exercise);
+  }, [exercise]);
+
+  // Clean text with conjugated answers or correct answers for read-out
+  const cleanSpokenPassage = useMemo(() => {
+    if (!exercise) return '';
+    let txt = exercise.passageTemplate;
+    (exercise.gaps || []).forEach((gap) => {
+      const userWord = answers[gap.label];
+      const wordToSpeak =
+        userWord && userWord.trim() ? userWord.trim() : isChecked ? gap.correctAnswer : `blank ${gap.label}`;
+      txt = txt.replace(`[${gap.label}]`, wordToSpeak);
+    });
+    return txt;
+  }, [exercise, answers, isChecked]);
+
+  useEffect(() => {
+    const found =
+      (RIGHT_FORM_VERBS_DATA || []).find((e) => e.board === selectedBoard) ||
+      RIGHT_FORM_VERBS_DATA[0];
+    setExercise(found);
+    handleReset();
+  }, [selectedBoard]);
+
+  const handleInputChange = (label: string, value: string) => {
+    setAnswers((prev) => ({ ...prev, [label]: value }));
+  };
+
+  const handleVerbClick = (verb: string) => {
+    if (activeDetailVerb === verb) {
+      // Second click toggles off / vanishes the detailed info
+      setActiveDetailVerb(null);
+      setSelectedVerb(null);
+    } else {
+      // First click opens the pronunciation, Bangla meaning, V2 & V3 forms
+      setActiveDetailVerb(verb);
+      setSelectedVerb(verb);
+    }
+  };
+
+  const handleBlankClick = (label: string) => {
+    if (selectedVerb) {
+      setAnswers((prev) => ({ ...prev, [label]: selectedVerb }));
+      setSelectedVerb(null);
+    }
+  };
+
+  const handleDragStart = (e: React.DragEvent, verb: string) => {
+    setDraggedVerb(verb);
+    e.dataTransfer.setData('text/plain', verb);
+  };
+
+  const handleDrop = (e: React.DragEvent, label: string) => {
+    e.preventDefault();
+    const verb = e.dataTransfer.getData('text/plain') || draggedVerb;
+    if (verb) {
+      setAnswers((prev) => ({ ...prev, [label]: verb }));
+      setDraggedVerb(null);
+    }
+  };
+
+  const handleDragOver = (e: React.DragEvent) => {
+    e.preventDefault();
+  };
+
+  // Instant Manual Quick Check
+  const handleQuickCheck = () => {
+    let currentScore = 0;
+    const gapEvals: VerbAiEvaluation['gapEvaluations'] = [];
+
+    (exercise?.gaps || []).forEach((gap) => {
+      const userAns = (answers[gap.label] || '').trim().toLowerCase();
+      const correct = (gap.correctAnswer || '').toLowerCase().trim();
+      const acceptable = (gap.acceptableAnswers || []).map((a) => (a || '').toLowerCase().trim());
+      const isMatch = userAns.length > 0 && (userAns === correct || acceptable.includes(userAns));
+
+      if (isMatch) {
+        currentScore += 1;
+      }
+
+      gapEvals.push({
+        label: gap.label,
+        studentAnswer: answers[gap.label] || '',
+        correctAnswer: gap.correctAnswer,
+        isCorrect: isMatch,
+        collocation: `Root verb: (${gap.rootVerb})`,
+        ruleExplanation: gap.ruleExplanation || `Correct conjugated form is "${gap.correctAnswer}".`,
+        banglaRule: 'টেন্স (Tense), ভয়েস (Voice), ও সাবজেক্ট অনুযায়ী সঠিক ভার্ব রূপ।',
+        whyIncorrect: isMatch
+          ? ''
+          : userAns.length === 0
+          ? 'Gap left blank (কোনো উত্তর লেখা হয়নি).'
+          : `"${userAns}" does not match the appropriate tense/voice. Expected: "${gap.correctAnswer}".`,
+      });
+    });
+
+    // SSC Item 3: 0.5 or 1 mark per gap (standard 10 gaps = 5 or 10 marks, let's keep 0.5x10 = 5 marks)
+    const normalizedScore = Math.round(currentScore * 0.5 * 10) / 10;
+    setScore(normalizedScore);
+
+    setAiEvaluation({
+      totalScore: normalizedScore,
+      maxScore: 5,
+      percentage: Math.round((normalizedScore / 5) * 100),
+      grade: normalizedScore >= 4.5 ? 'A+' : normalizedScore >= 4 ? 'A' : normalizedScore >= 3 ? 'B' : 'Needs Practice',
+      provider: 'Manual Rule Engine (বোর্ড উত্তরমালা)',
+      overallFeedback:
+        normalizedScore === 5
+          ? 'Remarkable accuracy! You mastered all verb tenses, passive forms, and subject-verb agreement.'
+          : normalizedScore >= 3.5
+          ? `Well done (${normalizedScore}/5.0)! A solid understanding of verb conjugation. Check the incorrect gaps below.`
+          : `Keep practicing (${normalizedScore}/5.0). Review passive voice, modal auxiliaries, and conditional clauses.`,
+      banglaTips:
+        'প্যাসেজের সামগ্রিক কাল (Past/Present) লক্ষ্য করুন। যদি বাক্য Passive হয় তবে be verb + V3 ব্যবহার করুন।',
+      gapEvaluations: gapEvals,
+      studySuggestions: [
+        'Identify whether the subject is performing the action or receiving the action (Active vs Passive).',
+        'Look for time indicators (yesterday, now, always, recently).',
+        'Check for preposition + verb-ing or to + base verb rules.',
+      ],
+      aiPowered: false,
+    });
+
+    setIsChecked(true);
+    setShowCelebration(true);
+  };
+
+  // AI Examination (ChatGPT / Gemini AI)
+  const handleAiExamine = async (provider: 'chatgpt' | 'gemini') => {
+    setSelectedAiModel(provider);
+    setIsAiChecking(true);
+
+    try {
+      const response = await fetch('/api/ai-grammar-examine', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          itemNumber: 3,
+          itemTitle: 'Right Form of Verbs',
+          provider,
+          exerciseContext: {
+            passageTitle: exercise.title,
+            board: selectedBoard,
+            passageTemplate: exercise.passageTemplate,
+            boxWords: exercise.rootVerbs,
+          },
+          items: exercise.gaps.map((g) => ({
+            label: g.label,
+            correctAnswer: g.correctAnswer,
+            acceptableAnswers: g.acceptableAnswers,
+            ruleExplanation: g.ruleExplanation,
+          })),
+          userAnswers: answers,
+        }),
+      });
+
+      const data = await response.json();
+      if (data && data.evaluation) {
+        setAiEvaluation(data.evaluation);
+        setScore(data.evaluation.totalScore || 0);
+      } else {
+        handleQuickCheck();
+      }
+    } catch (err) {
+      console.warn('AI verbs evaluation error, falling back to manual check:', err);
+      handleQuickCheck();
+    } finally {
+      setIsAiChecking(false);
+      setIsChecked(true);
+      setShowCelebration(true);
+    }
+  };
+
+  const handleShowAllAnswers = () => {
+    const modelAnswers: Record<string, string> = {};
+    (exercise?.gaps || []).forEach((gap) => {
+      modelAnswers[gap.label] = gap.correctAnswer;
+    });
+    setAnswers(modelAnswers);
+    setIsChecked(true);
+    setScore(5);
+  };
+
+  const handleReset = () => {
+    setAnswers({});
+    setIsChecked(false);
+    setIsAiChecking(false);
+    setAiEvaluation(null);
+    setShowCelebration(false);
+    setScore(0);
+    setSelectedVerb(null);
+    setActiveDetailVerb(null);
+    setActiveTab('aiFeedback');
+    setShowPassageBangla(false);
+  };
+
+  const availableBoards = RIGHT_FORM_VERBS_DATA.map((e) => e.board);
+  const gaps = exercise?.gaps || [];
+
+  const renderPassage = () => {
+    const parts = (exercise?.passageTemplate || '').split(/(\[[a-z]\])/g);
+
+    return (
+      <div className="text-sm sm:text-base md:text-lg leading-loose text-justify text-slate-800 dark:text-slate-200 bg-amber-50/30 dark:bg-slate-900/60 p-4 sm:p-6 md:p-7 rounded-2xl border border-amber-200/60 dark:border-slate-800 break-words">
+        {parts.map((part, index) => {
+          const match = part.match(/\[([a-z])\]/);
+          if (match) {
+            const label = match[1];
+            const gap = gaps.find((g) => g.label === label);
+            const userAns = answers[label] || '';
+
+            const gapEval = aiEvaluation?.gapEvaluations?.find((g) => g.label === label);
+            const isCorrect =
+              isChecked &&
+              (gapEval
+                ? gapEval.isCorrect
+                : gap &&
+                  userAns.trim().length > 0 &&
+                  (userAns.trim().toLowerCase() === (gap.correctAnswer || '').toLowerCase().trim() ||
+                    (gap.acceptableAnswers || [])
+                      .map((a) => (a || '').toLowerCase().trim())
+                      .includes(userAns.trim().toLowerCase())));
+
+            return (
+              <span key={index} className="inline-flex flex-col items-center mx-1 my-1 align-middle">
+                <span className="inline-flex items-center gap-1">
+                  <span className="text-xs font-bold text-amber-800 dark:text-amber-300 font-mono">
+                    ({label})
+                  </span>
+                  <input
+                    type="text"
+                    value={userAns}
+                    onChange={(e) => handleInputChange(label, e.target.value)}
+                    onClick={() => handleBlankClick(label)}
+                    onDragOver={handleDragOver}
+                    onDrop={(e) => handleDrop(e, label)}
+                    placeholder={`[${label}]`}
+                    className={`w-24 sm:w-32 md:w-36 text-center font-semibold text-xs sm:text-sm md:text-base px-2 py-1 rounded-xl border transition-all duration-200 shadow-sm focus:outline-none focus:ring-2 ${
+                      isChecked
+                        ? isCorrect
+                          ? 'bg-emerald-100 dark:bg-emerald-950 border-emerald-500 text-emerald-900 dark:text-emerald-200 ring-2 ring-emerald-400'
+                          : 'bg-rose-100 dark:bg-rose-950 border-rose-500 text-rose-900 dark:text-rose-200 ring-2 ring-rose-400'
+                        : selectedVerb
+                        ? 'bg-amber-100/70 dark:bg-amber-950/40 border-amber-400 ring-2 ring-amber-400/50 cursor-pointer animate-pulse'
+                        : 'bg-white dark:bg-slate-800 border-slate-300 dark:border-slate-600 focus:border-amber-500 focus:ring-amber-400'
+                    }`}
+                  />
+                  {isChecked && (
+                    <span>
+                      {isCorrect ? (
+                        <CheckCircle2 className="w-4 h-4 text-emerald-600 inline-block" />
+                      ) : (
+                        <XCircle className="w-4 h-4 text-rose-600 inline-block" />
+                      )}
+                    </span>
+                  )}
+                </span>
+                {isChecked && !isCorrect && gap && (
+                  <span className="text-[11px] font-bold text-emerald-700 dark:text-emerald-400 mt-0.5 max-w-[120px] truncate text-center">
+                    Ans: {gap.correctAnswer}
+                  </span>
+                )}
+              </span>
+            );
+          }
+          return <span key={index}>{part}</span>;
+        })}
+      </div>
+    );
+  };
+
+  return (
+    <div className="max-w-5xl mx-auto px-2 sm:px-4">
+      <BoardSelector
+        availableBoards={availableBoards}
+        selectedBoard={selectedBoard}
+        onSelectBoard={setSelectedBoard}
+        bookmarkData={{
+          id: `item-3-${exercise.id || selectedBoard}`,
+          itemId: 3,
+          itemNumber: 3,
+          itemTitle: 'Right Form of Verbs',
+          subTitle: `${selectedBoard}: ${exercise.title || 'Verb Forms Practice'}`,
+          category: 'grammar',
+          savedAt: new Date().toISOString(),
+        }}
+      />
+
+      <div className="bg-white dark:bg-slate-900 rounded-3xl p-4 sm:p-6 md:p-8 border border-slate-200 dark:border-slate-800 shadow-xl mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200 dark:border-slate-800 mb-6">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 mb-1.5">
+              <span>Question No. 3</span>
+              <span>•</span>
+              <span>Marks: 0.5x10 = 05</span>
+            </div>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-black text-slate-800 dark:text-slate-100">
+              {exercise.title}
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
+              প্রদত্ত বাক্সের মূল ক্রিয়াপদ (Root Verbs) গুলোর সঠিক কাল (Tense), ভাব (Voice) ও সাবজেক্ট অনুসারে সঠিক রূপ বসান।
+            </p>
+          </div>
+
+          <BookmarkButton
+            exercise={{
+              id: `item-3-${exercise.id || selectedBoard}`,
+              itemId: 3,
+              itemNumber: 3,
+              itemTitle: 'Right Form of Verbs',
+              subTitle: `${selectedBoard}: ${exercise.title}`,
+              category: 'grammar',
+              savedAt: new Date().toISOString(),
+            }}
+            variant="standard"
+          />
+        </div>
+
+        {/* Root Verbs Box (Sticky & Interactive for Dragging, Clicking & Detail Inspection) */}
+        <div className="sticky top-2 z-20 bg-gradient-to-r from-amber-50 via-orange-50 to-amber-50 dark:from-slate-800 dark:via-slate-800/95 dark:to-slate-800 p-3.5 sm:p-4 rounded-2xl border-2 border-amber-300/80 dark:border-amber-700/60 shadow-lg backdrop-blur-md mb-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2.5">
+            <span className="text-xs sm:text-sm font-black text-amber-950 dark:text-amber-200 flex items-center gap-1.5">
+              <Move className="w-4 h-4 text-amber-600 shrink-0" />
+              <span>Root Verbs Box (মূল ক্রিয়াপদসমূহ):</span>
+            </span>
+            {selectedVerb ? (
+              <span className="text-xs font-bold text-amber-900 dark:text-amber-200 bg-amber-200 dark:bg-amber-950 px-2.5 py-1 rounded-lg ring-1 ring-amber-400 animate-pulse">
+                Selected: <span className="underline font-black">{selectedVerb}</span> → ক্লিক বা ড্র্যাগ করে গ্যাপে বসান (পুনরায় ক্লিকে vanish হবে)
+              </span>
+            ) : (
+              <span className="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
+                💡 যে কোনো verb-এ ক্লিক করলে উচ্চারণ, অর্থ ও V2/V3 রূপ দেখাবে; ২য় ক্লিকে vanish হবে।
+              </span>
+            )}
+          </div>
+
+          <div className="flex flex-wrap gap-2 sm:gap-2.5">
+            {exercise.rootVerbs.map((verb, idx) => {
+              const isSelected = selectedVerb === verb;
+              const isDetailActive = activeDetailVerb === verb;
+              return (
+                <button
+                  key={idx}
+                  draggable
+                  onDragStart={(e) => handleDragStart(e, verb)}
+                  onClick={() => handleVerbClick(verb)}
+                  className={`px-3 py-1.5 rounded-xl font-bold text-xs sm:text-sm shadow-sm transition-all duration-200 cursor-pointer ${
+                    isDetailActive
+                      ? 'bg-amber-500 text-slate-950 ring-2 ring-amber-400 scale-105 shadow-md font-black'
+                      : isSelected
+                      ? 'bg-amber-400 text-slate-900 ring-2 ring-amber-300'
+                      : 'bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-200 hover:bg-amber-600 hover:text-white border border-slate-200 dark:border-slate-700 hover:scale-105'
+                  }`}
+                  title={`${verb} - ক্লিক করলে উচ্চারণ, অর্থ ও রূপ দেখাবে / গ্যাপে বসানো যাবে`}
+                >
+                  <span className="flex items-center gap-1">
+                    <span>{verb}</span>
+                    {isDetailActive && <span className="text-[10px] opacity-75">✕</span>}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Expanded Interactive Verb Details Card */}
+          {activeDetailVerb && (
+            <VerbInfoCard
+              verb={activeDetailVerb}
+              onClose={() => {
+                setActiveDetailVerb(null);
+                setSelectedVerb(null);
+              }}
+              onSelectForGap={(verb) => {
+                setSelectedVerb(verb);
+              }}
+            />
+          )}
+        </div>
+
+        {/* Read-Aloud Toolbar with Live Highlight & Translation Folding Controls */}
+        <div className="flex flex-wrap items-center justify-between gap-2.5 mb-3">
+          <div className="flex flex-wrap items-center gap-2">
+            {/* Toggle Total Passage Meaning (Folding / Unfolding) */}
+            <button
+              type="button"
+              id="btn-toggle-rfv-passage-translation-top"
+              onClick={() => setShowPassageBangla(!showPassageBangla)}
+              className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-xs cursor-pointer ${
+                showPassageBangla
+                  ? 'bg-amber-600 text-white shadow-md hover:bg-amber-700'
+                  : 'bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/50 dark:hover:bg-amber-900/60 text-amber-900 dark:text-amber-200 border border-amber-200 dark:border-amber-800'
+              }`}
+              title="সম্পূর্ণ অনুচ্ছেদের বাংলা অর্থ দেখুন বা লুকান"
+            >
+              <BookOpenCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
+              <span>
+                {showPassageBangla
+                  ? 'সম্পূর্ণ অনুচ্ছেদের অর্থ লুকান'
+                  : 'সম্পূর্ণ অনুচ্ছেদের অর্থ দেখুন'}
+              </span>
+              {showPassageBangla ? (
+                <ChevronUp className="w-3.5 h-3.5" />
+              ) : (
+                <ChevronDown className="w-3.5 h-3.5" />
+              )}
+            </button>
+          </div>
+
+          {/* Read Aloud Button */}
+          <button
+            onClick={() => setShowAudioReader(!showAudioReader)}
+            className={`inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all shadow-sm cursor-pointer ${
+              showAudioReader
+                ? 'bg-amber-600 text-white shadow-md'
+                : 'bg-amber-50 dark:bg-amber-950/50 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800/80 hover:bg-amber-100'
+            }`}
+          >
+            <Volume2 className="w-4 h-4 shrink-0" />
+            <span>
+              {showAudioReader
+                ? 'Hide Read-Out (প্যাসেজ লুকান)'
+                : '🔊 Read Aloud (লাইভ হাইলাইটসহ শুনুন)'}
+            </span>
+          </button>
+        </div>
+
+        {/* Live Highlighted Passage Reader */}
+        {showAudioReader && (
+          <div className="mb-5">
+            <HighlightedPassageReader
+              text={cleanSpokenPassage}
+              title={`${exercise.title} (Live Read-Out & Highlighting)`}
+              banglaTitle="প্যাসেজটি শুনুন: অডিও বাজানোর সময় প্রতিটি শব্দ ও বাক্য লাইভ সোনালী রঙে হাইলাইট হবে।"
+              accentColor="amber"
+            />
+          </div>
+        )}
+
+        {/* Passage with Gap Inputs inside a Scrollable Card */}
+        <div className="max-h-[520px] overflow-y-auto overscroll-contain pr-1 rounded-2xl custom-scrollbar border border-amber-200/40 dark:border-slate-800/80 shadow-inner">
+          {renderPassage()}
+        </div>
+
+        {/* STATE-DRIVEN FOLDING SECTION: Total Passage Bengali Translation */}
+        <div
+          id="rfv-passage-translation-folding-card"
+          className="mt-5 overflow-hidden rounded-3xl border border-amber-200/90 dark:border-amber-800/90 bg-gradient-to-br from-amber-50/80 via-orange-50/40 to-slate-50 dark:from-slate-900/95 dark:via-amber-950/40 dark:to-slate-900 shadow-sm transition-all duration-300"
+        >
+          {/* Main State-driven Toggle / Disclosure Button */}
+          <button
+            type="button"
+            id="btn-toggle-passage-translation"
+            aria-controls="rfv-passage-translation-content"
+            aria-expanded={showPassageBangla}
+            onClick={() => setShowPassageBangla(!showPassageBangla)}
+            className="w-full px-4 sm:px-6 py-3.5 sm:py-4 flex items-center justify-between gap-3 text-left transition-colors hover:bg-amber-100/70 dark:hover:bg-amber-950/70 cursor-pointer select-none group"
+          >
+            <div className="flex items-center gap-3 min-w-0">
+              <span className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-amber-500 to-orange-600 text-slate-950 flex items-center justify-center shrink-0 shadow-md group-hover:scale-105 transition-transform">
+                <BookOpenCheck className="w-5 h-5 text-slate-950" />
+              </span>
+              <div className="min-w-0">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-sm sm:text-base font-black text-amber-950 dark:text-amber-100 tracking-tight">
+                    {showPassageBangla
+                      ? 'সম্পূর্ণ অনুচ্ছেদের অর্থ লুকান'
+                      : 'সম্পূর্ণ অনুচ্ছেদের অর্থ দেখুন'}
+                  </span>
+                  <span
+                    className={`px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-bold transition-colors ${
+                      showPassageBangla
+                        ? 'bg-amber-600 text-white shadow-xs'
+                        : 'bg-amber-200/80 dark:bg-amber-900/70 text-amber-950 dark:text-amber-200'
+                    }`}
+                  >
+                    {showPassageBangla ? 'খোলা রয়েছে (Opened)' : 'ফোল্ডিং (Click to Unfold)'}
+                  </span>
+                </div>
+                <p className="text-[11px] sm:text-xs text-amber-800/80 dark:text-amber-300/80 font-medium truncate mt-0.5">
+                  অনুচ্ছেদটির সম্পূর্ণ প্রাঞ্জল বাংলা অর্থ ফোল্ডিং অবস্থায় পড়তে ক্লিক করুন
+                </p>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 shrink-0">
+              <span className="hidden sm:inline-flex items-center px-3 py-1 rounded-xl text-xs font-bold bg-white dark:bg-slate-800 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-800 shadow-2xs group-hover:bg-amber-50 dark:group-hover:bg-slate-700 transition">
+                {showPassageBangla ? 'ভাঁজ করুন' : 'সম্পূর্ণ অনুচ্ছেদের অর্থ দেখুন'}
+              </span>
+              <span
+                className={`w-8 h-8 rounded-xl bg-white dark:bg-slate-800 border border-amber-200 dark:border-amber-800 flex items-center justify-center text-amber-800 dark:text-amber-300 shadow-xs transition-transform duration-300 ${
+                  showPassageBangla ? 'rotate-180 bg-amber-100 dark:bg-amber-900 text-amber-900 dark:text-amber-100' : ''
+                }`}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </span>
+            </div>
+          </button>
+
+          {/* Unfolded Total Passage Meaning Body */}
+          {showPassageBangla && (
+            <div
+              id="rfv-passage-translation-content"
+              role="region"
+              aria-labelledby="btn-toggle-passage-translation"
+              className="px-4 sm:px-6 pb-5 pt-2 border-t border-amber-200/70 dark:border-amber-900/60 animate-in fade-in slide-in-from-top-2 duration-300"
+            >
+              <div className="p-4 sm:p-5 rounded-2xl bg-white/95 dark:bg-slate-900/90 border border-amber-200/80 dark:border-amber-800/60 shadow-xs">
+                <div className="flex items-center justify-between gap-2 mb-3 pb-2.5 border-b border-amber-100 dark:border-slate-800">
+                  <div className="flex items-center gap-2">
+                    <Languages className="w-4 h-4 text-amber-600" />
+                    <span className="text-xs sm:text-sm font-black text-amber-950 dark:text-amber-200 tracking-wide">
+                      {translationData?.titleBn || exercise.title} (পূর্ণাঙ্গ প্রাঞ্জল বাংলা অর্থ):
+                    </span>
+                  </div>
+
+                  <button
+                    type="button"
+                    id="btn-copy-rfv-passage-translation"
+                    onClick={() => {
+                      if (translationData?.passageBangla) {
+                        navigator.clipboard.writeText(translationData.passageBangla);
+                        setCopiedBangla(true);
+                        setTimeout(() => setCopiedBangla(false), 2000);
+                      }
+                    }}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold text-slate-700 dark:text-slate-200 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 transition cursor-pointer"
+                    title="অনুবাদ কপি করুন"
+                  >
+                    {copiedBangla ? (
+                      <>
+                        <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
+                        <span className="text-emerald-600 dark:text-emerald-400">কপি সম্পন্ন!</span>
+                      </>
+                    ) : (
+                      <>
+                        <Copy className="w-3.5 h-3.5 text-slate-500" />
+                        <span>কপি করুন</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+
+                {/* Translation text */}
+                <p className="text-sm sm:text-base text-slate-800 dark:text-slate-200 leading-relaxed sm:leading-loose font-normal">
+                  {translationData?.passageBangla}
+                </p>
+
+                {/* Sentence breakdown if available */}
+                {translationData?.sentenceBreakdown && translationData.sentenceBreakdown.length > 0 && (
+                  <div className="mt-4 pt-3 border-t border-amber-100 dark:border-slate-800">
+                    <span className="text-xs font-bold text-amber-800 dark:text-amber-400 block mb-2">
+                      বাক্যভিত্তিক বিশ্লেষণ (Sentence-by-Sentence Translation):
+                    </span>
+                    <div className="space-y-2 text-xs sm:text-sm">
+                      {translationData.sentenceBreakdown.map((sb, idx) => (
+                        <div
+                          key={idx}
+                          className="p-2.5 rounded-xl bg-amber-50/60 dark:bg-slate-800/60 border border-amber-100 dark:border-slate-700/60"
+                        >
+                          <p className="font-mono text-slate-900 dark:text-slate-100 text-xs">{sb.en}</p>
+                          <p className="font-sans text-amber-900 dark:text-amber-200 font-medium mt-1">
+                            {sb.bn}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div className="mt-3.5 pt-3 border-t border-amber-100 dark:border-slate-800/80 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-500 dark:text-slate-400">
+                  <span>💡 ক্রিয়ার সঠিক রূপ (Right Form of Verbs) প্রয়োগের মাধ্যমে অনুচ্ছেদটির সঠিক কাল ও অর্থ ফুটে উঠেছে।</span>
+                  <button
+                    type="button"
+                    onClick={() => setShowPassageBangla(false)}
+                    className="text-amber-700 dark:text-amber-400 hover:underline font-semibold cursor-pointer"
+                  >
+                    অর্থ ভাঁজ করুন (Collapse)
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Responsive Action Buttons Bar */}
+        <div className="mt-8 pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
+            {/* ChatGPT Check Button */}
+            <button
+              onClick={() => handleAiExamine('chatgpt')}
+              disabled={isAiChecking}
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+            >
+              {isAiChecking && selectedAiModel === 'chatgpt' ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Bot className="w-4 h-4 text-emerald-200" />
+              )}
+              <span>ChatGPT Examiner</span>
+            </button>
+
+            {/* Gemini AI Check Button */}
+            <button
+              onClick={() => handleAiExamine('gemini')}
+              disabled={isAiChecking}
+              className="inline-flex items-center justify-center gap-2 px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 text-white font-bold text-xs sm:text-sm shadow-md transition-all active:scale-95 disabled:opacity-50 cursor-pointer"
+            >
+              {isAiChecking && selectedAiModel === 'gemini' ? (
+                <Loader2 className="w-4 h-4 animate-spin" />
+              ) : (
+                <Sparkles className="w-4 h-4 text-amber-200" />
+              )}
+              <span>Gemini 3.7 AI</span>
+            </button>
+
+            {/* Manual Quick Check Button */}
+            <button
+              onClick={handleQuickCheck}
+              disabled={isAiChecking}
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-2xl bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/60 dark:hover:bg-amber-900/60 text-amber-800 dark:text-amber-300 font-bold text-xs sm:text-sm border border-amber-200 dark:border-amber-800/80 transition cursor-pointer"
+            >
+              <CheckCircle2 className="w-4 h-4 text-amber-600" />
+              <span>Quick Check (ম্যানুয়াল যাচাই)</span>
+            </button>
+
+            <button
+              onClick={handleShowAllAnswers}
+              disabled={isAiChecking}
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm transition cursor-pointer"
+            >
+              <Eye className="w-4 h-4" />
+              <span>Show Answers</span>
+            </button>
+
+            <button
+              onClick={handleReset}
+              disabled={isAiChecking}
+              className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-300 font-semibold text-xs sm:text-sm transition cursor-pointer"
+            >
+              <RotateCcw className="w-4 h-4" />
+              <span>Reset</span>
+            </button>
+          </div>
+
+          {isChecked && (
+            <div className="flex items-center justify-between sm:justify-end gap-3 bg-amber-50 dark:bg-amber-950/60 px-4 py-2.5 rounded-2xl border border-amber-300 dark:border-amber-800 self-stretch sm:self-auto">
+              <span className="text-xs font-bold text-slate-600 dark:text-slate-400">Total Score:</span>
+              <span className="text-base sm:text-lg font-black text-amber-700 dark:text-amber-300 font-mono">
+                {score} <span className="text-xs text-slate-500 font-sans">/ 5.0</span>
+              </span>
+              {aiEvaluation?.grade && (
+                <span className="px-2 py-0.5 rounded-lg bg-amber-200 dark:bg-amber-900 text-[11px] font-black text-amber-950 dark:text-amber-100">
+                  {aiEvaluation.grade}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+
+        {/* In-Page Responsive AI & Examiner Feedback Display */}
+        {isChecked && aiEvaluation && (
+          <div className="mt-8 space-y-6 animate-in fade-in">
+            {/* View Switcher Tabs */}
+            <div className="flex flex-wrap items-center gap-2 border-b border-slate-200 dark:border-slate-800 pb-3">
+              <button
+                onClick={() => setActiveTab('aiFeedback')}
+                className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  activeTab === 'aiFeedback'
+                    ? 'bg-amber-600 text-white shadow-md'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                }`}
+              >
+                <Bot className="w-4 h-4" />
+                <span>AI Tutor Assessment & Feedback</span>
+              </button>
+
+              <button
+                onClick={() => setActiveTab('rules')}
+                className={`inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all cursor-pointer ${
+                  activeTab === 'rules'
+                    ? 'bg-amber-600 text-white shadow-md'
+                    : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200'
+                }`}
+              >
+                <BookOpen className="w-4 h-4" />
+                <span>Grammar Rules Reference (নিয়মাবলী)</span>
+              </button>
+            </div>
+
+            {activeTab === 'aiFeedback' && (
+              <div className="space-y-6">
+                {/* Examiner Assessment Header Card */}
+                <div className="p-4 sm:p-6 rounded-3xl bg-gradient-to-br from-amber-500/10 via-orange-500/5 to-yellow-500/10 border border-amber-300 dark:border-amber-800 shadow-sm">
+                  <div className="flex items-start gap-3 sm:gap-4">
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-gradient-to-tr from-amber-600 to-orange-600 text-white flex items-center justify-center shrink-0 shadow-md">
+                      <Bot className="w-5 h-5 sm:w-6 sm:h-6" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center justify-between gap-2 mb-1.5">
+                        <h4 className="text-sm sm:text-base md:text-lg font-black text-slate-900 dark:text-slate-100 flex items-center gap-2">
+                          <span>{aiEvaluation.provider || 'AI English Tutor Evaluation'}</span>
+                          {aiEvaluation.aiPowered && (
+                            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+                              AI Powered
+                            </span>
+                          )}
+                        </h4>
+                        <div className="flex items-center gap-1.5">
+                          <span className="text-xs font-bold text-slate-500">Marks:</span>
+                          <span className="text-xs sm:text-sm font-black text-amber-700 dark:text-amber-300 bg-white dark:bg-slate-800 px-2.5 py-1 rounded-xl border border-amber-200 dark:border-slate-700">
+                            {score} / 5.0 ({Math.round((score / 5) * 100)}%)
+                          </span>
+                        </div>
+                      </div>
+                      <p className="text-xs sm:text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed font-medium">
+                        "{aiEvaluation.overallFeedback}"
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bangla Tips Card */}
+                  {aiEvaluation.banglaTips && (
+                    <div className="mt-4 p-3.5 sm:p-4 rounded-2xl bg-amber-50/80 dark:bg-amber-950/40 border border-amber-200/80 dark:border-amber-800/80 flex items-start gap-2.5 sm:gap-3">
+                      <Lightbulb className="w-4 h-4 sm:w-5 sm:h-5 text-amber-600 dark:text-amber-400 shrink-0 mt-0.5" />
+                      <div>
+                        <div className="text-[11px] sm:text-xs font-bold text-amber-900 dark:text-amber-200 uppercase tracking-wider mb-0.5">
+                          বাংলা টিপস ও কৌশল (Right Form of Verbs Strategy):
+                        </div>
+                        <p className="text-xs sm:text-sm text-amber-950 dark:text-amber-100 leading-relaxed">
+                          {aiEvaluation.banglaTips}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
+                {/* Per-Gap In-Depth Responsive Cards */}
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h5 className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                      <MessageSquare className="w-4 h-4 text-amber-600" />
+                      <span>Detailed Verb Conjugation Breakdown:</span>
+                    </h5>
+                    <span className="text-xs font-bold text-slate-500">10 Verbs (0.5 x 10 = 5 Marks)</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {aiEvaluation.gapEvaluations?.map((gap) => (
+                      <div
+                        key={gap.label}
+                        className={`p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 shadow-sm ${
+                          gap.isCorrect
+                            ? 'bg-emerald-50/60 dark:bg-emerald-950/20 border-emerald-200 dark:border-emerald-800/60'
+                            : 'bg-rose-50/60 dark:bg-rose-950/20 border-rose-200 dark:border-rose-800/60'
+                        }`}
+                      >
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-2">
+                            <span
+                              className={`w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center font-mono ${
+                                gap.isCorrect ? 'bg-emerald-600 text-white' : 'bg-rose-600 text-white'
+                              }`}
+                            >
+                              {gap.label}
+                            </span>
+                            <span className="text-xs font-bold text-slate-700 dark:text-slate-300">
+                              Gap ({gap.label}) {gap.collocation}
+                            </span>
+                          </div>
+
+                          <div className="flex items-center gap-1">
+                            {gap.isCorrect ? (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded-full">
+                                <CheckCircle2 className="w-3.5 h-3.5" />
+                                <span>+0.5 Mark</span>
+                              </span>
+                            ) : (
+                              <span className="inline-flex items-center gap-1 text-xs font-bold text-rose-700 dark:text-rose-300 bg-rose-100 dark:bg-rose-950 px-2 py-0.5 rounded-full">
+                                <XCircle className="w-3.5 h-3.5" />
+                                <span>0.0 Mark</span>
+                              </span>
+                            )}
+                          </div>
+                        </div>
+
+                        {/* Student Answer vs Correct Answer */}
+                        <div className="space-y-1 text-xs sm:text-sm mb-2">
+                          <div className="flex items-center justify-between text-slate-600 dark:text-slate-400">
+                            <span>Your Answer:</span>
+                            <span
+                              className={`font-bold font-mono px-2 py-0.5 rounded ${
+                                gap.isCorrect
+                                  ? 'bg-emerald-100 dark:bg-emerald-900/60 text-emerald-900 dark:text-emerald-100'
+                                  : 'bg-rose-100 dark:bg-rose-900/60 text-rose-900 dark:text-rose-100 line-through'
+                              }`}
+                            >
+                              {gap.studentAnswer && gap.studentAnswer.trim() ? gap.studentAnswer : '(blank)'}
+                            </span>
+                          </div>
+
+                          {!gap.isCorrect && (
+                            <div className="flex items-center justify-between text-slate-800 dark:text-slate-200">
+                              <span className="font-semibold text-emerald-700 dark:text-emerald-400">
+                                Correct Form:
+                              </span>
+                              <span className="font-bold font-mono bg-emerald-100 dark:bg-emerald-900 text-emerald-900 dark:text-emerald-100 px-2 py-0.5 rounded">
+                                {gap.correctAnswer}
+                              </span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Why Incorrect Notice */}
+                        {!gap.isCorrect && gap.whyIncorrect && (
+                          <p className="text-xs text-rose-800 dark:text-rose-300 bg-rose-100/70 dark:bg-rose-950/50 p-2 rounded-lg mb-2 leading-relaxed">
+                            <strong>ভুলের কারণ:</strong> {gap.whyIncorrect}
+                          </p>
+                        )}
+
+                        {/* Grammatical explanation */}
+                        <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                          {gap.ruleExplanation || gap.banglaRule}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Recommendations */}
+                {aiEvaluation.studySuggestions && aiEvaluation.studySuggestions.length > 0 && (
+                  <div className="p-4 sm:p-5 rounded-3xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700">
+                    <h5 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-2.5 flex items-center gap-1.5">
+                      <Sparkles className="w-4 h-4 text-amber-600" />
+                      <span>Study Recommendations for Verbs:</span>
+                    </h5>
+                    <ul className="space-y-1.5 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                      {aiEvaluation.studySuggestions.map((sug, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <ChevronRight className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
+                          <span>{sug}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {activeTab === 'rules' && (
+              <div className="bg-slate-50 dark:bg-slate-800/50 p-4 sm:p-6 rounded-2xl border border-slate-200 dark:border-slate-700 space-y-3">
+                <h4 className="font-bold text-slate-900 dark:text-slate-100 text-sm sm:text-base flex items-center gap-2">
+                  <Lightbulb className="w-5 h-5 text-amber-500 shrink-0" />
+                  <span>Grammatical Rules & Explanations (ব্যাকরণগত নিয়মাবলী):</span>
+                </h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs sm:text-sm">
+                  {exercise.gaps.map((gap) => (
+                    <div
+                      key={gap.label}
+                      className="p-3 bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800"
+                    >
+                      <span className="font-bold text-amber-600 dark:text-amber-400 mr-1.5">
+                        ({gap.label}) {gap.correctAnswer}:
+                      </span>
+                      <span className="text-slate-600 dark:text-slate-400">{gap.ruleExplanation}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+      </div>
+
+      <CelebrationModal
+        isOpen={showCelebration}
+        score={score}
+        maxScore={5}
+        title={exercise.title}
+        provider={aiEvaluation?.provider}
+        feedbackText={
+          aiEvaluation?.overallFeedback ||
+          (score === 5
+            ? 'Remarkable accuracy! You mastered all verb tenses and passive transformations.'
+            : score >= 3.5
+            ? 'Well done! A solid understanding of verb conjugation.'
+            : 'Keep practicing! Review subject-verb agreement and conditional clauses.')
+        }
+        banglaTips={
+          aiEvaluation?.banglaTips ||
+          'টেন্স ও ভয়েস অনুযায়ী মূল ক্রিয়াপদের রূপ পরিবর্তন করুন (যেমন: be+V3, having+V3, modal+V1)।'
+        }
+        onClose={() => setShowCelebration(false)}
+        onRetry={handleReset}
+      />
+    </div>
+  );
+};

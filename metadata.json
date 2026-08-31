@@ -1,0 +1,6 @@
+{
+  "name": "SSC English Second Part",
+  "description": "Interactive and AI-assisted educational platform for SSC English 2nd Paper with board question sets, drag & drop practice, AI grading, and bilingual writing guides.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
