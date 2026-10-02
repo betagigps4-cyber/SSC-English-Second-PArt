@@ -2,55 +2,57 @@ import { PunctuationExercise } from '../types';
 
 export const PUNCTUATION_MODEL_QUESTIONS: PunctuationExercise[] = [
   {
-    id: 'punc-rajshahi-2026',
-    board: 'Rajshahi Board 2026',
-    title: 'Rajshahi Board 2026 - The Honest Student and the Hundred Taka Note',
+    id: 'punc-dhaka-2026',
+    board: 'Dhaka Board 2026',
+    title: 'Dhaka Board 2026 - Haji Mohammad Mohsin and the Starving Man',
     unpunctuatedPassage:
-      'in a certain school a student once found a one hundred taka note in the play ground he took it to his mother what shall i do with it asked the mother',
+      'the man said to mohsin my family have been starving for a couple of days i have gone from door to door in quest of work but i have found no work mohsin said take the bunch of keys and open the almirah have as much money as you require',
     correctPassage:
-      'In a certain school, a student once found a one-hundred-taka note in the playground. He took it to his mother. "What shall I do with it?" asked the mother.',
+      'The man said to Mohsin, "My family have been starving for a couple of days. I have gone from door to door in quest of work, but I have found no work." Mohsin said, "Take the bunch of keys and open the almirah. Have as much money as you require."',
     keyPunctuationPoints: [
-      'Capitalize initial "In" and insert comma after the introductory adverbial phrase "In a certain school,".',
-      'Full stop after "in the playground." followed by capital "H" in "He took it to his mother.".',
-      'Direct question enclosed in quotation marks: opening inverted commas, capital "What", capital pronoun "I", question mark, and closing inverted commas: \'"What shall I do with it?"\'.',
-      'Reporting clause ends with a full stop: "asked the mother.".',
+      'Capitalize initial "The" and proper noun "Mohsin" in the reporting clause: "The man said to Mohsin,".',
+      'Comma after reporting verb phrase "The man said to Mohsin," before opening quotation marks.',
+      'Opening inverted commas before "My" and capital "M" in direct speech: \'"My family have been starving for a couple of days.\'.',
+      'Full stop after "couple of days." followed by capital pronoun "I" in "I have gone...".',
+      'Comma before coordinating conjunction "but" in "...in quest of work, but I have found no work.".',
+      'Capital pronoun "I" in "but I have found no work." followed by terminal full stop inside closing inverted commas.',
+      'Capital "Mohsin" for proper noun, comma after reporting clause "Mohsin said,", and opening inverted commas before "Take".',
+      'Capital "Take" for imperative sentence, and full stop after "open the almirah.".',
+      'Capital "Have" starting the next sentence, and terminal full stop inside closing quotation marks after "...as you require."',
     ],
     explanation:
-      'Introductory prepositional phrases set the scene and take a comma. Complete declarative thoughts terminate in periods/full stops. Direct quoted speech is enclosed in quotation marks with capitalized beginnings, with internal punctuation (question marks) placed before the closing quotation marks.',
+      'Direct dialogue speeches must begin with capital letters and be enclosed within quotation marks ("..."). Reporting clauses are separated with commas. Proper nouns (Mohsin) and the personal pronoun "I" are always capitalized. Declarative and imperative sentences within direct speech end with full stops before closing quotation marks.',
+    banglaMeaning:
+      'লোকটি মহসীনকে বলল, "আমার পরিবার কয়েক দিন ধরে অনাহারে আছে। আমি কাজের সন্ধানে দ্বারে দ্বারে ঘুরেছি, কিন্তু কোনো কাজ পাইনি।" মহসীন বললেন, "চাবির গোছাটি নাও এবং আলমারিটি খোলো। তোমার যতটুকু টাকার প্রয়োজন নিয়ে নাও।"',
+    banglaTranslation:
+      'লোকটি মহসীনকে বলল, "আমার পরিবার কয়েক দিন ধরে অনাহারে আছে। আমি কাজের সন্ধানে দ্বারে দ্বারে ঘুরেছি, কিন্তু কোনো কাজ পাইনি।" মহসীন বললেন, "চাবির গোছাটি নাও এবং আলমারিটি খোলো। তোমার যতটুকু টাকার প্রয়োজন নিয়ে নাও।"',
   },
   {
-    id: 'punc-mymensingh-2026',
-    board: 'Mymensingh Board 2026',
-    title: 'Mymensingh Board 2026 - Dialogue between the Lion and the Mouse',
+    id: 'punc-chattogram-2026',
+    board: 'Chattogram Board 2026',
+    title: 'Chattogram Board 2026 - Mother and Son Dialogue about Rafiq',
     unpunctuatedPassage:
-      'how dare you wake me up the lion roared i shall kill you for that please let me go the mouse cried i did not mean to wake you up',
+      'once my mother said to me who came to you my friend rafiq mom she asked what did he want i said his mother is ill he needs some money',
     correctPassage:
-      '"How dare you wake me up?" the lion roared. "I shall kill you for that." "Please, let me go," the mouse cried. "I did not mean to wake you up."',
+      'Once my mother said to me, "Who came to you?" "My friend Rafiq, Mom." She asked, "What did he want?" I said, "His mother is ill. He needs some money."',
     keyPunctuationPoints: [
-      'Opening quotation marks, capital "How", and question mark inside closing quotation marks after "How dare you wake me up?" followed by reporting verb phrase "the lion roared.".',
-      'Opening quotation marks, capital "I", and full stop inside closing quotes after "I shall kill you for that.".',
-      'Opening quotation marks, capital "Please", comma after "Please,", and comma inside closing quotes before reporting clause "the mouse cried.".',
-      'Opening quotation marks, capital "I", and terminal full stop inside closing quotes after "I did not mean to wake you up.".',
+      'Capital "Once" at the beginning of the passage.',
+      'Comma after reporting clause "Once my mother said to me," before direct speech.',
+      'Opening inverted commas and capital "Who" for the interrogative sentence.',
+      'Question mark and closing inverted commas after "Who came to you?".',
+      'Opening inverted commas, capital "My", and capital "Rafiq" for proper noun.',
+      'Comma before vocative direct address and capital "Mom" followed by full stop and closing quotes: \'"My friend Rafiq, Mom."\'.',
+      'Capital "She" beginning a new sentence and comma after reporting verb "asked,".',
+      'Opening quotation marks, capital "What", and question mark inside closing quotes after "What did he want?".',
+      'Capital "I" for personal pronoun and comma after reporting verb "said,".',
+      'Opening quotes, capital "His", full stop after "ill.", capital "He", and full stop inside closing quotes after "money."',
     ],
     explanation:
-      'Direct dialogue utterances are enclosed within inverted commas (quotation marks) with capitalized initial words. Interrogative speech ends with a question mark before closing quotes. Polite interjections like "Please" take commas, and the pronoun "I" is capitalized.',
-  },
-  {
-    id: 'punc-jessore-2026',
-    board: 'Jessore Board 2026',
-    title: 'Jessore Board 2026 - Dialogue between Librarian and Tamim on Wings of Fire',
-    unpunctuatedPassage:
-      'how can i help you the librarian says i need a book sir Wings of Fire by APJ Abdul Kalam tamim replies',
-    correctPassage:
-      '"How can I help you?" the librarian says. "I need a book, sir, \'Wings of Fire\' by APJ Abdul Kalam," Tamim replies.',
-    keyPunctuationPoints: [
-      'Opening quotation marks, capital "How", capital "I", and question mark inside closing quotation marks after "How can I help you?".',
-      'Lower case in reporting clause "the librarian says" followed by a full stop.',
-      'Opening quotation marks, capital "I", comma after vocative address "sir,", single/double quotes around book title "\'Wings of Fire\'", capital "APJ Abdul Kalam" for proper noun, and comma before closing quotes.',
-      'Capital "Tamim" for proper noun and terminal full stop after "replies.".',
-    ],
-    explanation:
-      'Direct speeches in dialogue are enclosed in quotation marks ("..."). Questions inside direct speech end with a question mark before closing quotation marks. The pronoun "I", book title "Wings of Fire", author name "APJ Abdul Kalam", and character name "Tamim" must be properly capitalized. Vocative direct address like "sir" is separated by commas.',
+      'Direct speeches in dialogue must be enclosed within quotation marks ("..."). The reporting clause is separated with a comma. Proper nouns (Rafiq) and vocative addresses (Mom) are capitalized. Sentences within speech begin with capital letters and end with appropriate punctuation marks (question mark, full stop) inside the quotes.',
+    banglaMeaning:
+      'একবার আমার মা আমাকে বললেন, "তোমার কাছে কে এসেছিল?" "আমার বন্ধু রফিক, মা।" তিনি জিজ্ঞাসা করলেন, "সে কী চেয়েছিল?" আমি বললাম, "তার মা অসুস্থ। তার কিছু টাকার প্রয়োজন।" ',
+    banglaTranslation:
+      'একবার আমার মা আমাকে বললেন, "তোমার কাছে কে এসেছিল?" "আমার বন্ধু রফিক, মা।" তিনি জিজ্ঞাসা করলেন, "সে কী চেয়েছিল?" আমি বললাম, "তার মা অসুস্থ। তার কিছু টাকার প্রয়োজন।" ',
   },
   {
     id: 'punc-cumilla-2026',
@@ -69,6 +71,138 @@ export const PUNCTUATION_MODEL_QUESTIONS: PunctuationExercise[] = [
     ],
     explanation:
       'Direct speeches must be enclosed in quotation marks with capital initial letters. A question mark separates interrogative direct sentences, while commas separate spoken clauses from reporting verbs.',
+    banglaMeaning:
+      '"তোমার মা কোথায়? পড়াশোনায় তোমার অগ্রগতি সম্পর্কে আমি তাঁর সাথে কথা বলতে চাই," শিক্ষক ছাত্রটিকে বললেন। "দুঃখিত, স্যার। আমি আমার মাকে জানাতে ভুলে গেছি," ছাত্রটি উত্তর দিল।',
+    banglaTranslation:
+      '"তোমার মা কোথায়? পড়াশোনায় তোমার অগ্রগতি সম্পর্কে আমি তাঁর সাথে কথা বলতে চাই," শিক্ষক ছাত্রটিকে বললেন। "দুঃখিত, স্যার। আমি আমার মাকে জানাতে ভুলে গেছি," ছাত্রটি উত্তর দিল।',
+  },
+  {
+    id: 'punc-rajshahi-2026',
+    board: 'Rajshahi Board 2026',
+    title: 'Rajshahi Board 2026 - The Honest Student and the Hundred Taka Note',
+    unpunctuatedPassage:
+      'in a certain school a student once found a one hundred taka note in the play ground he took it to his mother what shall i do with it asked the mother',
+    correctPassage:
+      'In a certain school, a student once found a one-hundred-taka note in the playground. He took it to his mother. "What shall I do with it?" asked the mother.',
+    keyPunctuationPoints: [
+      'Capitalize initial "In" and insert comma after the introductory adverbial phrase "In a certain school,".',
+      'Full stop after "in the playground." followed by capital "H" in "He took it to his mother.".',
+      'Direct question enclosed in quotation marks: opening inverted commas, capital "What", capital pronoun "I", question mark, and closing inverted commas: \'"What shall I do with it?"\'.',
+      'Reporting clause ends with a full stop: "asked the mother.".',
+    ],
+    explanation:
+      'Introductory prepositional phrases set the scene and take a comma. Complete declarative thoughts terminate in periods/full stops. Direct quoted speech is enclosed in quotation marks with capitalized beginnings, with internal punctuation (question marks) placed before the closing quotation marks.',
+    banglaMeaning:
+      'একটি নির্দিষ্ট বিদ্যালয়ে এক ছাত্র একবার খেলার মাঠে একশত টাকার একটি নোট পেয়েছিল। সে এটি তার মায়ের কাছে নিয়ে গেল। "আমি এটি দিয়ে কী করব?" মা জিজ্ঞাসা করলেন।',
+    banglaTranslation:
+      'একটি নির্দিষ্ট বিদ্যালয়ে এক ছাত্র একবার খেলার মাঠে একশত টাকার একটি নোট পেয়েছিল। সে এটি তার মায়ের কাছে নিয়ে গেল। "আমি এটি দিয়ে কী করব?" মা জিজ্ঞাসা করলেন।',
+  },
+  {
+    id: 'punc-jashore-2026',
+    board: 'Jashore Board 2026',
+    title: 'Jashore Board 2026 - Dialogue between Librarian and Tamim on Wings of Fire',
+    unpunctuatedPassage:
+      'how can i help you the librarian says i need a book sir Wings of Fire by APJ Abdul Kalam tamim replies',
+    correctPassage:
+      '"How can I help you?" the librarian says. "I need a book, sir, \'Wings of Fire\' by APJ Abdul Kalam," Tamim replies.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "How", capital "I", and question mark inside closing quotation marks after "How can I help you?".',
+      'Lower case in reporting clause "the librarian says" followed by a full stop.',
+      'Opening quotation marks, capital "I", comma after vocative address "sir,", single/double quotes around book title "\'Wings of Fire\'", capital "APJ Abdul Kalam" for proper noun, and comma before closing quotes.',
+      'Capital "Tamim" for proper noun and terminal full stop after "replies.".',
+    ],
+    explanation:
+      'Direct speeches in dialogue are enclosed in quotation marks ("..."). Questions inside direct speech end with a question mark before closing quotation marks. The pronoun "I", book title "Wings of Fire", author name "APJ Abdul Kalam", and character name "Tamim" must be properly capitalized. Vocative direct address like "sir" is separated by commas.',
+    banglaMeaning:
+      '"আমি আপনাকে কীভাবে সাহায্য করতে পারি?" গ্রন্থাগারিক (লাইব্রেরিয়ান) বললেন। "স্যার, আমার একটি বই প্রয়োজন, এপিজে আবদুল কালামের \'উইংস অব ফায়ার\'," তামিম উত্তর দিল।',
+    banglaTranslation:
+      '"আমি আপনাকে কীভাবে সাহায্য করতে পারি?" গ্রন্থাগারিক (লাইব্রেরিয়ান) বললেন। "স্যার, আমার একটি বই প্রয়োজন, এপিজে আবদুল কালামের \'উইংস অব ফায়ার\'," তামিম উত্তর দিল।',
+  },
+  {
+    id: 'punc-mymensingh-2026',
+    board: 'Mymensingh Board 2026',
+    title: 'Mymensingh Board 2026 - Dialogue between the Lion and the Mouse',
+    unpunctuatedPassage:
+      'how dare you wake me up the lion roared i shall kill you for that please let me go the mouse cried i did not mean to wake you up',
+    correctPassage:
+      '"How dare you wake me up?" the lion roared. "I shall kill you for that." "Please, let me go," the mouse cried. "I did not mean to wake you up."',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "How", and question mark inside closing quotation marks after "How dare you wake me up?" followed by reporting verb phrase "the lion roared.".',
+      'Opening quotation marks, capital "I", and full stop inside closing quotes after "I shall kill you for that.".',
+      'Opening quotation marks, capital "Please", comma after "Please,", and comma inside closing quotes before reporting clause "the mouse cried.".',
+      'Opening quotation marks, capital "I", and terminal full stop inside closing quotes after "I did not mean to wake you up.".',
+    ],
+    explanation:
+      'Direct dialogue utterances are enclosed within inverted commas (quotation marks) with capitalized initial words. Interrogative speech ends with a question mark before closing quotes. Polite interjections like "Please" take commas, and the pronoun "I" is capitalized.',
+    banglaMeaning:
+      '"তুমি কোন সাহসে আমাকে ঘুম থেকে জাগালে?" সিংহটি গর্জন করে উঠল। "এ জন্য আমি তোমাকে মেরে ফেলব।" "দয়া করে আমাকে ছেড়ে দিন," ইঁদুরটি কেঁদে বলল। "আমি ইচ্ছে করে আপনার ঘুম ভাঙাতে চাইনি।"',
+    banglaTranslation:
+      '"তুমি কোন সাহসে আমাকে ঘুম থেকে জাগালে?" সিংহটি গর্জন করে উঠল। "এ জন্য আমি তোমাকে মেরে ফেলব।" "দয়া করে আমাকে ছেড়ে দিন," ইঁদুরটি কেঁদে বলল। "আমি ইচ্ছে করে আপনার ঘুম ভাঙাতে চাইনি।"',
+  },
+  {
+    id: 'punc-dinajpur-2026',
+    board: 'Dinajpur Board 2026',
+    title: 'Dinajpur Board 2026 - Dialogue between Momin and Feroz on Winter Vacation',
+    unpunctuatedPassage:
+      'what are you going to do in the coming winter vacation said momin to feroz i will visit some historic and interesting places of bangladesh with my family and you replied feroz momin said excellent decision',
+    correctPassage:
+      '"What are you going to do in the coming winter vacation?" said Momin to Feroz. "I will visit some historic and interesting places of Bangladesh with my family, and you?" replied Feroz. Momin said, "Excellent decision!"',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "What", and question mark inside quotation marks after "winter vacation?".',
+      'Capital proper nouns "Momin" and "Feroz", ending reporting clause with full stop "said Momin to Feroz.".',
+      'Opening quotation marks, capital pronoun "I", capital proper noun "Bangladesh", comma before "and you?", and question mark inside quotes after "and you?".',
+      'Reporting clause "replied Feroz." with capital "Feroz" and full stop.',
+      'Capital "Momin", comma after "Momin said,", opening quotation marks, capital "Excellent", and exclamation mark inside quotes after "decision!".',
+    ],
+    explanation:
+      'Direct speeches are enclosed in quotation marks. Proper nouns such as Momin, Feroz, and Bangladesh, as well as the pronoun "I", must be capitalized. Questions end with question marks within quotes, and enthusiastic or appreciative remarks like "Excellent decision!" appropriately take an exclamation mark.',
+    banglaMeaning:
+      '"আসন্ন শীতের ছুটিতে তুমি কী করতে যাচ্ছ?" মোমিন ফিরোজকে বলল। "আমি আমার পরিবারের সাথে বাংলাদেশের কিছু ঐতিহাসিক ও আকর্ষণীয় স্থান পরিদর্শন করব, আর তুমি?" ফিরোজ উত্তর দিল। মোমিন বলল, "চমৎকার সিদ্ধান্ত!"',
+    banglaTranslation:
+      '"আসন্ন শীতের ছুটিতে তুমি কী করতে যাচ্ছ?" মোমিন ফিরোজকে বলল। "আমি আমার পরিবারের সাথে বাংলাদেশের কিছু ঐতিহাসিক ও আকর্ষণীয় স্থান পরিদর্শন করব, আর তুমি?" ফিরোজ উত্তর দিল। মোমিন বলল, "চমৎকার সিদ্ধান্ত!"',
+  },
+  {
+    id: 'punc-sylhet-2026',
+    board: 'Sylhet Board 2026',
+    title: 'Sylhet Board 2026 - Dialogue on Plan After the Examination',
+    unpunctuatedPassage:
+      'what is your plan after the examination said i we have decided to visit our home town mamun replied',
+    correctPassage:
+      '"What is your plan after the examination?" said I. "We have decided to visit our home town," Mamun replied.',
+    keyPunctuationPoints: [
+      'Opening inverted commas, capital "W" in "What", and question mark inside quotation marks after "examination?".',
+      'Capital pronoun "I" in "said I." followed by a full stop.',
+      'Opening inverted commas, capital "W" in "We", and comma inside closing quotes after "home town,".',
+      'Capital "M" in proper noun "Mamun", and full stop after "replied.".',
+    ],
+    explanation:
+      'Direct speeches in dialogue must be enclosed within quotation marks ("..."). The question sentence ends with a question mark inside the quote. The pronoun "I" and the proper noun "Mamun" must be capitalized. The declarative statement ends with a comma inside quotes before the reporting clause "Mamun replied."',
+    banglaMeaning:
+      '"পরীক্ষার পর তোমার কী পরিকল্পনা?" আমি বললাম। "আমরা আমাদের নিজ শহরে বেড়াতে যাওয়ার সিদ্ধান্ত নিয়েছি," মামুন উত্তর দিল।',
+    banglaTranslation:
+      '"পরীক্ষার পর তোমার কী পরিকল্পনা?" আমি বললাম। "আমরা আমাদের নিজ শহরে বেড়াতে যাওয়ার সিদ্ধান্ত নিয়েছি," মামুন উত্তর দিল।',
+  },
+  {
+    id: 'punc-dakhil-2026',
+    board: 'Dakhil Board 2026',
+    title: 'Dakhil Board 2026 - Passage on Physical and Mental Health',
+    unpunctuatedPassage:
+      'who are happy those who have fit bodies are the happiest ones if we are physically sound we will be mentally sound too we need to take care of our health as well as be positive in thinking how lucky they are who are both ways fit',
+    correctPassage:
+      'Who are happy? Those who have fit bodies are the happiest ones. If we are physically sound, we will be mentally sound too. We need to take care of our health as well as be positive in thinking. How lucky they are who are both ways fit!',
+    keyPunctuationPoints: [
+      'Capital "Who" starting the passage, and question mark after "Who are happy?".',
+      'Capital "Those" starting the answer, and full stop after "happiest ones.".',
+      'Capital "If" starting conditional clause, comma after dependent clause "physically sound,", and full stop after "mentally sound too.".',
+      'Capital "We" starting new sentence, and full stop after "positive in thinking.".',
+      'Capital "How" starting exclamatory sentence, and exclamation mark after "both ways fit!".',
+    ],
+    explanation:
+      'The passage starts with a rhetorical/interrogative question requiring a question mark. Declarative sentences conclude with full stops. A conditional complex sentence contains a comma after its dependent \'if\' clause ("If we are physically sound,"). An exclamatory statement conveying admiration or emotional emphasis ("How lucky they are...") concludes with an exclamation mark (!).',
+    banglaMeaning:
+      'কারা সুখী? যাদের সুস্থ ও নীরোগ শরীর আছে তারাই সবচেয়ে সুখী। আমরা যদি শারীরিকভাবে সুস্থ থাকি, তবে আমরা মানসিকভাবেও সুস্থ থাকব। আমাদের যেমন স্বাস্থ্যের যত্ন নিতে হবে, তেমনই চিন্তাভাবনায় ইতিবাচক হতে হবে। তারা কতই না ভাগ্যবান যারা উভয় দিক থেকেই সুস্থ!',
+    banglaTranslation:
+      'কারা সুখী? যাদের সুস্থ ও নীরোগ শরীর আছে তারাই সবচেয়ে সুখী। আমরা যদি শারীরিকভাবে সুস্থ থাকি, তবে আমরা মানসিকভাবেও সুস্থ থাকব। আমাদের যেমন স্বাস্থ্যের যত্ন নিতে হবে, তেমনই চিন্তাভাবনায় ইতিবাচক হতে হবে। তারা কতই না ভাগ্যবান যারা উভয় দিক থেকেই সুস্থ!',
   },
   {
     id: 'punc-barishal-2026',
@@ -87,102 +221,604 @@ export const PUNCTUATION_MODEL_QUESTIONS: PunctuationExercise[] = [
     ],
     explanation:
       'Direct dialogue sentences must be enclosed within quotation marks. Introductory phrases are punctuated with commas, greetings followed by direct questions require question marks, and responses are marked in separate quotes.',
+    banglaMeaning:
+      'হঠাৎ এক কণ্ঠস্বর ডেকে বলল, "সুপ্রভাত, ভদ্রমহোদয়গণ। আপনারা কোথায় যাচ্ছেন এবং এখানে কী করছেন?" "ওহ্, কোথাও নয় এবং বিশেষ কিছুই নয়।"',
+    banglaTranslation:
+      'হঠাৎ এক কণ্ঠস্বর ডেকে বলল, "সুপ্রভাত, ভদ্রমহোদয়গণ। আপনারা কোথায় যাচ্ছেন এবং এখানে কী করছেন?" "ওহ্, কোথাও নয় এবং বিশেষ কিছুই নয়।"',
   },
   {
-    id: 'punc-dinajpur-2026',
-    board: 'Dinajpur Board 2026',
-    title: 'Dinajpur Board 2026 - Dialogue between Sujon and Arman about Learning Computer Programming',
+    id: 'punc-dhaka-2024',
+    board: 'Dhaka Board 2024',
+    title: 'Dhaka Board 2024 - Dialogue between Abdullah and Mr. Rahman about Aesop\'s Fables',
     unpunctuatedPassage:
-      'what are you going to do after the ssc examination asked sujon i want to learn computer programming replied arman why do you want to learn it asked sujon it has great demand in the modern world said arman',
+      'what kind of stories did aesop tell said abdullah fables replied mr rahman do you know what fables are no replied abdullah well continued mr rahman fables are stories with a message or a moral.',
     correctPassage:
-      '"What are you going to do after the SSC examination?" asked Sujon. "I want to learn computer programming," replied Arman. "Why do you want to learn it?" asked Sujon. "It has great demand in the modern world," said Arman.',
+      '"What kind of stories did Aesop tell?" said Abdullah. "Fables," replied Mr. Rahman. "Do you know what fables are?" "No," replied Abdullah. "Well," continued Mr. Rahman, "fables are stories with a message or a moral."',
     keyPunctuationPoints: [
-      'Opening quotation marks, capital "What", capital "SSC", question mark inside inverted commas after "examination?", and capital "Sujon" for proper noun.',
-      'Full stop after reporting clause "asked Sujon."',
-      'Opening quotation marks, capital "I" for personal pronoun, comma inside inverted commas after "programming,", capital "Arman" for proper noun, and full stop after "replied Arman."',
-      'Opening quotation marks, capital "Why", question mark inside inverted commas after "learn it?", capital "Sujon", and full stop after "asked Sujon."',
-      'Opening quotation marks, capital "It", comma inside inverted commas after "world,", capital "Arman", and full stop after "said Arman."',
+      'Opening quotation marks, capital "What", capital "Aesop" (proper noun), and question mark inside quotation marks after "Aesop tell?".',
+      'Lower case "said", capital "Abdullah" (proper noun), and full stop after "said Abdullah.".',
+      'Opening quotation marks, capital "Fables", comma inside quotation marks, and reporting clause "replied Mr. Rahman." with abbreviation dot and full stop.',
+      'Opening quotation marks, capital "Do", and question mark inside quotation marks after "what fables are?".',
+      'Opening quotation marks, capital "No", comma inside quotes, and reporting clause "replied Abdullah.".',
+      'Direct dialogue continuation: \'"Well," continued Mr. Rahman, "fables are stories with a message or a moral."\' with commas isolating the speaker tag and final full stop inside inverted commas.',
     ],
     explanation:
-      'In direct speech, each speaker\'s spoken sentence must be enclosed within quotation marks. Punctuation marks (question mark, comma) are placed inside the closing quotes. Acronyms (SSC) and proper nouns (Sujon, Arman) must be capitalized.',
+      'Spoken direct dialogue must be enclosed in quotation marks. Proper nouns such as Aesop, Abdullah, and Rahman must be capitalized. Honorific abbreviations such as "Mr." take a period. When a speaker\'s sentence is interrupted by a reporting clause ("Well," continued Mr. Rahman, "..."), commas enclose the reporting clause and the second part begins with a lowercase letter if it continues the same sentence.',
+    banglaMeaning:
+      '"ঈশপ কী ধরনের গল্প বলতেন?" আব্দুল্লাহ বলল। "উপকথা (নীতিকথা)," জনাব রহমান উত্তর দিলেন। "তুমি কি জানো উপকথা কী?" "না," আব্দুল্লাহ উত্তর দিল। "বেশ," জনাব রহমান বলে চললেন, "উপকথা হলো এমন গল্প যাতে কোনো বার্তা বা নীতিশিক্ষা থাকে। "',
+    banglaTranslation:
+      '"ঈশপ কী ধরনের গল্প বলতেন?" আব্দুল্লাহ বলল। "উপকথা (নীতিকথা)," জনাব রহমান উত্তর দিলেন। "তুমি কি জানো উপকথা কী?" "না," আব্দুল্লাহ উত্তর দিল। "বেশ," জনাব রহমান বলে চললেন, "উপকথা হলো এমন গল্প যাতে কোনো বার্তা বা নীতিশিক্ষা থাকে। "',
   },
   {
-    id: 'punc-dhaka-2026',
-    board: 'Dhaka Board 2026',
-    title: 'Dhaka Board 2026 - The Lion and the Mouse Dialogue',
+    id: 'punc-rajshahi-2024',
+    board: 'Rajshahi Board 2024',
+    title: 'Rajshahi Board 2024 - Dialogue between Sumon and Mr. Jamal',
     unpunctuatedPassage:
-      'how dare you wake me up the lion roared i shall kill you for that please sir the mouse cried dont kill me i did not mean to wake you up',
+      'do you know me yes i know you from my childhood. what’s your name my name is sumon thank you a lot said mr. Jamal.',
     correctPassage:
-      '"How dare you wake me up?" the lion roared. "I shall kill you for that." "Please, sir," the mouse cried, "don\'t kill me. I did not mean to wake you up."',
+      '"Do you know me?" "Yes, I know you from my childhood." "What\'s your name?" "My name is Sumon." "Thank you a lot," said Mr. Jamal.',
     keyPunctuationPoints: [
-      'Opening quotation marks, capital "How", question mark inside inverted commas after "wake me up?", and small "the lion roared."',
-      'Full stop after reporting verb "roared."',
-      'Opening quotation marks, capital "I", full stop and closing quotes after "for that."',
-      'Opening quotation marks, capital "Please", comma after "Please", comma after vocative address "sir,", closing quotes, small "the mouse cried,", and opening quotation marks for resumed speech.',
-      'Small/capital "don\'t" with contraction apostrophe, full stop after "kill me.", capital "I", and closing quotes after "wake you up."',
+      'Opening quotation marks, capital "Do", and question mark inside quotation marks after "Do you know me?".',
+      'Opening quotation marks, capital "Yes", comma after "Yes,", capital pronoun "I", and full stop inside quotes after "childhood.".',
+      'Opening quotation marks, capital "What\'s" with apostrophe for contraction, and question mark inside quotes after "name?".',
+      'Opening quotation marks, capital "My", capital "Sumon" (proper noun), and full stop inside quotes after "Sumon.".',
+      'Opening quotation marks, capital "Thank", comma inside quotes after "a lot,", lower case "said", abbreviation period in "Mr.", capital "Jamal", and ending full stop.',
     ],
     explanation:
-      'Direct dialogues must be enclosed in quotation marks. Separate reporting verbs with commas or full stops as appropriate. Capitalize personal pronoun "I" and sentence-initial words.',
+      'Every direct speech turn is enclosed within quotation marks. Yes/No introductory words take a comma. The personal pronoun "I", proper nouns (Sumon, Jamal), and honorifics (Mr.) must always be capitalized. Contractions (What\'s) require an apostrophe.',
+    banglaMeaning:
+      '"আপনি কি আমাকে চেনেন?" "হ্যাঁ, আমি শৈশব থেকেই তোমাকে চিনি।" "তোমার নাম কী?" "আমার নাম সুমন।" "তোমাকে অনেক ধন্যবাদ," জনাব জামাল বললেন।',
+    banglaTranslation:
+      '"আপনি কি আমাকে চেনেন?" "হ্যাঁ, আমি শৈশব থেকেই তোমাকে চিনি।" "তোমার নাম কী?" "আমার নাম সুমন।" "তোমাকে অনেক ধন্যবাদ," জনাব জামাল বললেন।',
   },
   {
-    id: 'punc-chattragram-2026',
-    board: 'Chattragram Board 2026',
-    title: 'Chattragram Board 2026 - Mother and Son Dialogue about Rafiq',
+    id: 'punc-chattogram-2024',
+    board: 'Chattogram Board 2024',
+    title: 'Chattogram Board 2024 - Teacher and Girl Dialogue on Honesty',
     unpunctuatedPassage:
-      'once my mother said to me who came to you my friend rafiq mom she asked what did he want i said his mother is ill he needs some money',
+      'the teacher said to the girl do you think that honesty is the best policy yes sir i think so said the girl then learn to be honest from your childhood thank you sir said the girl may allah bless you said the teacher',
     correctPassage:
-      'Once my mother said to me, "Who came to you?" "My friend Rafiq, Mom." She asked, "What did he want?" I said, "His mother is ill. He needs some money."',
+      'The teacher said to the girl, "Do you think that honesty is the best policy?" "Yes, sir, I think so," said the girl. "Then learn to be honest from your childhood." "Thank you, sir," said the girl. "May Allah bless you," said the teacher.',
     keyPunctuationPoints: [
-      'Capital "Once" at the beginning of the passage.',
-      'Comma after reporting clause "Once my mother said to me," before direct speech.',
-      'Opening inverted commas and capital "Who" for the interrogative sentence.',
-      'Question mark and closing inverted commas after "Who came to you?".',
-      'Opening inverted commas, capital "My", and capital "Rafiq" for proper noun.',
-      'Comma before vocative direct address and capital "Mom" followed by full stop and closing quotes.',
-      'Capital "She" beginning a new sentence and comma after reporting verb "asked".',
-      'Opening quotation marks, capital "What", and question mark inside closing quotes after "What did he want?".',
-      'Capital "I" for personal pronoun and comma after "said".',
-      'Opening quotes, capital "His", full stop after "ill", capital "He", and full stop inside closing quotes after "money."',
+      'Capital "The" at the start, comma after reporting clause "The teacher said to the girl," before opening quotation marks.',
+      'Capital "Do" and question mark inside closing quotation marks after "best policy?".',
+      'Opening quotation marks, capital "Yes", commas setting off vocative address "sir" ("Yes, sir, I think so,"), capital pronoun "I", and comma inside closing quotes before "said the girl.".',
+      'Opening quotation marks, capital "Then", and full stop inside quotes after "childhood.".',
+      'Opening quotation marks, capital "Thank", comma before vocative "sir,", and comma inside quotes before "said the girl.".',
+      'Opening quotation marks, capital "May", capital "Allah" for the Creator, comma inside quotes after "bless you,", and full stop after "said the teacher.".',
     ],
     explanation:
-      'Direct speeches in dialogue must be enclosed within quotation marks ("..."). The reporting clause is separated with a comma. Proper nouns (Rafiq) and vocative addresses (Mom) are capitalized. Sentences within speech begin with capital letters and end with appropriate punctuation marks (question mark, full stop) inside the quotes.',
+      'Direct speeches in dialogue are enclosed in quotation marks. Polite vocatives like "sir" are set off by commas. Proper nouns including the divine name "Allah" and the pronoun "I" must always be capitalized. Declarative statements inside quotes end with commas before reporting clauses.',
+    banglaMeaning:
+      'শিক্ষক বালিকাটিকে বললেন, "তুমি কি মনে করো যে সততাই সর্বোৎকৃষ্ট পন্থা?" "হ্যাঁ স্যার, আমি তা-ই মনে করি," বালিকাটি বলল। "তাহলে শৈশব থেকেই সৎ হতে শেখো।" "ধন্যবাদ, স্যার," বালিকাটি বলল। "আল্লাহ তোমার মঙ্গল করুন," শিক্ষক বললেন।',
+    banglaTranslation:
+      'শিক্ষক বালিকাটিকে বললেন, "তুমি কি মনে করো যে সততাই সর্বোৎকৃষ্ট পন্থা?" "হ্যাঁ স্যার, আমি তা-ই মনে করি," বালিকাটি বলল। "তাহলে শৈশব থেকেই সৎ হতে শেখো।" "ধন্যবাদ, স্যার," বালিকাটি বলল। "আল্লাহ তোমার মঙ্গল করুন," শিক্ষক বললেন।',
   },
   {
-    id: 'punc-sylhet-2026',
-    board: 'Sylhet Board 2026',
-    title: 'Sylhet Board 2026 - Dialogue on Plan After the Examination',
+    id: 'punc-sylhet-2024',
+    board: 'Sylhet Board 2024',
+    title: 'Sylhet Board 2024 - Teacher and Student Conversation on Regular Attendance',
     unpunctuatedPassage:
-      'what is your plan after the examination said I we have decided to visit our home town mamun replied',
+      'why don’t you attend classes regularly the teacher said to the boy you cannot expect good results unless you attend classes as i tell you i am sorry sir said the student',
     correctPassage:
-      '"What is your plan after the examination?" said I. "We have decided to visit our home town," Mamun replied.',
+      '"Why don\'t you attend classes regularly?" the teacher said to the boy. "You cannot expect good results unless you attend classes as I tell you." "I am sorry, sir," said the student.',
     keyPunctuationPoints: [
-      'Opening inverted commas, capital "W" in "What", and question mark inside quotation marks after "examination".',
-      'Capital pronoun "I" in "said I." followed by a full stop.',
-      'Opening inverted commas, capital "W" in "We", and comma inside closing quotes after "home town".',
-      'Capital "M" in proper noun "Mamun", and full stop after "replied."',
+      'Opening quotation marks, capital "Why", apostrophe in contraction "don\'t", and question mark inside quotes after "regularly?".',
+      'Reporting clause in lowercase "the teacher said to the boy." ending with a period.',
+      'Opening quotation marks, capital "You", capital pronoun "I" in "as I tell you.", and full stop inside closing quotation marks.',
+      'Opening quotation marks, capital pronoun "I", comma before vocative "sir,", comma inside quotes, lowercase "said", and full stop after "the student.".',
     ],
     explanation:
-      'Direct speeches in dialogue must be enclosed within quotation marks ("..."). The question sentence ends with a question mark inside the quote. The pronoun "I" and the proper noun "Mamun" must be capitalized. The declarative statement ends with a comma inside quotes before the reporting clause "Mamun replied."',
+      'Direct dialogue is placed in quotation marks. Interrogative sentences conclude with a question mark before the closing quote. Contractions (don\'t) require apostrophes. The pronoun "I" is always capitalized, and vocative addresses (sir) are set off with commas.',
+    banglaMeaning:
+      '"তুমি নিয়মিত ক্লাসে উপস্থিত থাকো না কেন?" শিক্ষক ছেলেটিকে বললেন। "আমি যেভাবে বলি সে অনুযায়ী ক্লাসে উপস্থিত না থাকলে তুমি ভালো ফলাফল আশা করতে পারো না।" "আমি অত্যন্ত দুঃখিত, স্যার," ছাত্রটি বলল।',
+    banglaTranslation:
+      '"তুমি নিয়মিত ক্লাসে উপস্থিত থাকো না কেন?" শিক্ষক ছেলেটিকে বললেন। "আমি যেভাবে বলি সে অনুযায়ী ক্লাসে উপস্থিত না থাকলে তুমি ভালো ফলাফল আশা করতে পারো না।" "আমি অত্যন্ত দুঃখিত, স্যার," ছাত্রটি বলল।',
   },
   {
-    id: 'punc-dinajpur-2026',
-    board: 'Dinajpur Board 2026',
-    title: 'Dinajpur Board 2026 - Dialogue on Joining the Picnic',
+    id: 'punc-barishal-2024',
+    board: 'Barishal Board 2024',
+    title: 'Barishal Board 2024 - Old Woman and Young Man Dialogue',
     unpunctuatedPassage:
-      'why are you going to sit alone here said robin i have no other work to do so i am sitting here said she why don\'t you go to the playground said he no i don\'t want to play said she',
+      'the old woman said, can you give me some food i have been starving for three days the young man said why do you beg cant you work',
     correctPassage:
-      '"Why are you going to sit alone here?" said Robin. "I have no other work to do. So, I am sitting here," said she. "Why don\'t you go to the playground?" said he. "No, I don\'t want to play," said she.',
+      'The old woman said, "Can you give me some food? I have been starving for three days." The young man said, "Why do you beg? Can\'t you work?"',
     keyPunctuationPoints: [
-      'Opening quotation marks and capital "Why" in "Why are you going to sit alone here?".',
-      'Question mark inside closing quotation marks after "here?".',
-      'Capital "Robin" for proper noun followed by a full stop.',
-      'Opening quotation marks and capital "I" in "I have no other work to do."',
-      'Full stop after "do", capital "So", comma after "So,", capital "I", and comma inside closing quotes after "here,".',
-      'Opening quotation marks, capital "Why", apostrophe in "don\'t", and question mark inside quotes after "playground?".',
-      'Opening quotation marks, capital "No", comma after "No,", capital "I", apostrophe in "don\'t", and comma inside quotes before "said she."',
+      'Capital "The" at the start, comma after reporting verb "said," and opening quotation marks before "Can".',
+      'Capital "Can", question mark after "some food?", capital pronoun "I", and full stop inside closing quotation marks after "three days.".',
+      'Capital "The young man said,", comma after "said,", and opening quotation marks before "Why".',
+      'Capital "Why", question mark after "beg?", capital "Can\'t" with contraction apostrophe, and question mark inside closing quotation marks after "work?".',
     ],
     explanation:
-      'Direct speeches in dialogue must be enclosed within quotation marks ("..."). Questions end with question marks inside the quotation marks. Sentences starting inside speech begin with capital letters. Contractions like "don\'t" require apostrophes. Proper noun "Robin" is capitalized. Yes/No answers and introductory connectors (like "So") are followed by commas.',
+      'Introductory reporting clauses end with commas before opening quotation marks. Direct questions end with question marks. Contractions (Can\'t) require apostrophes. Personal pronoun "I" and sentence-initial words are always capitalized.',
+    banglaMeaning:
+      'বৃদ্ধা মহিলাটি বললেন, "আপনি কি আমাকে কিছু খাবার দিতে পারেন? আমি তিন দিন ধরে অনাহারে আছি।" যুবকটি বলল, "তুমি ভিক্ষা করো কেন? কাজ করতে পারো না?"',
+    banglaTranslation:
+      'বৃদ্ধা মহিলাটি বললেন, "আপনি কি আমাকে কিছু খাবার দিতে পারেন? আমি তিন দিন ধরে অনাহারে আছি।" যুবকটি বলল, "তুমি ভিক্ষা করো কেন? কাজ করতে পারো না?"',
+  },
+  {
+    id: 'punc-jashore-2024',
+    board: 'Jashore Board 2024',
+    title: 'Jashore Board 2024 - Father and Raju Dialogue on Feeling Feverish',
+    unpunctuatedPassage:
+      'won’t you go to school today raju he said dad i feel feverish i dont want to go to school ok take rest now said he.',
+    correctPassage:
+      '"Won\'t you go to school today, Raju?" he said. "Dad, I feel feverish. I don\'t want to go to school." "OK, take rest now," said he.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Won\'t" with apostrophe, comma before vocative name "Raju", capital "Raju" (proper noun), and question mark inside quotes after "Raju?".',
+      'Reporting clause in lowercase "he said." ending with a full stop.',
+      'Opening quotation marks, capital "Dad", comma after "Dad,", capital pronoun "I", and full stop after "feverish.".',
+      'Capital pronoun "I", apostrophe in "don\'t", and full stop inside closing quotation marks after "school.".',
+      'Opening quotation marks, capital "OK", comma after "OK,", comma inside quotes after "rest now,", and full stop after "said he.".',
+    ],
+    explanation:
+      'Vocative nouns (Raju, Dad) are separated by commas. Contractions (Won\'t, don\'t) require apostrophes. Proper nouns (Raju) and personal pronoun "I" must be capitalized. Spoken speech turns are enclosed in quotation marks.',
+    banglaMeaning:
+      '"আজ কি তুমি স্কুলে যাবে না, রাজু?" সে বলল। "বাবা, আমার জ্বর জ্বর লাগছে। আমি স্কুলে যেতে চাই না।" "ঠিক আছে, এখন বিশ্রাম নাও," সে বলল।',
+    banglaTranslation:
+      '"আজ কি তুমি স্কুলে যাবে না, রাজু?" সে বলল। "বাবা, আমার জ্বর জ্বর লাগছে। আমি স্কুলে যেতে চাই না।" "ঠিক আছে, এখন বিশ্রাম নাও," সে বলল।',
+  },
+  {
+    id: 'punc-cumilla-2024',
+    board: 'Cumilla Board 2024',
+    title: 'Cumilla Board 2024 - The Lion and the Mouse Dialogue',
+    unpunctuatedPassage:
+      'how dare you wake me up the lion roared i shall kill you for that please let me go the mouse cried.',
+    correctPassage:
+      '"How dare you wake me up?" the lion roared. "I shall kill you for that." "Please, let me go," the mouse cried.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "How", and question mark inside quotes after "wake me up?".',
+      'Reporting clause in lowercase "the lion roared." ending with a full stop.',
+      'Opening quotation marks, capital pronoun "I", and full stop inside quotes after "for that.".',
+      'Opening quotation marks, capital "Please", comma after "Please,", comma inside quotes after "go,", and full stop after "the mouse cried.".',
+    ],
+    explanation:
+      'Quotation marks enclose direct speech. Rhetorical questions require a question mark. Polite requests starting with "Please" use a comma to set off the interjection.',
+    banglaMeaning:
+      '"তুমি কোন সাহসে আমাকে ঘুম থেকে জাগালে?" সিংহটি গর্জন করে উঠল। "এ জন্য আমি তোমাকে মেরে ফেলব।" "দয়া করে আমাকে ছেড়ে দিন," ইঁদুরটি কেঁদে বলল।',
+    banglaTranslation:
+      '"তুমি কোন সাহসে আমাকে ঘুম থেকে জাগালে?" সিংহটি গর্জন করে উঠল। "এ জন্য আমি তোমাকে মেরে ফেলব।" "দয়া করে আমাকে ছেড়ে দিন," ইঁদুরটি কেঁদে বলল।',
+  },
+  {
+    id: 'punc-dinajpur-2024',
+    board: 'Dinajpur Board 2024',
+    title: 'Dinajpur Board 2024 - Dialogue between Passenger and Speaker on Visiting Varsity',
+    unpunctuatedPassage:
+      'the man said to me where are you going i am going to Varsity said i did you go to Varsity yesterday no I replied why did you not go i was very busy said i.',
+    correctPassage:
+      'The man said to me, "Where are you going?" "I am going to Varsity," said I. "Did you go to Varsity yesterday?" "No," I replied. "Why did you not go?" "I was very busy," said I.',
+    keyPunctuationPoints: [
+      'Capital "The" at the start, comma after reporting clause "The man said to me," before quotes.',
+      'Opening quotation marks, capital "Where", and question mark inside quotes after "Where are you going?".',
+      'Opening quotation marks, capital pronoun "I", capital "Varsity", comma inside quotes, lowercase "said", and capital pronoun "I." with a period.',
+      'Opening quotation marks, capital "Did", and question mark inside quotes after "Varsity yesterday?".',
+      'Opening quotation marks, capital "No", comma inside quotes, and capital pronoun "I replied.".',
+      'Opening quotation marks, capital "Why", and question mark inside quotes after "not go?".',
+      'Opening quotation marks, capital pronoun "I", comma inside quotes after "busy,", lowercase "said", and capital pronoun "I." ending with a period.',
+    ],
+    explanation:
+      'Direct dialogues must be enclosed in quotation marks. Questions terminate with question marks before closing inverted commas. The personal pronoun "I" is always capitalized, both in direct speech and in reporting clauses ("said I").',
+    banglaMeaning:
+      'লোকটি আমাকে বলল, "তুমি কোথায় যাচ্ছ?" "আমি বিশ্ববিদ্যালয়ে যাচ্ছি," আমি বললাম। "তুমি কি গতকাল বিশ্ববিদ্যালয়ে গিয়েছিলে?" "না," আমি উত্তর দিলাম। "কেন যাওনি?" "আমি খুব ব্যস্ত ছিলাম," আমি বললাম।',
+    banglaTranslation:
+      'লোকটি আমাকে বলল, "তুমি কোথায় যাচ্ছ?" "আমি বিশ্ববিদ্যালয়ে যাচ্ছি," আমি বললাম। "তুমি কি গতকাল বিশ্ববিদ্যালয়ে গিয়েছিলে?" "না," আমি উত্তর দিলাম। "কেন যাওনি?" "আমি খুব ব্যস্ত ছিলাম," আমি বললাম।',
+  },
+  {
+    id: 'punc-mymensingh-2024',
+    board: 'Mymensingh Board 2024',
+    title: 'Mymensingh Board 2024 - Meghla and Jhorna Dialogue about Airport Reception',
+    unpunctuatedPassage:
+      'hi Jhorna, Im coming to Bangladesh next month Will you receive me at the airport said Meghla. Dont worry Ill be there Jhorna said.',
+    correctPassage:
+      '"Hi Jhorna, I\'m coming to Bangladesh next month. Will you receive me at the airport?" said Meghla. "Don\'t worry, I\'ll be there," Jhorna said.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Hi", capital proper noun "Jhorna", and comma after "Jhorna,".',
+      'Apostrophe and capital in contraction "I\'m", capital proper noun "Bangladesh", and full stop after "next month.".',
+      'Capital "Will", and question mark inside quotes after "airport?".',
+      'Reporting clause in lowercase "said", capital proper noun "Meghla.", and full stop.',
+      'Opening quotation marks, capital "Don\'t" with contraction apostrophe, and comma after "worry,".',
+      'Capital pronoun and contraction "I\'ll", comma inside quotes after "there,", capital proper noun "Jhorna", and full stop after "said.".',
+    ],
+    explanation:
+      'Direct dialogue utterances are enclosed in quotation marks. Proper nouns (Jhorna, Bangladesh, Meghla) and pronoun contractions (I\'m, I\'ll, Don\'t) must be correctly capitalized and punctuated with apostrophes. Direct questions conclude with a question mark before closing quotation marks.',
+    banglaMeaning:
+      '"হাই ঝর্ণা, আমি আগামী মাসে বাংলাদেশে আসছি। তুমি কি বিমানবন্দরে আমাকে অভ্যর্থনা জানাতে আসবে?" মেঘলা বলল। "চিন্তা করো না, আমি সেখানে থাকব," ঝর্ণা বলল।',
+    banglaTranslation:
+      '"হাই ঝর্ণা, আমি আগামী মাসে বাংলাদেশে আসছি। তুমি কি বিমানবন্দরে আমাকে অভ্যর্থনা জানাতে আসবে?" মেঘলা বলল। "চিন্তা করো না, আমি সেখানে থাকব," ঝর্ণা বলল।',
+  },
+  {
+    id: 'punc-dhaka-2023',
+    board: 'Dhaka Board 2023',
+    title: 'Dhaka Board 2023 - Mehdi and Nitu Dialogue on Visiting the Padma Bridge',
+    unpunctuatedPassage:
+      'mehdi said to nitu whats your programme after the text examination nitu said i have decided to visit the padma bridge what an excellent idea it is',
+    correctPassage:
+      'Mehdi said to Nitu, "What\'s your programme after the test examination?" Nitu said, "I have decided to visit the Padma Bridge." "What an excellent idea it is!"',
+    keyPunctuationPoints: [
+      'Capitalize initial "Mehdi" (proper noun), comma after reporting clause "Mehdi said to Nitu," before opening quotation marks.',
+      'Opening quotation marks, capital "What\'s" with apostrophe for contraction, capital "Nitu" (proper noun), and question mark inside quotes after "test examination?".',
+      'Capital "Nitu", comma after "Nitu said,", opening quotation marks, and capital pronoun "I".',
+      'Capitalize proper noun "Padma Bridge", followed by full stop inside closing quotation marks.',
+      'Opening quotation marks, capital "What", and exclamation mark inside quotes after "idea it is!", expressing admiration.',
+    ],
+    explanation:
+      'Direct dialogue speeches are enclosed within inverted commas. Proper nouns (Mehdi, Nitu, Padma Bridge) are capitalized. The contraction "What\'s" requires an apostrophe. Exclamatory utterances conclude with an exclamation mark (!) within quotation marks.',
+    banglaMeaning:
+      'মেহেদী নিতুকে বলল, "টেস্ট পরীক্ষার পর তোমার কী পরিকল্পনা?" নিতু বলল, "আমি পদ্মা সেতু দেখতে যাওয়ার সিদ্ধান্ত নিয়েছি।" "কী চমৎকার একটি ভাবনা!"',
+    banglaTranslation:
+      'মেহেদী নিতুকে বলল, "টেস্ট পরীক্ষার পর তোমার কী পরিকল্পনা?" নিতু বলল, "আমি পদ্মা সেতু দেখতে যাওয়ার সিদ্ধান্ত নিয়েছি।" "কী চমৎকার একটি ভাবনা!"',
+  },
+  {
+    id: 'punc-rajshahi-2023',
+    board: 'Rajshahi Board 2023',
+    title: 'Rajshahi Board 2023 - Mother and Child Dialogue about Rafiq\'s Illness',
+    unpunctuatedPassage:
+      'once my mother said to me who came to you my friend rafiq mom she asked what did he want i said his mother is ill he needs some money i have given him five hundred taka my mother said wonderful',
+    correctPassage:
+      'Once my mother said to me, "Who came to you?" "My friend Rafiq, Mom." She asked, "What did he want?" I said, "His mother is ill. He needs some money. I have given him five hundred taka." My mother said, "Wonderful!"',
+    keyPunctuationPoints: [
+      'Capital "Once", comma after reporting clause "Once my mother said to me,".',
+      'Opening quotation marks, capital "Who", and question mark inside quotes after "Who came to you?".',
+      'Opening quotation marks, capital "My", capital "Rafiq" (proper noun), comma before vocative direct address "Mom", and full stop inside quotes.',
+      'Capital "She", comma after "asked,", opening quotation marks, capital "What", and question mark inside quotes after "want?".',
+      'Capital pronoun "I", comma after "said,", opening quotes, capital "His", full stop after "ill.", capital "He", full stop after "money.", capital pronoun "I", and full stop inside quotes after "five hundred taka."',
+      'Capital "My mother said,", comma after "said,", opening quotes, capital "Wonderful", and exclamation mark inside quotes after "Wonderful!".',
+    ],
+    explanation:
+      'Direct speech turns are enclosed in quotation marks. Proper nouns (Rafiq) and direct vocative addresses (Mom) must be capitalized. Expressive interjections ("Wonderful!") require exclamation marks.',
+    banglaMeaning:
+      'একবার আমার মা আমাকে বললেন, "তোমার কাছে কে এসেছিল?" "আমার বন্ধু রফিক, মা।" তিনি জিজ্ঞাসা করলেন, "সে কী চেয়েছিল?" আমি বললাম, "তার মা অসুস্থ। তার কিছু টাকার প্রয়োজন। আমি তাকে পাঁচশত টাকা দিয়েছি।" আমার মা বললেন, "চমৎকার!"',
+    banglaTranslation:
+      'একবার আমার মা আমাকে বললেন, "তোমার কাছে কে এসেছিল?" "আমার বন্ধু রফিক, মা।" তিনি জিজ্ঞাসা করলেন, "সে কী চেয়েছিল?" আমি বললাম, "তার মা অসুস্থ। তার কিছু টাকার প্রয়োজন। আমি তাকে পাঁচশত টাকা দিয়েছি।" আমার মা বললেন, "চমৎকার!"',
+  },
+  {
+    id: 'punc-jashore-2023',
+    board: 'Jashore Board 2023',
+    title: 'Jashore Board 2023 - Sheikh Saadi and the Nobleman on Hospitality and Dress',
+    unpunctuatedPassage:
+      'Why are you putting the foods in your pocket Sir? Why don\'t you eat? asked the nobleman I\'m doing the right thing My dress deserves these rich dishes replied Seikh Saadi. I\'m sorry I don\'t understand what you mean to say said the nobleman.',
+    correctPassage:
+      '"Why are you putting the foods in your pocket, Sir? Why don\'t you eat?" asked the nobleman. "I\'m doing the right thing. My dress deserves these rich dishes," replied Seikh Saadi. "I\'m sorry. I don\'t understand what you mean to say," said the nobleman.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Why", comma before polite vocative "Sir,", question mark after "Sir?".',
+      'Capital "Why", contraction apostrophe in "don\'t", and question mark inside closing quotation marks after "eat?".',
+      'Reporting clause in lowercase "asked the nobleman." ending with a full stop.',
+      'Opening quotation marks, capital pronoun with contraction "I\'m", full stop after "right thing.", capital "My", comma inside quotes, lowercase "replied", capital proper noun "Seikh Saadi", and full stop.',
+      'Opening quotation marks, capital "I\'m", full stop after "sorry.", capital pronoun "I", apostrophe in "don\'t", comma inside quotes, and full stop after "said the nobleman."',
+    ],
+    explanation:
+      'Polite vocatives (Sir) are set off with commas. Proper nouns (Seikh Saadi) and personal pronouns (I, I\'m) are always capitalized. Inverted commas enclose each speaker\'s words.',
+    banglaMeaning:
+      '"জনাব, আপনি কেন খাবারগুলো আপনার পকেটে রাখছেন? আপনি খাচ্ছেন না কেন?" সম্ভ্রান্ত ব্যক্তিটি জিজ্ঞাসা করলেন। "আমি সঠিক কাজটিই করছি। আমার পোশাকই এই মূল্যবান খাবারের যোগ্য," শেখ সাদী উত্তর দিলেন। "আমি দুঃখিত। আপনি কী বোঝাতে চেয়েছেন আমি বুঝতে পারছি না," সম্ভ্রান্ত ব্যক্তিটি বললেন।',
+    banglaTranslation:
+      '"জনাব, আপনি কেন খাবারগুলো আপনার পকেটে রাখছেন? আপনি খাচ্ছেন না কেন?" সম্ভ্রান্ত ব্যক্তিটি জিজ্ঞাসা করলেন। "আমি সঠিক কাজটিই করছি। আমার পোশাকই এই মূল্যবান খাবারের যোগ্য," শেখ সাদী উত্তর দিলেন। "আমি দুঃখিত। আপনি কী বোঝাতে চেয়েছেন আমি বুঝতে পারছি না," সম্ভ্রান্ত ব্যক্তিটি বললেন।',
+  },
+  {
+    id: 'punc-cumilla-2023',
+    board: 'Cumilla Board 2023',
+    title: 'Cumilla Board 2023 - Dialogue with Karim on Hospital Visit',
+    unpunctuatedPassage:
+      'Where are you going now Karim Said I am going to hospital My brother is ill Ive to stay with him in the hospital',
+    correctPassage:
+      '"Where are you going now?" Karim said, "I am going to hospital. My brother is ill. I\'ve to stay with him in the hospital."',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Where", and question mark inside quotes after "Where are you going now?".',
+      'Capital proper noun "Karim", lowercase "said,", and comma after reporting verb.',
+      'Opening quotation marks, capital pronoun "I", and full stop after "hospital.". ',
+      'Capital "My", and full stop after "ill.". ',
+      'Capital pronoun with apostrophe in contraction "I\'ve", and terminal full stop inside closing quotation marks after "hospital."',
+    ],
+    explanation:
+      'Direct dialogue is enclosed in quotation marks. Questions terminate with question marks before closing inverted commas. Proper nouns (Karim) and the pronoun "I" (including contractions like "I\'ve") must be capitalized.',
+    banglaMeaning:
+      '"তুমি এখন কোথায় যাচ্ছ?" করিম বলল, "আমি হাসপাতালে যাচ্ছি। আমার ভাই অসুস্থ। আমাকে হাসপাতালে তার সাথে থাকতে হবে।" ',
+    banglaTranslation:
+      '"তুমি এখন কোথায় যাচ্ছ?" করিম বলল, "আমি হাসপাতালে যাচ্ছি। আমার ভাই অসুস্থ। আমাকে হাসপাতালে তার সাথে থাকতে হবে।" ',
+  },
+  {
+    id: 'punc-chattogram-2023',
+    board: 'Chattogram Board 2023',
+    title: 'Chattogram Board 2023 - Cunning Fox and Other Foxes on Tails',
+    unpunctuatedPassage:
+      'My dear friends I am here to tell you about an important discovery said the cunning fox I have discovered that our tails are unnecessary How strange Is it unnecessary said the other foxes',
+    correctPassage:
+      '"My dear friends, I am here to tell you about an important discovery," said the cunning fox. "I have discovered that our tails are unnecessary." "How strange! Is it unnecessary?" said the other foxes.',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "My", comma after direct vocative address "My dear friends,", capital pronoun "I", comma inside closing quotes before "said the cunning fox.". ',
+      'Full stop after "said the cunning fox." ',
+      'Opening quotation marks, capital pronoun "I", and full stop inside closing quotes after "unnecessary."',
+      'Opening quotation marks, capital "How", exclamation mark after "How strange!", capital "Is", question mark inside closing quotes after "unnecessary?", and full stop after "said the other foxes."',
+    ],
+    explanation:
+      'Introductory vocative phrases ("My dear friends,") are separated by commas. Direct quoted speech is surrounded by quotation marks. Strong emotional remarks receive exclamation marks, and questions receive question marks inside the quotation marks.',
+    banglaMeaning:
+      '"আমার প্রিয় বন্ধুরা, আমি এখানে তোমাদের একটি গুরুত্বপূর্ণ আবিষ্কারের কথা জানাতে এসেছি," ধূর্ত শিয়ালটি বলল। "আমি আবিষ্কার করেছি যে আমাদের লেজগুলো একেবারেই অপ্রয়োজনীয়।" "কী অদ্ভুত! এটা কি সত্যিই অপ্রয়োজনীয়?" অন্যান্য শিয়ালরা বলল।',
+    banglaTranslation:
+      '"আমার প্রিয় বন্ধুরা, আমি এখানে তোমাদের একটি গুরুত্বপূর্ণ আবিষ্কারের কথা জানাতে এসেছি," ধূর্ত শিয়ালটি বলল। "আমি আবিষ্কার করেছি যে আমাদের লেজগুলো একেবারেই অপ্রয়োজনীয়।" "কী অদ্ভুত! এটা কি সত্যিই অপ্রয়োজনীয়?" অন্যান্য শিয়ালরা বলল।',
+  },
+  {
+    id: 'punc-sylhet-2023',
+    board: 'Sylhet Board 2023',
+    title: 'Sylhet Board 2023 - Mainul Islam: The Qualified Farmer in Naogaon',
+    unpunctuatedPassage:
+      'Mainul Islam a qualified farmer in Naogaon. He lives in his village with his two brothers When he was asked What makes you decide to stay here in this village He replied Look its true that we could leave this village for a city life But it dinnt attract us',
+    correctPassage:
+      'Mainul Islam, a qualified farmer in Naogaon, lives in his village with his two brothers. When he was asked, "What makes you decide to stay here in this village?" he replied, "Look, it\'s true that we could leave this village for a city life, but it didn\'t attract us."',
+    keyPunctuationPoints: [
+      'Capital "Mainul Islam" (proper noun), commas enclosing appositive phrase "a qualified farmer in Naogaon," and capital "Naogaon" (district/town proper noun).',
+      'Full stop after "with his two brothers." ',
+      'Capital "When", comma after dependent adverbial clause "When he was asked,".',
+      'Opening quotation marks, capital "What", and question mark inside quotes after "this village?".',
+      'Lowercase "he replied,", comma after reporting verb.',
+      'Opening quotation marks, capital "Look", comma after conversational interjection "Look,", apostrophe in contraction "it\'s", comma before conjunction "but", apostrophe in "didn\'t", and terminal period inside closing quotes.',
+    ],
+    explanation:
+      'Appositives (noun phrases explaining another noun) are set off by commas. Proper nouns (Mainul Islam, Naogaon) are capitalized. Complex sentences with introductory adverbial clauses take commas. Direct dialogue is enclosed in quotation marks with appropriate internal punctuation.',
+    banglaMeaning:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+    banglaTranslation:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+  },
+  {
+    id: 'punc-dinajpur-2023',
+    board: 'Dinajpur Board 2023',
+    title: 'Dinajpur Board 2023 - Mainul Islam: The Qualified Farmer in Naogaon',
+    unpunctuatedPassage:
+      'Mainul Islam a qualified farmer in Naogaon. He lives in his village with his two brothers When he was asked What makes you decide to stay here in this village He replied Look its true that we could leave this village for a city life But it dinnt attract us',
+    correctPassage:
+      'Mainul Islam, a qualified farmer in Naogaon, lives in his village with his two brothers. When he was asked, "What makes you decide to stay here in this village?" he replied, "Look, it\'s true that we could leave this village for a city life, but it didn\'t attract us."',
+    keyPunctuationPoints: [
+      'Capital "Mainul Islam" (proper noun), commas enclosing appositive phrase "a qualified farmer in Naogaon," and capital "Naogaon" (district/town proper noun).',
+      'Full stop after "with his two brothers." ',
+      'Capital "When", comma after dependent adverbial clause "When he was asked,".',
+      'Opening quotation marks, capital "What", and question mark inside quotes after "this village?".',
+      'Lowercase "he replied,", comma after reporting verb.',
+      'Opening quotation marks, capital "Look", comma after conversational interjection "Look,", apostrophe in contraction "it\'s", comma before conjunction "but", apostrophe in "didn\'t", and terminal period inside closing quotes.',
+    ],
+    explanation:
+      'Appositives (noun phrases explaining another noun) are set off by commas. Proper nouns (Mainul Islam, Naogaon) are capitalized. Complex sentences with introductory adverbial clauses take commas. Direct dialogue is enclosed in quotation marks with appropriate internal punctuation.',
+    banglaMeaning:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+    banglaTranslation:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+  },
+  {
+    id: 'punc-mymensingh-2023',
+    board: 'Mymensingh Board 2023',
+    title: 'Mymensingh Board 2023 - Mainul Islam: The Qualified Farmer in Naogaon',
+    unpunctuatedPassage:
+      'Mainul Islam a qualified farmer in Naogaon. He lives in his village with his two brothers When he was asked What makes you decide to stay here in this village He replied Look its true that we could leave this village for a city life But it dinnt attract us',
+    correctPassage:
+      'Mainul Islam, a qualified farmer in Naogaon, lives in his village with his two brothers. When he was asked, "What makes you decide to stay here in this village?" he replied, "Look, it\'s true that we could leave this village for a city life, but it didn\'t attract us."',
+    keyPunctuationPoints: [
+      'Capital "Mainul Islam" (proper noun), commas enclosing appositive phrase "a qualified farmer in Naogaon," and capital "Naogaon" (district/town proper noun).',
+      'Full stop after "with his two brothers." ',
+      'Capital "When", comma after dependent adverbial clause "When he was asked,".',
+      'Opening quotation marks, capital "What", and question mark inside quotes after "this village?".',
+      'Lowercase "he replied,", comma after reporting verb.',
+      'Opening quotation marks, capital "Look", comma after conversational interjection "Look,", apostrophe in contraction "it\'s", comma before conjunction "but", apostrophe in "didn\'t", and terminal period inside closing quotes.',
+    ],
+    explanation:
+      'Appositives (noun phrases explaining another noun) are set off by commas. Proper nouns (Mainul Islam, Naogaon) are capitalized. Complex sentences with introductory adverbial clauses take commas. Direct dialogue is enclosed in quotation marks with appropriate internal punctuation.',
+    banglaMeaning:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+    banglaTranslation:
+      'মাইনুল ইসলাম নওগাঁর একজন উচ্চশিক্ষিত কৃষক। তিনি তাঁর দুই ভাইয়ের সাথে তাঁর গ্রামেই বসবাস করেন। যখন তাঁকে জিজ্ঞাসা করা হয়েছিল, "কী আপনাকে এই গ্রামে থাকার সিদ্ধান্ত নিতে বাধ্য করল?" তিনি উত্তর দিয়েছিলেন, "দেখুন, এটা সত্যি যে আমরা শহরের জীবনের জন্য এই গ্রাম ছেড়ে চলে যেতে পারতাম, কিন্তু তা আমাদের আকর্ষণ করেনি। "',
+  },
+  {
+    id: 'punc-barishal-2023',
+    board: 'Barishal Board 2023',
+    title: 'Barishal Board 2023 - Mother and Son Dialogue about Going to School',
+    unpunctuatedPassage:
+      'why are not you going to school said mother to her son he said i am waiting for my friend to come and go to school together',
+    correctPassage:
+      '"Why are you not going to school?" said mother to her son. He said, "I am waiting for my friend to come and go to school together."',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Why", and question mark inside closing quotation marks after "going to school?".',
+      'Lowercase "said", full stop after reporting clause "said mother to her son."',
+      'Capital "He", comma after reporting verb "He said,", and opening quotation marks before direct speech.',
+      'Capital pronoun "I", terminal full stop inside closing quotation marks after "together."',
+    ],
+    explanation:
+      'Direct dialogue questions require quotation marks and question marks inside the quotes. Reporting clauses between two separate speakers conclude with full stops. The pronoun "I" and sentence-initial words are always capitalized.',
+    banglaMeaning:
+      '"তুমি স্কুলে যাচ্ছ না কেন?" মা তাঁর ছেলেকে বললেন। সে বলল, "আমি আমার বন্ধুর জন্য অপেক্ষা করছি যাতে সে এলে আমরা একসাথে স্কুলে যেতে পারি।"',
+    banglaTranslation:
+      '"তুমি স্কুলে যাচ্ছ না কেন?" মা তাঁর ছেলেকে বললেন। সে বলল, "আমি আমার বন্ধুর জন্য অপেক্ষা করছি যাতে সে এলে আমরা একসাথে স্কুলে যেতে পারি।"',
+  },
+  {
+    id: 'punc-dhaka-2022',
+    board: 'Dhaka Board 2022',
+    title: 'Dhaka Board 2022 - Pied Piper and Mayor of Hamelin Dialogue',
+    unpunctuatedPassage:
+      'have you killed the rats said the mayor yes i have replied the piper give me the promised money how funny you are said the mayor take only fifty',
+    correctPassage:
+      '"Have you killed the rats?" said the mayor. "Yes, I have," replied the piper. "Give me the promised money." "How funny you are!" said the mayor. "Take only fifty."',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Have", and question mark inside quotes after "rats?".',
+      'Reporting clause in lowercase "said the mayor." ending with a full stop.',
+      'Opening quotation marks, capital "Yes", comma after "Yes,", capital pronoun "I", comma inside quotes, lowercase "replied the piper." ending with a period.',
+      'Opening quotation marks, capital "Give", and full stop inside quotes after "promised money."',
+      'Opening quotation marks, capital "How", exclamation mark after "How funny you are!", lowercase "said the mayor." ending with a period.',
+      'Opening quotation marks, capital "Take", and terminal period inside closing quotes after "fifty."',
+    ],
+    explanation:
+      'Direct speech is enclosed in quotation marks. Questions take question marks before the closing quote, while exclamations of amazement take exclamation marks. Commas set off Yes/No introductory words and separate speech from reporting verbs.',
+    banglaMeaning:
+      '"তুমি কি ইঁদুরগুলোকে মেরে ফেলেছ?" মেয়র বললেন। "হ্যাঁ, আমি মেরেছি," বাঁশিওয়ালা উত্তর দিল। "আমাকে প্রতিশ্রুত অর্থ দিন।" "তুমি কেমন রসিক লোক!" মেয়র বললেন। "কেবল পঞ্চাশ নাও।" ',
+    banglaTranslation:
+      '"তুমি কি ইঁদুরগুলোকে মেরে ফেলেছ?" মেয়র বললেন। "হ্যাঁ, আমি মেরেছি," বাঁশিওয়ালা উত্তর দিল। "আমাকে প্রতিশ্রুত অর্থ দিন।" "তুমি কেমন রসিক লোক!" মেয়র বললেন। "কেবল পঞ্চাশ নাও।" ',
+  },
+  {
+    id: 'punc-rajshahi-2022',
+    board: 'Rajshahi Board 2022',
+    title: 'Rajshahi Board 2022 - Shohel and Alam on the National Memorial at Savar',
+    unpunctuatedPassage:
+      'Shoel asked Alam Friend have you ever visited the National Memorial at Savar in Dhaka Wow how Splendid it is Yes I havent yet gone there said Alam.',
+    correctPassage:
+      'Shoel asked Alam, "Friend, have you ever visited the National Memorial at Savar in Dhaka? Wow, how splendid it is!" "Yes, I haven\'t yet gone there," said Alam.',
+    keyPunctuationPoints: [
+      'Capital proper nouns "Shoel" and "Alam", comma after reporting clause "Shoel asked Alam,".',
+      'Opening quotation marks, capital "Friend", comma after vocative address "Friend,", capital "National Memorial", "Savar", "Dhaka" for proper nouns, and question mark inside quotes after "Dhaka?".',
+      'Capital "Wow", comma after "Wow,", exclamation mark inside quotes after "splendid it is!".',
+      'Opening quotation marks, capital "Yes", comma after "Yes,", capital pronoun "I", contraction apostrophe in "haven\'t", comma inside quotes, lowercase "said", and capital proper noun "Alam." with full stop.',
+    ],
+    explanation:
+      'Vocative direct addresses (Friend) and Yes/No interjections take commas. Proper nouns representing specific monuments, towns, and cities (National Memorial, Savar, Dhaka) must be capitalized. Expressive utterances take exclamation marks.',
+    banglaMeaning:
+      'সোহেল আলমকে জিজ্ঞাসা করল, "বন্ধু, তুমি কি কখনো ঢাকার সাভারে জাতীয় স্মৃতিসৌধ পরিদর্শন করেছ? বাহ্, এটি কতই না চমৎকার!" "হ্যাঁ, আমি এখনো সেখানে যাইনি," আলম বলল।',
+    banglaTranslation:
+      'সোহেল আলমকে জিজ্ঞাসা করল, "বন্ধু, তুমি কি কখনো ঢাকার সাভারে জাতীয় স্মৃতিসৌধ পরিদর্শন করেছ? বাহ্, এটি কতই না চমৎকার!" "হ্যাঁ, আমি এখনো সেখানে যাইনি," আলম বলল।',
+  },
+  {
+    id: 'punc-jashore-2022',
+    board: 'Jashore Board 2022',
+    title: 'Jashore Board 2022 - Mother and Child Dialogue on Completing Assignment',
+    unpunctuatedPassage:
+      'go to bed now mother said you can complete your assignment in the morning no mom ill finish it now.',
+    correctPassage:
+      '"Go to bed now," mother said. "You can complete your assignment in the morning." "No, Mom, I\'ll finish it now."',
+    keyPunctuationPoints: [
+      'Opening quotation marks, capital "Go", comma inside quotes after "now,", lowercase "mother said." followed by a full stop.',
+      'Opening quotation marks, capital "You", and full stop inside closing quotation marks after "morning."',
+      'Opening quotation marks, capital "No", comma after "No,", capital vocative "Mom,", capital pronoun with contraction "I\'ll", and terminal full stop inside quotes after "now."',
+    ],
+    explanation:
+      'Direct dialogue must be enclosed in quotation marks. Direct addresses like "Mom" are set off by commas and capitalized. Contractions like "I\'ll" require apostrophes.',
+    banglaMeaning:
+      '"এখন ঘুমাতে যাও," মা বললেন। "তুমি সকালে তোমার বাড়ির কাজটি শেষ করতে পারবে।" "না, মা, আমি এখনই এটি শেষ করব।" ',
+    banglaTranslation:
+      '"এখন ঘুমাতে যাও," মা বললেন। "তুমি সকালে তোমার বাড়ির কাজটি শেষ করতে পারবে।" "না, মা, আমি এখনই এটি শেষ করব।" ',
+  },
+  {
+    id: 'punc-cumilla-2022',
+    board: 'Cumilla Board 2022',
+    title: 'Cumilla Board 2022 - Passage on Mr. Hasan the Renowned English Teacher',
+    unpunctuatedPassage:
+      'mr. hasan is a renowned english teacher he has been teaching in our school for the past five years he is honest and sincere he is our favourite teacher we love him much',
+    correctPassage:
+      'Mr. Hasan is a renowned English teacher. He has been teaching in our school for the past five years. He is honest and sincere. He is our favourite teacher. We love him much.',
+    keyPunctuationPoints: [
+      'Capital "Mr." with abbreviation period, capital proper noun "Hasan", capital proper adjective "English", and full stop after "teacher."',
+      'Capital "He" starting new sentence, and full stop after "five years."',
+      'Capital "He" starting new sentence, and full stop after "sincere."',
+      'Capital "He" starting new sentence, and full stop after "favourite teacher."',
+      'Capital "We" starting new sentence, and terminal full stop after "him much."',
+    ],
+    explanation:
+      'Every complete declarative thought terminates in a full stop (period). Proper nouns (Hasan) and proper adjectives designating languages or nationalities (English) must begin with capital letters. Each new sentence begins with a capital letter.',
+    banglaMeaning:
+      'জনাব হাসান একজন প্রখ্যাত ইংরেজি শিক্ষক। তিনি বিগত পাঁচ বছর ধরে আমাদের বিদ্যালয়ে শিক্ষকতা করছেন। তিনি সৎ ও নিষ্ঠাবান। তিনি আমাদের প্রিয় শিক্ষক। আমরা তাঁকে খুব ভালোবাসি।',
+    banglaTranslation:
+      'জনাব হাসান একজন প্রখ্যাত ইংরেজি শিক্ষক। তিনি বিগত পাঁচ বছর ধরে আমাদের বিদ্যালয়ে শিক্ষকতা করছেন। তিনি সৎ ও নিষ্ঠাবান। তিনি আমাদের প্রিয় শিক্ষক। আমরা তাঁকে খুব ভালোবাসি।',
+  },
+  {
+    id: 'punc-chattogram-2022',
+    board: 'Chattogram Board 2022',
+    title: 'Chattogram Board 2022 - Rich Banker and Poor Cobbler on Happiness and Earnings',
+    unpunctuatedPassage:
+      'Once a rich banker said to a poor cobbler How much do you earn a year The cobbler replied laughing I never count in this way I earn barely enough to pass a day And I’m happy Are you really happy said the banker.',
+    correctPassage:
+      'Once a rich banker said to a poor cobbler, "How much do you earn a year?" The cobbler replied laughing, "I never count in this way. I earn barely enough to pass a day, and I\'m happy." "Are you really happy?" said the banker.',
+    keyPunctuationPoints: [
+      'Capital "Once", comma after reporting clause "Once a rich banker said to a poor cobbler,".',
+      'Opening quotation marks, capital "How", and question mark inside quotes after "year?".',
+      'Capital "The", comma after reporting phrase "The cobbler replied laughing,".',
+      'Opening quotation marks, capital pronoun "I", full stop after "this way.", capital pronoun "I", comma before "and", contraction apostrophe in "I\'m", and full stop inside quotes after "happy."',
+      'Opening quotation marks, capital "Are", question mark inside quotes after "really happy?", lowercase "said the banker." ending with full stop.',
+    ],
+    explanation:
+      'Direct dialogue is enclosed in quotation marks. Reporting clauses take commas before opening quotes. Direct questions conclude with question marks inside the inverted commas. The pronoun "I" and contractions (I\'m) are capitalized and apostrophized.',
+    banglaMeaning:
+      'একবার এক ধনী ব্যাংকার এক গরিব মুচিকে বলল, "তুমি বছরে কত উপার্জন করো?" মুচি হেসে উত্তর দিল, "আমি কখনো এভাবে হিসাব করি না। দিন পার করার মতো কোনোমতে আয় করি, এবং আমি এতেই সুখী।" "তুমি কি সত্যিই সুখী?" ব্যাংকার জিজ্ঞাসা করলেন।',
+    banglaTranslation:
+      'একবার এক ধনী ব্যাংকার এক গরিব মুচিকে বলল, "তুমি বছরে কত উপার্জন করো?" মুচি হেসে উত্তর দিল, "আমি কখনো এভাবে হিসাব করি না। দিন পার করার মতো কোনোমতে আয় করি, এবং আমি এতেই সুখী।" "তুমি কি সত্যিই সুখী?" ব্যাংকার জিজ্ঞাসা করলেন।',
+  },
+  {
+    id: 'punc-sylhet-2022',
+    board: 'Sylhet Board 2022',
+    title: 'Sylhet Board 2022 - Old Man and Boys Swimming in the Pond',
+    unpunctuatedPassage:
+      'I said to the old man, what are you doing I am watching the boy, swimming in the pond he said How happy they are May Allah bless them let me sit by you and enjoy the scene I said.',
+    correctPassage:
+      'I said to the old man, "What are you doing?" "I am watching the boys swimming in the pond," he said. "How happy they are! May Allah bless them." "Let me sit by you and enjoy the scene," I said.',
+    keyPunctuationPoints: [
+      'Capital pronoun "I", comma after reporting clause "I said to the old man,".',
+      'Opening quotation marks, capital "What", and question mark inside quotes after "What are you doing?".',
+      'Opening quotation marks, capital pronoun "I", comma inside quotes after "pond,", lowercase "he said." followed by full stop.',
+      'Opening quotation marks, capital "How", exclamation mark after "How happy they are!", capital "May", capital "Allah" (Creator), and full stop inside quotes after "bless them."',
+      'Opening quotation marks, capital "Let", comma inside quotes after "scene,", lowercase "said", and capital pronoun "I." ending with full stop.',
+    ],
+    explanation:
+      'Direct quoted speech is enclosed within quotation marks. Sentences expressing emotion (How happy they are!) take exclamation marks. Religious/divine names (Allah) must always be capitalized. The personal pronoun "I" is capitalized anywhere in the sentence.',
+    banglaMeaning:
+      'আমি বৃদ্ধ লোকটিকে বললাম, "আপনি কী করছেন?" "আমি পুকুরে ছেলেদের সাঁতার কাটা দেখছি," তিনি বললেন। "তারা কতই না সুখী! আল্লাহ তাদের মঙ্গল করুন।" "আমাকে আপনার পাশে বসতে দিন এবং দৃশ্যটি উপভোগ করতে দিন," আমি বললাম।',
+    banglaTranslation:
+      'আমি বৃদ্ধ লোকটিকে বললাম, "আপনি কী করছেন?" "আমি পুকুরে ছেলেদের সাঁতার কাটা দেখছি," তিনি বললেন। "তারা কতই না সুখী! আল্লাহ তাদের মঙ্গল করুন।" "আমাকে আপনার পাশে বসতে দিন এবং দৃশ্যটি উপভোগ করতে দিন," আমি বললাম।',
+  },
+  {
+    id: 'punc-barishal-2022',
+    board: 'Barishal Board 2022',
+    title: 'Barishal Board 2022 - Mother and Child Dialogue on Going to School',
+    unpunctuatedPassage:
+      'my mother said to me where are you going i am going to school said i did you go to school yesterday',
+    correctPassage:
+      'My mother said to me, "Where are you going?" "I am going to school," said I. "Did you go to school yesterday?"',
+    keyPunctuationPoints: [
+      'Capital "My", comma after reporting clause "My mother said to me,".',
+      'Opening quotation marks, capital "Where", and question mark inside quotes after "going?".',
+      'Opening quotation marks, capital pronoun "I", comma inside quotes after "school,", lowercase "said", and capital pronoun "I." ending with period.',
+      'Opening quotation marks, capital "Did", and question mark inside closing quotation marks after "yesterday?".',
+    ],
+    explanation:
+      'Direct dialogue is enclosed in quotation marks. Questions terminate with question marks before the closing quotation marks. The pronoun "I" is capitalized both in direct speech and in the speaker tag ("said I").',
+    banglaMeaning:
+      'আমার মা আমাকে বললেন, "তুমি কোথায় যাচ্ছ?" "আমি স্কুলে যাচ্ছি," আমি বললাম। "তুমি কি গতকাল স্কুলে গিয়েছিলে?"',
+    banglaTranslation:
+      'আমার মা আমাকে বললেন, "তুমি কোথায় যাচ্ছ?" "আমি স্কুলে যাচ্ছি," আমি বললাম। "তুমি কি গতকাল স্কুলে গিয়েছিলে?"',
+  },
+  {
+    id: 'punc-dinajpur-2022',
+    board: 'Dinajpur Board 2022',
+    title: 'Dinajpur Board 2022 - Old Woman and Young Man Dialogue on Begging and Work',
+    unpunctuatedPassage:
+      'the old woman said can you give me some food i have been starving for three days the young man said why do you beg cant you work',
+    correctPassage:
+      'The old woman said, "Can you give me some food? I have been starving for three days." The young man said, "Why do you beg? Can\'t you work?"',
+    keyPunctuationPoints: [
+      'Capital "The", comma after reporting clause "The old woman said,".',
+      'Opening quotation marks, capital "Can", question mark after "some food?", capital pronoun "I", and full stop inside quotes after "three days."',
+      'Capital "The young man said,", comma after "said,".',
+      'Opening quotation marks, capital "Why", question mark after "beg?", capital "Can\'t" with contraction apostrophe, and question mark inside quotes after "work?".',
+    ],
+    explanation:
+      'Reporting clauses end with commas before quotes. Interrogative sentences end with question marks. Contractions (Can\'t) require apostrophes. Sentence-initial words and personal pronoun "I" are always capitalized.',
+    banglaMeaning:
+      'বৃদ্ধা মহিলাটি বললেন, "আপনি কি আমাকে কিছু খাবার দিতে পারেন? আমি তিন দিন ধরে অনাহারে আছি।" যুবকটি বলল, "তুমি ভিক্ষা করো কেন? কাজ করতে পারো না?"',
+    banglaTranslation:
+      'বৃদ্ধা মহিলাটি বললেন, "আপনি কি আমাকে কিছু খাবার দিতে পারেন? আমি তিন দিন ধরে অনাহারে আছি।" যুবকটি বলল, "তুমি ভিক্ষা করো কেন? কাজ করতে পারো না?"',
+  },
+  {
+    id: 'punc-mymensingh-2022',
+    board: 'Mymensingh Board 2022',
+    title: 'Mymensingh Board 2022 - Monira and Protiva Dialogue on Common Questions in Exam',
+    unpunctuatedPassage:
+      'Monira said to Protiva How does the question seem to you Have you got everything common. No one item is uncommon to me. What about you said Protiva. Im in the same position like you replied Monira.',
+    correctPassage:
+      'Monira said to Protiva, "How does the question seem to you? Have you got everything common?" "No, one item is uncommon to me. What about you?" said Protiva. "I\'m in the same position like you," replied Monira.',
+    keyPunctuationPoints: [
+      'Capital proper nouns "Monira" and "Protiva", comma after reporting clause "Monira said to Protiva,".',
+      'Opening quotation marks, capital "How", question mark after "seem to you?", capital "Have", and question mark inside quotes after "common?".',
+      'Opening quotation marks, capital "No", comma after "No,", capital "What", and question mark inside quotes after "about you?".',
+      'Reporting clause in lowercase "said Protiva." ending with a full stop.',
+      'Opening quotation marks, capital pronoun with contraction "I\'m", comma inside quotes after "like you,", lowercase "replied Monira." ending with a period.',
+    ],
+    explanation:
+      'Direct dialogue is enclosed in quotation marks. Proper nouns (Monira, Protiva) are capitalized. Introductory negative words ("No,") take a comma. Contractions (I\'m) require an apostrophe.',
+    banglaMeaning:
+      'মনিরা প্রতিভাকে বলল, "প্রশ্ন তোমার কাছে কেমন মনে হচ্ছে? তুমি কি সবকিছু কমন পেয়েছ?" "না, একটি বিষয় আমার কাছে আনকমন। তোমার খবর কী?" প্রতিভা বলল। "আমিও তোমার মতোই অবস্থায় আছি," মনিরা উত্তর দিল।',
+    banglaTranslation:
+      'মনিরা প্রতিভাকে বলল, "প্রশ্ন তোমার কাছে কেমন মনে হচ্ছে? তুমি কি সবকিছু কমন পেয়েছ?" "না, একটি বিষয় আমার কাছে আনকমন। তোমার খবর কী?" প্রতিভা বলল। "আমিও তোমার মতোই অবস্থায় আছি," মনিরা উত্তর দিল।',
   },
   {
     id: 'punc-model-1',
