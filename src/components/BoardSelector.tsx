@@ -17,17 +17,20 @@ export const BoardSelector: React.FC<BoardSelectorProps> = ({
   bookmarkData,
 }) => {
   const has2026 = useMemo(() => availableBoards.some((b) => b.includes('2026')), [availableBoards]);
+  const has2025 = useMemo(() => availableBoards.some((b) => b.includes('2025')), [availableBoards]);
   const has2024 = useMemo(() => availableBoards.some((b) => b.includes('2024')), [availableBoards]);
   const has2023 = useMemo(() => availableBoards.some((b) => b.includes('2023')), [availableBoards]);
   const has2022 = useMemo(() => availableBoards.some((b) => b.includes('2022')), [availableBoards]);
   const hasModel = useMemo(() => availableBoards.some((b) => b.includes('Model')), [availableBoards]);
-  const hasCategories = (has2026 ? 1 : 0) + (has2024 ? 1 : 0) + (has2023 ? 1 : 0) + (has2022 ? 1 : 0) + (hasModel ? 1 : 0) > 1;
+  const hasCategories = (has2026 ? 1 : 0) + (has2025 ? 1 : 0) + (has2024 ? 1 : 0) + (has2023 ? 1 : 0) + (has2022 ? 1 : 0) + (hasModel ? 1 : 0) > 1;
 
-  const [activeFilter, setActiveFilter] = useState<'all' | '2026' | '2024' | '2023' | '2022' | 'model'>('all');
+  const [activeFilter, setActiveFilter] = useState<'all' | '2026' | '2025' | '2024' | '2023' | '2022' | 'model'>('all');
 
   // Auto switch filter if selected board is not in current activeFilter
   useEffect(() => {
     if (activeFilter === '2026' && !selectedBoard.includes('2026')) {
+      setActiveFilter('all');
+    } else if (activeFilter === '2025' && !selectedBoard.includes('2025')) {
       setActiveFilter('all');
     } else if (activeFilter === '2024' && !selectedBoard.includes('2024')) {
       setActiveFilter('all');
@@ -42,6 +45,7 @@ export const BoardSelector: React.FC<BoardSelectorProps> = ({
 
   const filteredBoards = useMemo(() => {
     if (activeFilter === '2026') return availableBoards.filter((b) => b.includes('2026'));
+    if (activeFilter === '2025') return availableBoards.filter((b) => b.includes('2025'));
     if (activeFilter === '2024') return availableBoards.filter((b) => b.includes('2024'));
     if (activeFilter === '2023') return availableBoards.filter((b) => b.includes('2023'));
     if (activeFilter === '2022') return availableBoards.filter((b) => b.includes('2022'));
@@ -94,6 +98,19 @@ export const BoardSelector: React.FC<BoardSelectorProps> = ({
             >
               <Award className="w-3 h-3" />
               <span>Board 2026 ({availableBoards.filter((b) => b.includes('2026')).length})</span>
+            </button>
+          )}
+          {has2025 && (
+            <button
+              onClick={() => setActiveFilter('2025')}
+              className={`px-3 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1 ${
+                activeFilter === '2025'
+                  ? 'bg-teal-600 text-white shadow-sm'
+                  : 'bg-teal-100 dark:bg-teal-950/50 text-teal-800 dark:text-teal-300 hover:bg-teal-200'
+              }`}
+            >
+              <Calendar className="w-3 h-3" />
+              <span>Board 2025 ({availableBoards.filter((b) => b.includes('2025')).length})</span>
             </button>
           )}
           {has2024 && (
@@ -154,6 +171,7 @@ export const BoardSelector: React.FC<BoardSelectorProps> = ({
         {filteredBoards.map((board) => {
           const isSelected = selectedBoard === board;
           const is2026 = board.includes('2026');
+          const is2025 = board.includes('2025');
           const is2024 = board.includes('2024');
           const is2023 = board.includes('2023');
           const is2022 = board.includes('2022');
@@ -161,6 +179,8 @@ export const BoardSelector: React.FC<BoardSelectorProps> = ({
           let badgeColor = 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-700';
           if (is2026) {
             badgeColor = 'bg-amber-50/70 dark:bg-amber-950/30 text-amber-900 dark:text-amber-200 border-amber-200 dark:border-amber-800/50';
+          } else if (is2025) {
+            badgeColor = 'bg-teal-50/70 dark:bg-teal-950/30 text-teal-900 dark:text-teal-200 border-teal-200 dark:border-teal-800/50';
           } else if (is2024) {
             badgeColor = 'bg-blue-50/70 dark:bg-blue-950/30 text-blue-900 dark:text-blue-200 border-blue-200 dark:border-blue-800/50';
           } else if (is2023) {

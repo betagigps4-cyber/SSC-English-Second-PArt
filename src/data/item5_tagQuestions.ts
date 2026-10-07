@@ -1231,7 +1231,1181 @@ const JESSORE_BOARD_2026: TagQuestionsExercise = {
   ],
 };
 
+// ==========================================
+// SSC BOARD QUESTIONS 2025 (ALL 9 BOARDS)
+// ==========================================
+
+const DHAKA_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-dhaka-2025',
+  board: 'Dhaka Board 2025',
+  title: 'Dhaka Board 2025 - Striving for a Better Life and Hard Realities',
+  questions: [
+    {
+      index: 1,
+      statement: 'Everybody wants to have a better life,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes the tag pronoun "they". With the affirmative Present Indefinite verb "wants", the tag becomes negative "don\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'A better life seldom comes without hard work,',
+      modelTag: 'does it?',
+      acceptableTags: ['does it?'],
+      explanation: 'The semi-negative adverb "seldom" makes the statement negative. The subject "A better life" takes pronoun "it", so the affirmative tag in Present Indefinite is "does it?".',
+    },
+    {
+      index: 3,
+      statement: 'We have to work for this,',
+      modelTag: "don't we?",
+      acceptableTags: ["don't we?", "haven't we?", "do not we?"],
+      explanation: 'Semi-modal "have to" takes the do-operator auxiliary in Present Indefinite. With affirmative "have to work", the tag is "don\'t we?".',
+    },
+    {
+      index: 4,
+      statement: 'But most of us can hardly do the job,',
+      modelTag: 'can we?',
+      acceptableTags: ['can we?'],
+      explanation: 'Negative adverb "hardly" makes the clause negative. Subject "most of us" takes pronoun "we", and modal "can" takes the affirmative tag "can we?".',
+    },
+    {
+      index: 5,
+      statement: "Actually, life isn't a bed of roses,",
+      modelTag: 'is it?',
+      acceptableTags: ['is it?'],
+      explanation: 'The negative auxiliary "isn\'t" with singular subject "life" (pronoun "it") takes the affirmative tag "is it?".',
+    },
+  ],
+};
+
+const RAJSHAHI_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-rajshahi-2025',
+  board: 'Rajshahi Board 2025',
+  title: 'Rajshahi Board 2025 - The Cheat, Truthfulness & Morality',
+  questions: [
+    {
+      index: 1,
+      statement: 'Nobody believes a cheat,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Negative indefinite pronoun "Nobody" takes tag pronoun "they" and renders the statement negative. In Present Indefinite, the tag is affirmative "do they?".',
+    },
+    {
+      index: 2,
+      statement: 'Everybody hates him,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". In Present Indefinite affirmative, the tag is negative "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'He has to drag a miserable life,',
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "hasn't he?", "does not he?"],
+      explanation: 'Semi-modal "has to" with 3rd person singular subject "He" in Present Indefinite takes the negative tag "doesn\'t he?".',
+    },
+    {
+      index: 4,
+      statement: 'He can hardly succeed in life,',
+      modelTag: 'can he?',
+      acceptableTags: ['can he?'],
+      explanation: 'Negative adverb "hardly" makes the statement negative. Modal auxiliary "can" with subject "he" takes the affirmative tag "can he?".',
+    },
+    {
+      index: 5,
+      statement: 'Let us always speak the truth,',
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposals or suggestions beginning with "Let us" or "Let\'s" always take the tag "shall we?".',
+    },
+  ],
+};
+
+const CUMILLA_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-cumilla-2025',
+  board: 'Cumilla Board 2025',
+  title: 'Cumilla Board 2025 - Affectionate English Teacher and Dedicated Students',
+  questions: [
+    {
+      index: 1,
+      statement: 'Our new English teacher is very affectionate,',
+      modelTag: "isn't she?",
+      acceptableTags: ["isn't she?", "isn't he?", "is not she?", "is not he?"],
+      explanation: 'Affirmative statement with linking verb "is". As subsequent sentences use feminine pronoun "She", the tag is "isn\'t she?" (or "isn\'t he?").',
+    },
+    {
+      index: 2,
+      statement: 'She has joined recently,',
+      modelTag: "hasn't she?",
+      acceptableTags: ["hasn't she?", "has not she?"],
+      explanation: 'Present Perfect tense affirmative statement with auxiliary "has" and subject "She" takes the negative tag "hasn\'t she?".',
+    },
+    {
+      index: 3,
+      statement: 'She never scolds her students,',
+      modelTag: 'does she?',
+      acceptableTags: ['does she?'],
+      explanation: 'Negative adverb "never" makes the statement negative. Present Indefinite 3rd person singular takes affirmative tag "does she?".',
+    },
+    {
+      index: 4,
+      statement: 'Each of her students loves her,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "doesn't he?", "do not they?"],
+      explanation: 'Subject "Each of her students" refers to a group of individuals and takes the tag pronoun "they" with plural auxiliary "don\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'None of her students dislikes her,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Negative phrase "None of her students" makes the statement negative and takes tag pronoun "they". In Present Indefinite, the tag is affirmative "do they?".',
+    },
+  ],
+};
+
+const JASHORE_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-jashore-2025',
+  board: 'Jashore Board 2025',
+  title: 'Jashore Board 2025 - Speaking the Truth vs Deceit of a Liar',
+  questions: [
+    {
+      index: 1,
+      statement: 'Nobody trusts a liar,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Negative indefinite pronoun "Nobody" takes pronoun "they" and makes the statement negative. The tag is affirmative "do they?".',
+    },
+    {
+      index: 2,
+      statement: 'A liar has to lead a miserable life,',
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "hasn't he?", "does not he?"],
+      explanation: 'Semi-modal "has to" with singular subject "A liar" (he) takes the negative tag "doesn\'t he?".',
+    },
+    {
+      index: 3,
+      statement: 'Speaking the truth is a good exercise,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Gerund phrase "Speaking the truth" acts as a singular neuter subject taking pronoun "it". Affirmative "is" takes "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'Everybody should have the habit of speaking the truth,',
+      modelTag: "shouldn't they?",
+      acceptableTags: ["shouldn't they?", "should not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes pronoun "they". Modal "should" in affirmative sentence takes negative tag "shouldn\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'Let us always speak the truth,',
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal with "Let us" always takes the tag "shall we?".',
+    },
+  ],
+};
+
+const SYLHET_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-sylhet-2025',
+  board: 'Sylhet Board 2025',
+  title: 'Sylhet Board 2025 - Proverbs, Money, and Moral Truths',
+  questions: [
+    {
+      index: 1,
+      statement: "Don't make late. Let's go,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'When a sentence concludes with an imperative proposal "Let\'s go", the tag question attaches to that proposal taking "shall we?".',
+    },
+    {
+      index: 2,
+      statement: 'A barking dog seldom bites,',
+      modelTag: 'does it?',
+      acceptableTags: ['does it?'],
+      explanation: 'The proverbial statement contains semi-negative adverb "seldom". Subject "A barking dog" takes pronoun "it", so the tag is affirmative "does it?".',
+    },
+    {
+      index: 3,
+      statement: 'Money is a must for life,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Uncountable noun "Money" takes pronoun "it". Affirmative linking verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'Everybody believes this truth,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes pronoun "they". Affirmative Present Indefinite takes negative tag "don\'t they?".',
+    },
+    {
+      index: 5,
+      statement: "The teacher says, 'Charity begins at home',",
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "doesn't she?", "does not he?", "does not she?"],
+      explanation: 'The tag question is formed based on the main reporting clause "The teacher says", where singular subject "The teacher" takes "doesn\'t he?" (or "doesn\'t she?").',
+    },
+  ],
+};
+
+const BARISHAL_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-barishal-2025',
+  board: 'Barishal Board 2025',
+  title: 'Barishal Board 2025 - Truthfulness, Habit Formation & Liars',
+  questions: [
+    {
+      index: 1,
+      statement: 'Nobody trusts a liar,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Negative pronoun "Nobody" takes tag pronoun "they" and renders the statement negative. The tag is affirmative "do they?".',
+    },
+    {
+      index: 2,
+      statement: 'A liar has to lead a miserable life,',
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "hasn't he?", "does not he?"],
+      explanation: 'Semi-modal "has to" with singular subject "A liar" takes negative tag "doesn\'t he?".',
+    },
+    {
+      index: 3,
+      statement: 'Speaking the truth is a good exercise,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Gerund subject "Speaking the truth" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'Everybody should have the habit of speaking the truth,',
+      modelTag: "shouldn't they?",
+      acceptableTags: ["shouldn't they?", "should not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes pronoun "they". Modal auxiliary "should" takes negative tag "shouldn\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'Let us always speak the truth,',
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let us" always takes the question tag "shall we?".',
+    },
+  ],
+};
+
+const CHATTOGRAM_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-chattogram-2025',
+  board: 'Chattogram Board 2025',
+  title: 'Chattogram Board 2025 - Value of Time and Striving for Academic Success',
+  questions: [
+    {
+      index: 1,
+      statement: 'I along with you am SSC examinees,',
+      modelTag: "aren't I?",
+      acceptableTags: ["aren't I?", "ain't I?", "am I not?"],
+      explanation: 'When two subjects are connected by "along with", the verb and tag agree with the first subject ("I"). Affirmative "I am" takes the standard negative tag "aren\'t I?" (or "ain\'t I?").',
+    },
+    {
+      index: 2,
+      statement: 'Let me make the best use of time,',
+      modelTag: 'will you?',
+      acceptableTags: ['will you?', "won't you?"],
+      explanation: 'Imperative sentence with "Let me" expressing a request or seeking permission takes the tag "will you?".',
+    },
+    {
+      index: 3,
+      statement: 'We should not neglect time,',
+      modelTag: 'should we?',
+      acceptableTags: ['should we?'],
+      explanation: 'Negative statement with modal auxiliary "should not" takes affirmative tag "should we?".',
+    },
+    {
+      index: 4,
+      statement: 'Everyone wants to get A+,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everyone" takes tag pronoun "they". Present Indefinite affirmative statement takes negative tag "don\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'We know that time is very valuable,',
+      modelTag: "don't we?",
+      acceptableTags: ["don't we?", "do not we?"],
+      explanation: 'In complex sentences expressing our knowledge or belief ("We know that..."), the tag question agrees with the main clause "We know" -> "don\'t we?".',
+    },
+  ],
+};
+
+const DINAJPUR_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-dinajpur-2025',
+  board: 'Dinajpur Board 2025',
+  title: 'Dinajpur Board 2025 - Conjunctions, Identity, Titanic & Future Plans',
+  questions: [
+    {
+      index: 1,
+      statement: "'But' is a conjunction,",
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'The word "\'But\'" in quotation marks is treated as a singular noun/concept taking pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'I am not a dancer,',
+      modelTag: 'am I?',
+      acceptableTags: ['am I?'],
+      explanation: 'Negative statement with "I am not" takes affirmative tag "am I?".',
+    },
+    {
+      index: 3,
+      statement: 'He let me make tea,',
+      modelTag: "didn't he?",
+      acceptableTags: ["didn't he?", "did not he?"],
+      explanation: 'Since subject "He" is 3rd person singular and the verb is "let" (not "lets"), it is Past Indefinite tense. Hence, the tag is negative past "didn\'t he?".',
+    },
+    {
+      index: 4,
+      statement: 'The Titanic sank on its first voyage,',
+      modelTag: "didn't it?",
+      acceptableTags: ["didn't it?", "didn't she?", "did not it?", "did not she?"],
+      explanation: 'Past Indefinite verb "sank" with subject "The Titanic" (it, or personified ship she) takes negative past tag "didn\'t it?" (or "didn\'t she?").',
+    },
+    {
+      index: 5,
+      statement: 'He will visit a book fair tomorrow,',
+      modelTag: "won't he?",
+      acceptableTags: ["won't he?", "will not he?"],
+      explanation: 'Future simple affirmative statement with modal "will" and subject "He" takes negative tag "won\'t he?".',
+    },
+  ],
+};
+
+const MYMENSINGH_BOARD_2025: TagQuestionsExercise = {
+  id: 'tag-mymensingh-2025',
+  board: 'Mymensingh Board 2025',
+  title: 'Mymensingh Board 2025 - Hard Work, Determination and Achieving Goals',
+  questions: [
+    {
+      index: 1,
+      statement: 'Working hard is very important,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Gerund subject "Working hard" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'Work hard and stay focused to achieve your goal,',
+      modelTag: 'will you?',
+      acceptableTags: ['will you?', "won't you?", 'can you?'],
+      explanation: 'Compound imperative sentence giving advice/instruction takes the tag "will you?" (or "won\'t you?").',
+    },
+    {
+      index: 3,
+      statement: 'Hard work can lead to success if you stay determined,',
+      modelTag: "can't it?",
+      acceptableTags: ["can't it?", "cannot it?"],
+      explanation: 'Main clause subject "Hard work" (it) with modal auxiliary "can" takes negative tag "can\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'It does not always give quick results,',
+      modelTag: 'does it?',
+      acceptableTags: ['does it?'],
+      explanation: 'Negative statement with "does not" and subject "It" takes affirmative tag "does it?".',
+    },
+    {
+      index: 5,
+      statement: 'Actually, it helps us to do things better,',
+      modelTag: "doesn't it?",
+      acceptableTags: ["doesn't it?", "does not it?"],
+      explanation: 'Present Indefinite affirmative statement with 3rd person singular subject "it" and verb "helps" takes negative tag "doesn\'t it?".',
+    },
+  ],
+};
+
+// ==========================================
+// SSC BOARD QUESTIONS 2024 (ALL 9 BOARDS)
+// ==========================================
+
+const DHAKA_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-dhaka-2024',
+  board: 'Dhaka Board 2024',
+  title: 'Dhaka Board 2024 - Hankering After Money, Morality & Greed',
+  questions: [
+    {
+      index: 1,
+      statement: 'Many people hanker after money,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Plural subject "Many people" takes tag pronoun "they". In Present Indefinite affirmative with verb "hanker", the tag is negative "don\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'But money is not as valuable as morality,',
+      modelTag: 'is it?',
+      acceptableTags: ['is it?'],
+      explanation: 'Negative statement with "is not" and uncountable singular noun "money" (pronoun "it") takes affirmative tag "is it?".',
+    },
+    {
+      index: 3,
+      statement: 'Let us always keep this truth in mind,',
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposals or suggestions beginning with "Let us" or "Let\'s" always take the tag "shall we?".',
+    },
+    {
+      index: 4,
+      statement: 'Money can hardly bring happiness,',
+      modelTag: 'can it?',
+      acceptableTags: ['can it?'],
+      explanation: 'Semi-negative adverb "hardly" makes the sentence negative. With modal "can" and subject "Money" (it), the tag is affirmative "can it?".',
+    },
+    {
+      index: 5,
+      statement: 'So, we should never have greed for money,',
+      modelTag: 'should we?',
+      acceptableTags: ['should we?'],
+      explanation: 'Negative adverb "never" makes the statement negative. Modal auxiliary "should" with subject "we" takes affirmative tag "should we?".',
+    },
+  ],
+};
+
+const SYLHET_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-sylhet-2024',
+  board: 'Sylhet Board 2024',
+  title: 'Sylhet Board 2024 - Extended Families, Rural Life & Shared Rooms',
+  questions: [
+    {
+      index: 1,
+      statement: 'At present extended families are found in rural areas,',
+      modelTag: "aren't they?",
+      acceptableTags: ["aren't they?", "are not they?"],
+      explanation: 'Plural subject "extended families" takes pronoun "they". Affirmative passive "are found" takes negative tag "aren\'t they?".',
+    },
+    {
+      index: 2,
+      statement: "There're many members in extended families,",
+      modelTag: "aren't there?",
+      acceptableTags: ["aren't there?", "are not there?"],
+      explanation: 'Introductory "There\'re" (There are) with plural noun takes tag with pronoun "there": "aren\'t there?".',
+    },
+    {
+      index: 3,
+      statement: 'The house is always full of guests,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular subject "The house" (pronoun "it") with affirmative verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'It becomes very difficult for one to study,',
+      modelTag: "doesn't it?",
+      acceptableTags: ["doesn't it?", "does not it?"],
+      explanation: 'Present Indefinite 3rd person singular verb "becomes" with subject "It" takes negative tag "doesn\'t it?".',
+    },
+    {
+      index: 5,
+      statement: 'In the same room children are found reading, gossiping, and sleeping,',
+      modelTag: "aren't they?",
+      acceptableTags: ["aren't they?", "are not they?"],
+      explanation: 'Plural subject "children" takes pronoun "they". Affirmative verb "are" takes negative tag "aren\'t they?".',
+    },
+  ],
+};
+
+const CUMILLA_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-cumilla-2024',
+  board: 'Cumilla Board 2024',
+  title: 'Cumilla Board 2024 - Persistence, Maternal Feeling, Past Actions & Favours',
+  questions: [
+    {
+      index: 1,
+      statement: 'Slow and steady wins the race,',
+      modelTag: "doesn't it?",
+      acceptableTags: ["doesn't it?", "does not it?"],
+      explanation: 'Compound phrase "Slow and steady" represents a single unified virtue taking 3rd person singular verb "wins" and pronoun "it". Tag is "doesn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'The mother has risen in her to see the orphan,',
+      modelTag: "hasn't it?",
+      acceptableTags: ["hasn't it?", "hasn't she?", "has not it?", "has not she?"],
+      explanation: '"The mother" here refers to motherly affection (an abstract feeling), taking pronoun "it" (or personified "she"). Affirmative "has risen" takes "hasn\'t it?" / "hasn\'t she?".',
+    },
+    {
+      index: 3,
+      statement: 'He hardly cast a vote for me,',
+      modelTag: 'did he?',
+      acceptableTags: ['did he?'],
+      explanation: 'Since subject "He" is 3rd person singular and the verb form is "cast" (not "casts"), it is Past Indefinite tense. Semi-negative adverb "hardly" makes the clause negative, taking affirmative past tag "did he?".',
+    },
+    {
+      index: 4,
+      statement: 'Kindly do me a favour,',
+      modelTag: 'will you?',
+      acceptableTags: ['will you?', "won't you?", 'can you?', 'could you?'],
+      explanation: 'Polite imperative request starting with "Kindly" takes tag "will you?" (or "won\'t you?").',
+    },
+    {
+      index: 5,
+      statement: 'I need not go there,',
+      modelTag: 'need I?',
+      acceptableTags: ['need I?'],
+      explanation: 'Negative modal auxiliary "need not" takes affirmative tag with modal "need": "need I?".',
+    },
+  ],
+};
+
+const DINAJPUR_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-dinajpur-2024',
+  board: 'Dinajpur Board 2024',
+  title: 'Dinajpur Board 2024 - Problem Solving, Sin of Lying & Nature Admiration',
+  questions: [
+    {
+      index: 1,
+      statement: 'None can solve this problem,',
+      modelTag: 'can they?',
+      acceptableTags: ['can they?'],
+      explanation: 'Negative pronoun "None" makes the statement negative and takes tag pronoun "they". Modal "can" takes affirmative tag "can they?".',
+    },
+    {
+      index: 2,
+      statement: 'Everybody hates them,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". In Present Indefinite affirmative ("hates"), the tag is negative "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: "Let's do the work,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal starting with "Let\'s" (Let us) always takes the tag "shall we?".',
+    },
+    {
+      index: 4,
+      statement: 'Telling lies is a great sin,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Gerund subject "Telling lies" acts as a singular neuter noun taking pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 5,
+      statement: 'How nice the bird is!,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Exclamatory sentence about "the bird" (pronoun "it") with affirmative verb "is" takes negative tag "isn\'t it?".',
+    },
+  ],
+};
+
+const JASHORE_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-jashore-2024',
+  board: 'Jashore Board 2024',
+  title: 'Jashore Board 2024 - Patriotism, Courage of a Patriot & Exclamations',
+  questions: [
+    {
+      index: 1,
+      statement: 'Patriotism persuades a man to do everything just,',
+      modelTag: "doesn't it?",
+      acceptableTags: ["doesn't it?", "does not it?"],
+      explanation: 'Singular abstract noun "Patriotism" takes pronoun "it". Present Indefinite affirmative verb "persuades" takes negative tag "doesn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'A patriot hardly fears anybody,',
+      modelTag: 'does he?',
+      acceptableTags: ['does he?', 'does she?'],
+      explanation: 'Semi-negative adverb "hardly" makes the statement negative. Singular subject "A patriot" takes pronoun "he", taking affirmative tag "does he?".',
+    },
+    {
+      index: 3,
+      statement: 'Everybody respects a patriot,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". Present Indefinite affirmative verb "respects" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 4,
+      statement: 'What an outstanding quality it is!,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Exclamatory sentence with subject "it" and linking verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 5,
+      statement: "Let's be patriots,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let\'s" (Let us) always takes the tag "shall we?".',
+    },
+  ],
+};
+
+const RAJSHAHI_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-rajshahi-2024',
+  board: 'Rajshahi Board 2024',
+  title: 'Rajshahi Board 2024 - Birth of Bangladesh, Civic Duties & Patriotism',
+  questions: [
+    {
+      index: 1,
+      statement: 'Bangladesh came into being at the cost of a bloody war,',
+      modelTag: "didn't it?",
+      acceptableTags: ["didn't it?", "didn't she?", "did not it?", "did not she?"],
+      explanation: 'Past Indefinite verb "came" with country subject "Bangladesh" (pronoun "it" or personified "she") takes negative past tag "didn\'t it?" (or "didn\'t she?").',
+    },
+    {
+      index: 2,
+      statement: 'So, everyone has some duties and responsibilities to this country,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "haven't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "everyone" takes tag pronoun "they". In Present Indefinite with main verb "has", the negative tag is "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'As a citizen of this country, we can hardly forget our duties,',
+      modelTag: 'can we?',
+      acceptableTags: ['can we?'],
+      explanation: 'Negative adverb "hardly" makes the clause negative. Modal auxiliary "can" with subject "we" takes affirmative tag "can we?".',
+    },
+    {
+      index: 4,
+      statement: 'I am proud to be a citizen of this country,',
+      modelTag: "aren't I?",
+      acceptableTags: ["aren't I?", "ain't I?", "am I not?"],
+      explanation: 'Affirmative statement with "I am" takes the standard negative tag "aren\'t I?" (or "ain\'t I?").',
+    },
+    {
+      index: 5,
+      statement: 'Let us work together to build up our country,',
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let us" always takes the tag "shall we?".',
+    },
+  ],
+};
+
+const BARISHAL_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-barishal-2024',
+  board: 'Barishal Board 2024',
+  title: 'Barishal Board 2024 - Industry vs Idleness & Prosperity',
+  questions: [
+    {
+      index: 1,
+      statement: 'Industry is the key to success,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular abstract noun "Industry" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'The industrious are prosperous,',
+      modelTag: "aren't they?",
+      acceptableTags: ["aren't they?", "are not they?"],
+      explanation: '"The industrious" functions as a plural collective noun (industrious people) taking pronoun "they". Verb "are" takes negative tag "aren\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'They hardly suffer from poverty,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Semi-negative adverb "hardly" makes the sentence negative. Present Indefinite plural takes affirmative tag "do they?".',
+    },
+    {
+      index: 4,
+      statement: 'On the other hand, idleness is a curse,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Subject "idleness" is a singular abstract noun taking pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 5,
+      statement: 'The idle seldom prosper,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: '"The idle" refers to idle people (plural noun) taking pronoun "they". Semi-negative adverb "seldom" makes the statement negative, so the tag is affirmative "do they?".',
+    },
+  ],
+};
+
+const CHATTOGRAM_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-chattogram-2024',
+  board: 'Chattogram Board 2024',
+  title: 'Chattogram Board 2024 - Universal Truths, Negative Words & Commands',
+  questions: [
+    {
+      index: 1,
+      statement: 'Everybody believes this truth,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". Present Indefinite affirmative takes negative tag "don\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'We hardly forget the golden past,',
+      modelTag: 'do we?',
+      acceptableTags: ['do we?'],
+      explanation: 'Semi-negative adverb "hardly" makes the statement negative. Present Indefinite with subject "we" takes affirmative tag "do we?".',
+    },
+    {
+      index: 3,
+      statement: 'Nothing was said,',
+      modelTag: 'was it?',
+      acceptableTags: ['was it?'],
+      explanation: 'Negative pronoun "Nothing" takes tag pronoun "it" and makes the clause negative. Past verb "was" takes affirmative tag "was it?".',
+    },
+    {
+      index: 4,
+      statement: "Don't disturb me,",
+      modelTag: 'will you?',
+      acceptableTags: ['will you?'],
+      explanation: 'Negative imperative command starting with "Don\'t" always takes the affirmative tag "will you?".',
+    },
+    {
+      index: 5,
+      statement: "Let's be sincere in our life,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let\'s" (Let us) always takes the tag "shall we?".',
+    },
+  ],
+};
+
+const MYMENSINGH_BOARD_2024: TagQuestionsExercise = {
+  id: 'tag-mymensingh-2024',
+  board: 'Mymensingh Board 2024',
+  title: 'Mymensingh Board 2024 - Patriotism, Wise Teachings & Loving Motherland',
+  questions: [
+    {
+      index: 1,
+      statement: 'Patriotism is a noble virtue,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular abstract subject "Patriotism" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'Wise people teach us to love our own country,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Plural subject "Wise people" takes pronoun "they". Affirmative Present Indefinite verb "teach" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'We should remember that motherland is above everything,',
+      modelTag: "shouldn't we?",
+      acceptableTags: ["shouldn't we?", "should not we?"],
+      explanation: 'The tag question is formed based on the principal clause "We should remember", taking negative modal tag "shouldn\'t we?".',
+    },
+    {
+      index: 4,
+      statement: 'Some people forget it,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Plural subject "Some people" takes pronoun "they". Affirmative verb "forget" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'We hope that everybody will love his motherland,',
+      modelTag: "don't we?",
+      acceptableTags: ["don't we?", "won't they?", "do not we?"],
+      explanation: 'In complex sentences with a main clause expressing hope or opinion ("We hope that..."), the tag question agrees with the main clause "We hope" -> "don\'t we?".',
+    },
+  ],
+};
+
+// ==========================================
+// SSC BOARD QUESTIONS 2023 (ALL 9 BOARDS)
+// ==========================================
+
+const DHAKA_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-dhaka-2023',
+  board: 'Dhaka Board 2023',
+  title: 'Dhaka Board 2023 - Modesty, Respect for Superiors & Student Success',
+  questions: [
+    {
+      index: 1,
+      statement: 'Modesty is a great virtue,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular abstract noun "Modesty" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'The modest always respect their superiors,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: '"The modest" functions as a plural collective noun (meaning modest people) taking pronoun "they". Present Indefinite affirmative verb "respect" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'Everybody likes a modest person,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". Present Indefinite affirmative verb "likes" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 4,
+      statement: 'A modest student hardly fails to reach his goal,',
+      modelTag: 'does he?',
+      acceptableTags: ['does he?', 'does she?'],
+      explanation: 'Semi-negative adverb "hardly" makes the statement negative. Singular subject "A modest student" takes pronoun "he", taking affirmative tag "does he?".',
+    },
+    {
+      index: 5,
+      statement: "Let's try to be modest in our way of life,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposals or suggestions beginning with "Let\'s" (Let us) always take the tag "shall we?".',
+    },
+  ],
+};
+
+const RAJSHAHI_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-rajshahi-2023',
+  board: 'Rajshahi Board 2023',
+  title: 'Rajshahi Board 2023 - War as a Curse, Destruction & Sufferers',
+  questions: [
+    {
+      index: 1,
+      statement: 'War is a curse of human civilization,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular abstract noun "War" takes pronoun "it". Affirmative linking verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'Everybody suffers from it,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes pronoun "they". Present Indefinite affirmative verb "suffers" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'Massive destruction is found everywhere,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular uncountable subject "Massive destruction" takes pronoun "it". Affirmative passive "is found" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'None can escape from the bombings of the enemy,',
+      modelTag: 'can they?',
+      acceptableTags: ['can they?'],
+      explanation: 'Negative subject pronoun "None" takes tag pronoun "they" and renders the statement negative. Modal auxiliary "can" takes affirmative tag "can they?".',
+    },
+    {
+      index: 5,
+      statement: 'Women and children are the worst sufferers,',
+      modelTag: "aren't they?",
+      acceptableTags: ["aren't they?", "are not they?"],
+      explanation: 'Compound plural subject "Women and children" takes pronoun "they". Affirmative linking verb "are" takes negative tag "aren\'t they?".',
+    },
+  ],
+};
+
+const CUMILLA_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-cumilla-2023',
+  board: 'Cumilla Board 2023',
+  title: 'Cumilla Board 2023 - Passion for Cricket and Excitement of the Game',
+  questions: [
+    {
+      index: 1,
+      statement: 'At present, everybody likes cricket,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "everybody" takes tag pronoun "they". Present Indefinite affirmative verb "likes" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'Students hardly miss watching this game,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Semi-negative adverb "hardly" makes the sentence negative. Plural subject "Students" takes pronoun "they", taking affirmative tag "do they?".',
+    },
+    {
+      index: 3,
+      statement: 'Nothing is more enjoyable to them than cricket,',
+      modelTag: 'is it?',
+      acceptableTags: ['is it?'],
+      explanation: 'Negative pronoun "Nothing" takes pronoun "it" and makes the clause negative. Linking verb "is" takes affirmative tag "is it?".',
+    },
+    {
+      index: 4,
+      statement: 'How exciting the game is!,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Exclamatory sentence about "the game" (pronoun "it") with affirmative verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 5,
+      statement: "Let's play this game,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let\'s" (Let us) always takes the tag "shall we?".',
+    },
+  ],
+};
+
+const JASHORE_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-jashore-2023',
+  board: 'Jashore Board 2023',
+  title: 'Jashore Board 2023 - Habit of Reading, Studious Students & Book Gifting',
+  questions: [
+    {
+      index: 1,
+      statement: 'The habit of reading is good,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular subject "The habit of reading" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'But we hardly find it in us,',
+      modelTag: 'do we?',
+      acceptableTags: ['do we?'],
+      explanation: 'Semi-negative adverb "hardly" makes the statement negative. Present Indefinite with subject "we" takes affirmative tag "do we?".',
+    },
+    {
+      index: 3,
+      statement: 'Everybody loves a studious student,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". Present Indefinite affirmative verb "loves" takes negative tag "don\'t they?".',
+    },
+    {
+      index: 4,
+      statement: 'We ought to give him books,',
+      modelTag: "oughtn't we?",
+      acceptableTags: ["oughtn't we?", "shouldn't we?", "ought not we?"],
+      explanation: 'Modal auxiliary "ought to" in affirmative sentence takes negative tag "oughtn\'t we?" (or "shouldn\'t we?").',
+    },
+    {
+      index: 5,
+      statement: 'Books give us knowledge,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Plural subject "Books" takes pronoun "they". Present Indefinite affirmative verb "give" takes negative tag "don\'t they?".',
+    },
+  ],
+};
+
+const SYLHET_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-sylhet-2023',
+  board: 'Sylhet Board 2023',
+  title: 'Sylhet Board 2023 - Abilities, Imperatives, Parts of Speech & Past Verbs',
+  questions: [
+    {
+      index: 1,
+      statement: 'Fishes can swim,',
+      modelTag: "can't they?",
+      acceptableTags: ["can't they?", "cannot they?"],
+      explanation: 'Plural subject "Fishes" takes pronoun "they". Modal auxiliary "can" in affirmative statement takes negative tag "can\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'Help the helpless,',
+      modelTag: 'will you?',
+      acceptableTags: ['will you?', "won't you?", 'can you?'],
+      explanation: 'Imperative sentence expressing an order, request or moral advice takes the tag "will you?" (or "won\'t you?").',
+    },
+    {
+      index: 3,
+      statement: "'She' is a pronoun,",
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'The word "\'She\'" in quotation marks refers to a grammatical word/part of speech (singular noun concept), taking pronoun "it". Tag is "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'He put the bag here,',
+      modelTag: "didn't he?",
+      acceptableTags: ["didn't he?", "did not he?"],
+      explanation: 'Since subject "He" is 3rd person singular and the verb is "put" (not "puts"), it is Past Indefinite tense. Affirmative past takes negative tag "didn\'t he?".',
+    },
+    {
+      index: 5,
+      statement: 'They seldom come to me,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Semi-negative adverb "seldom" makes the statement negative. Present Indefinite with plural subject "They" takes affirmative tag "do they?".',
+    },
+  ],
+};
+
+const BARISHAL_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-barishal-2023',
+  board: 'Barishal Board 2023',
+  title: 'Barishal Board 2023 - Significance of the SSC Examination & Preparation',
+  questions: [
+    {
+      index: 1,
+      statement: 'SSC Examination is the first public examination in our country,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Singular proper/abstract noun "SSC Examination" takes pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: 'Every student takes the examination seriously,',
+      modelTag: "don't they?",
+      acceptableTags: ["don't they?", "do not they?"],
+      explanation: 'Phrase "Every student" takes tag pronoun "they". Present Indefinite affirmative takes negative tag "don\'t they?".',
+    },
+    {
+      index: 3,
+      statement: 'Its result allows one to enter the next level,',
+      modelTag: "doesn't it?",
+      acceptableTags: ["doesn't it?", "does not it?"],
+      explanation: 'Singular subject "Its result" takes pronoun "it". Present Indefinite affirmative verb "allows" takes negative tag "doesn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: "So, it is not less important in one's life,",
+      modelTag: 'is it?',
+      acceptableTags: ['is it?'],
+      explanation: 'Negative statement with "is not" and subject "it" takes affirmative tag "is it?".',
+    },
+    {
+      index: 5,
+      statement: 'A student needs to take good preparation for it,',
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "needn't he?", "does not he?"],
+      explanation: 'Singular subject "A student" takes pronoun "he". Present Indefinite main verb "needs" takes negative tag "doesn\'t he?".',
+    },
+  ],
+};
+
+const CHATTOGRAM_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-chattogram-2023',
+  board: 'Chattogram Board 2023',
+  title: 'Chattogram Board 2023 - Truthfulness, Liars & Speaking the Truth',
+  questions: [
+    {
+      index: 1,
+      statement: 'Nobody trusts a liar,',
+      modelTag: 'do they?',
+      acceptableTags: ['do they?'],
+      explanation: 'Negative indefinite pronoun "Nobody" takes tag pronoun "they" and renders the statement negative. Tag is affirmative "do they?".',
+    },
+    {
+      index: 2,
+      statement: 'A liar has to lead a miserable life,',
+      modelTag: "doesn't he?",
+      acceptableTags: ["doesn't he?", "hasn't he?", "does not he?"],
+      explanation: 'Semi-modal "has to" with singular subject "A liar" (he) takes negative tag "doesn\'t he?".',
+    },
+    {
+      index: 3,
+      statement: 'Speaking the truth is a good exercise,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Gerund subject "Speaking the truth" acts as a singular noun taking pronoun "it". Affirmative "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: 'Everybody should have the habit of speaking the truth,',
+      modelTag: "shouldn't they?",
+      acceptableTags: ["shouldn't they?", "should not they?"],
+      explanation: 'Indefinite pronoun "Everybody" takes tag pronoun "they". Modal auxiliary "should" in affirmative sentence takes negative tag "shouldn\'t they?".',
+    },
+    {
+      index: 5,
+      statement: 'Many are often found telling a lie out of fun,',
+      modelTag: "aren't they?",
+      acceptableTags: ["aren't they?", "are not they?"],
+      explanation: 'Indefinite plural pronoun "Many" takes tag pronoun "they". Affirmative passive "are often found" takes negative tag "aren\'t they?".',
+    },
+  ],
+};
+
+const DINAJPUR_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-dinajpur-2023',
+  board: 'Dinajpur Board 2023',
+  title: 'Dinajpur Board 2023 - Noun Clauses, Commands, Exclamations & Mixed Pronouns',
+  questions: [
+    {
+      index: 1,
+      statement: 'What he said was true,',
+      modelTag: "wasn't it?",
+      acceptableTags: ["wasn't it?", "was not it?"],
+      explanation: 'The noun clause "What he said" acts as the singular subject taking pronoun "it". Affirmative past linking verb "was" takes negative tag "wasn\'t it?".',
+    },
+    {
+      index: 2,
+      statement: "Don't forget me,",
+      modelTag: 'will you?',
+      acceptableTags: ['will you?'],
+      explanation: 'Negative imperative command starting with "Don\'t" always takes the affirmative tag "will you?".',
+    },
+    {
+      index: 3,
+      statement: 'How exciting the game is,',
+      modelTag: "isn't it?",
+      acceptableTags: ["isn't it?", "is not it?"],
+      explanation: 'Exclamatory sentence about "the game" (pronoun "it") with affirmative verb "is" takes negative tag "isn\'t it?".',
+    },
+    {
+      index: 4,
+      statement: "Let's try to make him understand the importance of literacy,",
+      modelTag: 'shall we?',
+      acceptableTags: ['shall we?'],
+      explanation: 'Imperative proposal beginning with "Let\'s" (Let us) always takes the tag "shall we?".',
+    },
+    {
+      index: 5,
+      statement: 'You, he, and I did the work,',
+      modelTag: "didn't we?",
+      acceptableTags: ["didn't we?", "did not we?"],
+      explanation: 'Compound subject containing first person pronoun "I" ("You, he, and I") combines into the plural first person pronoun "we". Past Indefinite verb "did" takes negative tag "didn\'t we?".',
+    },
+  ],
+};
+
+const MYMENSINGH_BOARD_2023: TagQuestionsExercise = {
+  id: 'tag-mymensingh-2023',
+  board: 'Mymensingh Board 2023',
+  title: 'Mymensingh Board 2023 - Feeding the Unfed, Titanic & Fatherly Affection',
+  questions: [
+    {
+      index: 1,
+      statement: 'The unfed should be fed,',
+      modelTag: "shouldn't they?",
+      acceptableTags: ["shouldn't they?", "should not they?"],
+      explanation: '"The unfed" functions as a plural collective noun (unfed people) taking pronoun "they". Modal auxiliary "should" takes negative tag "shouldn\'t they?".',
+    },
+    {
+      index: 2,
+      statement: 'He let me do the work,',
+      modelTag: "didn't he?",
+      acceptableTags: ["didn't he?", "did not he?"],
+      explanation: 'Since subject "He" is 3rd person singular and the verb is "let" (not "lets"), it is Past Indefinite tense. Affirmative past takes negative tag "didn\'t he?".',
+    },
+    {
+      index: 3,
+      statement: 'The Titanic sank on its first voyage,',
+      modelTag: "didn't it?",
+      acceptableTags: ["didn't it?", "didn't she?", "did not it?", "did not she?"],
+      explanation: 'Past Indefinite verb "sank" with subject "The Titanic" (pronoun "it" or personified "she") takes negative past tag "didn\'t it?" (or "didn\'t she?").',
+    },
+    {
+      index: 4,
+      statement: 'There is no school in our village,',
+      modelTag: 'is there?',
+      acceptableTags: ['is there?'],
+      explanation: 'Negative statement with introductory "There is no" takes affirmative tag with pronoun "there": "is there?".',
+    },
+    {
+      index: 5,
+      statement: 'The father rose in him,',
+      modelTag: "didn't it?",
+      acceptableTags: ["didn't it?", "didn't he?", "did not it?", "did not he?"],
+      explanation: '"The father" here refers to fatherly affection (an abstract noun/feeling), which takes pronoun "it" (or "he"). Past Indefinite verb "rose" takes negative tag "didn\'t it?".',
+    },
+  ],
+};
+
 export const TAG_QUESTIONS_MODEL_QUESTIONS: TagQuestionsExercise[] = [
+  // 2026 Board Questions
   RAJSHAHI_BOARD_2026,
   MYMENSINGH_BOARD_2026,
   JESSORE_BOARD_2026,
@@ -1241,6 +2415,41 @@ export const TAG_QUESTIONS_MODEL_QUESTIONS: TagQuestionsExercise[] = [
   CHATTRAGRAM_BOARD_2026,
   SYLHET_BOARD_2026,
   DINAJPUR_BOARD_2026,
+
+  // 2025 Board Questions
+  DHAKA_BOARD_2025,
+  RAJSHAHI_BOARD_2025,
+  CUMILLA_BOARD_2025,
+  JASHORE_BOARD_2025,
+  SYLHET_BOARD_2025,
+  BARISHAL_BOARD_2025,
+  CHATTOGRAM_BOARD_2025,
+  DINAJPUR_BOARD_2025,
+  MYMENSINGH_BOARD_2025,
+
+  // 2024 Board Questions
+  DHAKA_BOARD_2024,
+  SYLHET_BOARD_2024,
+  CUMILLA_BOARD_2024,
+  DINAJPUR_BOARD_2024,
+  JASHORE_BOARD_2024,
+  RAJSHAHI_BOARD_2024,
+  BARISHAL_BOARD_2024,
+  CHATTOGRAM_BOARD_2024,
+  MYMENSINGH_BOARD_2024,
+
+  // 2023 Board Questions
+  DHAKA_BOARD_2023,
+  RAJSHAHI_BOARD_2023,
+  CUMILLA_BOARD_2023,
+  JASHORE_BOARD_2023,
+  SYLHET_BOARD_2023,
+  BARISHAL_BOARD_2023,
+  CHATTOGRAM_BOARD_2023,
+  DINAJPUR_BOARD_2023,
+  MYMENSINGH_BOARD_2023,
+
+  // Model Practice Sets
   ...TAG_QUESTIONS_SETS_1_TO_20,
   ...TAG_QUESTIONS_SETS_21_TO_40,
 ];

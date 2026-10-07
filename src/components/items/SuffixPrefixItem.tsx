@@ -191,8 +191,24 @@ export const SuffixPrefixItem: React.FC<SuffixPrefixItemProps> = ({ onBackToMenu
 
       const data = await response.json();
       if (data && data.evaluation) {
-        setAiEvaluation(data.evaluation);
-        setScore(data.evaluation.totalScore || 0);
+        const evalData = { ...data.evaluation };
+        const totalItemsCount = (exercise?.items || []).length;
+        if (evalData.gapEvaluations && Array.isArray(evalData.gapEvaluations)) {
+          const correctCount = evalData.gapEvaluations.filter((g: any) => g.isCorrect).length;
+          const markWeight = totalItemsCount === 5 ? 1.0 : 5.0 / (totalItemsCount || 10);
+          evalData.totalScore = Math.round(correctCount * markWeight * 10) / 10;
+          evalData.maxScore = 5;
+          evalData.percentage = Math.round((evalData.totalScore / 5) * 100);
+          if (correctCount === totalItemsCount) {
+            evalData.totalScore = 5;
+            evalData.percentage = 100;
+            evalData.grade = 'A+';
+            evalData.overallFeedback =
+              'Phenomenal morphology mastery! All prefixes and suffixes correctly formed (5 out of 5 marks).';
+          }
+        }
+        setAiEvaluation(evalData);
+        setScore(evalData.totalScore ?? 0);
       } else {
         handleQuickCheck();
       }
@@ -317,7 +333,7 @@ export const SuffixPrefixItem: React.FC<SuffixPrefixItemProps> = ({ onBackToMenu
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-cyan-100 dark:bg-cyan-950 text-cyan-800 dark:text-cyan-300 mb-1.5">
               <span>Question No. 6</span>
               <span>•</span>
-              <span>Marks: 0.5x10 = 05</span>
+              <span>{items.length === 5 ? 'Marks: 1x5 = 05' : 'Marks: 0.5x10 = 05'}</span>
             </div>
             <h3 className="text-lg sm:text-xl md:text-2xl font-black text-slate-800 dark:text-slate-100">
               {exercise.title}

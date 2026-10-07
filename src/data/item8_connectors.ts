@@ -352,6 +352,358 @@ export const CONNECTORS_MODEL_QUESTIONS: ConnectorsExercise[] = [
       },
     ],
   },
+  // SSC BOARD QUESTIONS 2025 (ALL 9 BOARDS)
+  {
+    id: 'conn-dhaka-2025',
+    board: 'Dhaka Board 2025',
+    title: "Dhaka Board 2025 - Ruma's Meritorious Character and Helpful Nature",
+    passageTemplate:
+      'Ruma is a student of class ten. [a] she is meritorious, she never takes pride in her merit. She is helpful to all. [b] any weak student comes to her with any problem, she tries to help him/her. She is respectful to the seniors [c] affectionate to the juniors. She is simple in behavior [d] strict in principle. [e] everyone loves her.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'Although',
+        acceptableAnswers: ['Although', 'Though', 'Even though'],
+        explanation: 'Concessive subordinating conjunction "Although / Though" contrasting her merit with lack of pride.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Whenever',
+        acceptableAnswers: ['Whenever', 'When', 'If', 'Every time', 'As soon as'],
+        explanation: 'Temporal / conditional connector "Whenever / When" expressing the repeated occasions when weak students seek her help.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'as well as'],
+        explanation: 'Coordinating conjunction "and" joining parallel phrases: "respectful to the seniors" and "affectionate to the juniors".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'but',
+        acceptableAnswers: ['but', 'yet', 'still'],
+        explanation: 'Adversative coordinating conjunction "but" contrasting "simple in behavior" with "strict in principle".',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'So',
+        acceptableAnswers: ['So', "That's why", 'That is why', 'Therefore', 'Hence', 'For this reason'],
+        explanation: 'Resultative / concluding connector "So / That\'s why / Therefore" showing the natural result of her lovable nature.',
+      },
+    ],
+  },
+  {
+    id: 'conn-rajshahi-2025',
+    board: 'Rajshahi Board 2025',
+    title: 'Rajshahi Board 2025 - Tree Plantation Importance, Reckless Cutting and Awareness',
+    passageTemplate:
+      'None can deny the importance of tree plantation [a] our lives depend on it. [b] it is unfortunate that we are cutting trees recklessly. [c] trees are planted, soon our land will be deserted [d] there will be an adverse situation. [e] we should be aware of tree plantation.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since'],
+        explanation: 'Causal subordinating conjunction "because / as / since" explaining why none can deny trees\' importance.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'However',
+        acceptableAnswers: ['However', 'But', 'Yet', 'Nevertheless', 'Unfortunately'],
+        explanation: 'Adversative transition connector "However / But" contrasting trees\' importance with reckless deforestation.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'Unless',
+        acceptableAnswers: ['Unless', 'If not'],
+        explanation: 'Negative conditional subordinating conjunction "Unless" meaning "if trees are not planted".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'consequently'],
+        explanation: 'Coordinating conjunction "and" joining compound clauses: "land will be deserted" and "there will be an adverse situation".',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'Therefore',
+        acceptableAnswers: ['Therefore', 'So', 'Hence', 'Thus', 'So that'],
+        explanation: 'Concluding connector "Therefore / So / Hence" presenting the moral responsibility of planting trees.',
+      },
+    ],
+  },
+  {
+    id: 'conn-cumilla-2025',
+    board: 'Cumilla Board 2025',
+    title: 'Cumilla Board 2025 - Environmental Pollution, Human Negligence and Health Consciousness',
+    passageTemplate:
+      'Our environment is getting polluted in many ways. [a] our air is being polluted by smoke from vehicles, household wastes, industrial wastes, smoke from burning fuels and so on. [b] water is being polluted for using insanitary latrines, for using pesticides in croplands, for industrial wastes [c] for many other reasons. Another form of pollution is sound pollution. [d] this pollution occurs because of our unconsciousness. [e] we all should be conscious of the side effects of any kind of pollution and act accordingly to lead a healthier and happier life.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'For example',
+        acceptableAnswers: ['For example', 'For instance', 'Firstly', 'First of all'],
+        explanation: 'Exemplifying transitional connector "For example / For instance" illustrating air pollution as the first category.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Similarly',
+        acceptableAnswers: ['Similarly', 'Likewise', 'Secondly', 'In the same way', 'Besides'],
+        explanation: 'Comparative / additive connector "Similarly / Likewise" introducing water pollution as an analogous threat.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'as well as'],
+        explanation: 'Coordinating conjunction "and" linking the final element in the series of causes.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'Actually',
+        acceptableAnswers: ['Actually', 'In fact', 'Truly', 'Mainly'],
+        explanation: 'Emphatic adverbial connector "Actually / In fact" highlighting the real root cause of noise pollution.',
+      },
+      {
+        label: 'e',
+        correctAnswer: "That's why",
+        acceptableAnswers: ["That's why", 'That is why', 'So', 'Therefore', 'Hence', 'Thus', 'Consequently'],
+        explanation: 'Resultative / concluding connector "That\'s why / So / Therefore" urging civic awareness and action.',
+      },
+    ],
+  },
+  {
+    id: 'conn-jashore-2025',
+    board: 'Jashore Board 2025',
+    title: 'Jashore Board 2025 - Six Kinds of Food, Nutrients and Bodily Growth',
+    passageTemplate:
+      'The foods that we eat can be divided into six kinds [a] what substances they contain and [b] benefits they do to us. Fish, meat, peas and milk provide us with protein [c] builds our body and helps us grow. [d] we do not take these, we cannot grow well. Vitamins and mineral salts protect us from several diseases [e] keep us fit for work.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'according to',
+        acceptableAnswers: ['according to', 'based on'],
+        explanation: 'Complex prepositional connector "according to / based on" introducing the classification criteria.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'what',
+        acceptableAnswers: ['what', 'the'],
+        explanation: 'Interrogative / relative determiner "what" connecting "what benefits they do to us".',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to "protein" as subject of "builds our body".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'If',
+        acceptableAnswers: ['If', 'In case'],
+        explanation: 'Conditional subordinator "If" introducing the negative conditional clause "If we do not take these".',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'as well as'],
+        explanation: 'Coordinating conjunction "and" joining two parallel predicates: "protect us" and "keep us fit for work".',
+      },
+    ],
+  },
+  {
+    id: 'conn-dinajpur-2025',
+    board: 'Dinajpur Board 2025',
+    title: 'Dinajpur Board 2025 - Physical Exercise Suitability by Age, Strength and Energy',
+    passageTemplate:
+      'We should always keep in mind [a] all kinds of physical exercise are not suitable for all. Different people have different capabilities. [b], harder exercise like wrestling [c] gymnastics are suitable for young people [d] they have energy to perform them. Weaker and old people should take the milder exercises [e] include walking, jogging, free hand exercises etc.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Noun clause conjunction "that" acting as the direct object complement of "keep in mind".',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'For example',
+        acceptableAnswers: ['For example', 'For instance', 'In fact'],
+        explanation: 'Exemplifying connector "For example / For instance" introducing concrete examples of heavy exercise.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'or', 'as well as'],
+        explanation: 'Coordinating conjunction "and" joining noun items "wrestling" and "gymnastics".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since'],
+        explanation: 'Causal subordinator "because / as / since" explaining why youth possess the energy for strenuous exercise.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to antecedent "the milder exercises".',
+      },
+    ],
+  },
+  {
+    id: 'conn-sylhet-2025',
+    board: 'Sylhet Board 2025',
+    title: 'Sylhet Board 2025 - Blood Donation Fears, Facts and Red Blood Cell Regeneration',
+    passageTemplate:
+      'Some people think that blood donation is so serious loss from their body. It cannot be recovered [a] it may cause serious health problem. [b] this concept is completely wrong. [c] most people [d] the educated people do not have clear conception on the process of blood donation and its facts correctly. The fact is [e] red blood cells in our body are reproduced again within 120 days after blood donation.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'or', 'as well as'],
+        explanation: 'Coordinating conjunction "and" compounding the two unfounded fears: unrecoverable loss and serious health problems.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'But',
+        acceptableAnswers: ['But', 'However', 'Yet', 'Nevertheless'],
+        explanation: 'Adversative connector "But / However" firmly rejecting the false misconception.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'In fact',
+        acceptableAnswers: ['In fact', 'Actually', 'Truly', 'Really'],
+        explanation: 'Emphatic sentence connector "In fact / Actually" introducing the widespread lack of awareness.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'even',
+        acceptableAnswers: ['even', 'including'],
+        explanation: 'Focusing adverbial connector "even" emphasizing that even educated citizens harbor misconceptions.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Noun clause conjunction "that" serving as predicate complement after "The fact is".',
+      },
+    ],
+  },
+  {
+    id: 'conn-barishal-2025',
+    board: 'Barishal Board 2025',
+    title: 'Barishal Board 2025 - Where There Is a Will There Is a Way & Diligent Effort',
+    passageTemplate:
+      '“Where there is a will there is a way.” This proverb is quite true. People hate their fate [a] they cannot get the result as their wishes. But [b] a man works deliberately for building his future, success will touch him definitely. There is no magic power, [c] it is the magic of hard-work. [d] one gets success, fortune will side him too. The unlucky people rebuke the fate. [e], there is no alternative to work.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'since',
+        acceptableAnswers: ['since', 'when', 'as', 'because'],
+        explanation: 'Causal / temporal subordinator "since / when / because" explaining why people blame fate.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'when',
+        acceptableAnswers: ['when', 'if', 'whenever', 'as long as'],
+        explanation: 'Temporal / conditional subordinator "when / if" introducing intentional hard work.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'but',
+        acceptableAnswers: ['but', 'rather', 'instead'],
+        explanation: 'Adversative coordinating conjunction "but / rather" contrasting supernatural magic with honest labor.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'If',
+        acceptableAnswers: ['If', 'When', 'Once', 'Whenever'],
+        explanation: 'Conditional subordinator "If / When" stating that fortune naturally aligns with those who achieve success through effort.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'However',
+        acceptableAnswers: ['However', 'In fact', 'Truly', 'So', 'Therefore', 'Above all'],
+        explanation: 'Adversative / conclusive connector "However / In fact" concluding that nothing replaces hard work.',
+      },
+    ],
+  },
+  {
+    id: 'conn-chattogram-2025',
+    board: 'Chattogram Board 2025',
+    title: 'Chattogram Board 2025 - Floods as Natural Calamity and Silt Alluvial Fertility',
+    passageTemplate:
+      '[a] a flood is considered to be a natural calamity, it is no doubt a blessing for the people. It is considered to be a blessing in the sense [b] it makes the soil alluvial. [c], silt is scattered over land after land [d] makes the soil fertile. So, it can be said that the flood has [e] constructive and destructive sides.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'Though',
+        acceptableAnswers: ['Though', 'Although', 'Even though'],
+        explanation: 'Concessive subordinating conjunction "Though / Although" acknowledging flood is a calamity yet carries blessings.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that', 'in which'],
+        explanation: 'Appositive noun clause connector "that" explaining the phrase "in the sense that".',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'Thus',
+        acceptableAnswers: ['Thus', 'Generally', 'Usually', 'In this way', 'Normally', 'Consequently'],
+        explanation: 'Explanatory manner connector "Thus / Generally" explaining how floods deposit rich silt.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to the silt deposition which makes the soil fertile.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'both',
+        acceptableAnswers: ['both'],
+        explanation: 'Correlative coordinator "both" pairing with "and": "both constructive and destructive sides".',
+      },
+    ],
+  },
+  {
+    id: 'conn-mymensingh-2025',
+    board: 'Mymensingh Board 2025',
+    title: 'Mymensingh Board 2025 - Load-shedding Curse, Generation Deficit and Illegal Connections',
+    passageTemplate:
+      'Load-shedding refers to stopping the supply of electricity for a period of time in a certain area. It is a great curse [a] people have got used to an electricity oriented life. It occurs [b] the power generation is less [c] the demand. [d] unplanned distribution [e] illegal connection of electricity are also responsible for it.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since'],
+        explanation: 'Causal subordinating conjunction "because / as / since" explaining why load-shedding is so disruptive.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'when',
+        acceptableAnswers: ['when', 'because', 'as', 'if'],
+        explanation: 'Temporal / causal conjunction "when / because" indicating when load-shedding takes place.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'than',
+        acceptableAnswers: ['than'],
+        explanation: 'Comparative particle "than" following comparative adjective "less" (less than the demand).',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'Moreover',
+        acceptableAnswers: ['Moreover', 'Besides', 'Furthermore', 'In addition'],
+        explanation: 'Additive transitional connector "Moreover / Besides" introducing secondary contributing factors.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'and',
+        acceptableAnswers: ['and', 'as well as'],
+        explanation: 'Coordinating conjunction "and" connecting compound subjects "unplanned distribution" and "illegal connection".',
+      },
+    ],
+  },
   {
     id: 'conn-model-1',
     board: 'Model Question 1',

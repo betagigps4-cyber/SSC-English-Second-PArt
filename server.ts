@@ -141,6 +141,14 @@ Respond ONLY with a JSON object in the following format:
     } else if (itemNumber === 4) {
       marksPerGap = items.length === 10 ? 1.0 : 1.0;
       maxMarks = items.length === 10 ? 10.0 : 5.0;
+    } else if (items.length === 5) {
+      marksPerGap = 1.0;
+      maxMarks = 5.0;
+    } else if (items.length === 10) {
+      marksPerGap = 0.5;
+      maxMarks = 5.0;
+    } else if (items.length > 0) {
+      marksPerGap = maxMarks / items.length;
     }
 
     // Local intelligent evaluation fallback when API key is missing or offline
@@ -380,6 +388,15 @@ CRITICAL EXAMINATION RULES FOR ITEM 2 (SUBSTITUTION TABLE):
 - RULE 4 (NO FALSE "WRONG COMBINATION"): If a student sentence forms a valid, meaningful, and factually correct combination from the table, it MUST be evaluated as "isCorrect": true, "whyIncorrect": "", and awarded 1.0 mark.
 - RULE 5 (FULL MARKS FOR 5 VALID SENTENCES): If all 5 submitted sentences match the 5 valid combinations (in any sequence), you MUST set "totalScore": 5, "percentage": 100, "grade": "A+".
 `;
+      } else if (itemNumber === 6) {
+        const isFiveItem = items.length === 5;
+        itemSpecificPrompt = `
+CRITICAL EXAMINATION RULES FOR ITEM 6 (SUFFIX AND PREFIX):
+- This exercise contains ${items.length} items/gaps. Total Marks: 5.0.
+- ${isFiveItem ? 'EACH GAP IS WORTH 1.0 MARK (5 gaps x 1.0 mark = 5.0 marks total).' : 'EACH GAP IS WORTH 0.5 MARK (10 gaps x 0.5 mark = 5.0 marks total).'}
+- If ${isFiveItem ? 'all 5 gaps are answered correctly, you MUST award totalScore: 5.0 out of 5.0, percentage: 100, and grade: "A+". Never award 2.5 for 5 correct answers in a 5-item test!' : 'all 10 gaps are answered correctly, you MUST award totalScore: 5.0 out of 5.0 (percentage: 100, grade: "A+").'}
+- When checking answers, accept standard morphological variants and prefixes/suffixes specified in board keys (e.g. build-up/buildup, ill-treated/maltreated, inborn/innate, unrevealed/undisclosed).
+`;
       }
 
       const prompt = `${personaPrompt}
@@ -589,6 +606,55 @@ Respond strictly in JSON matching this exact structure:
         if (recomputedScore === 5) {
           parsed.overallFeedback =
             'Splendid! All 5 sentences are grammatically and syntactically flawless. You have successfully formed all valid combinations.';
+        }
+      }
+
+      // Post-validation safeguards for Suffix and Prefix (Item 6)
+      if (itemNumber === 6) {
+        const totalExerciseItems = items.length;
+        const markEach = totalExerciseItems === 5 ? 1.0 : (maxMarks / totalExerciseItems);
+
+        let correctGapsCount = 0;
+        if (Array.isArray(parsed.gapEvaluations)) {
+          parsed.gapEvaluations.forEach((evalItem: any) => {
+            const matchItem = items.find((it: any) => String(it.label) === String(evalItem.label));
+            if (matchItem) {
+              const studentAns = String(evalItem.studentAnswer || userAnswers[matchItem.label] || '').trim().toLowerCase();
+              const correctAns = String(matchItem.correctAnswer || '').trim().toLowerCase();
+              const acceptableAns = (matchItem.acceptableAnswers || []).map((a: string) => String(a || '').trim().toLowerCase());
+
+              if (studentAns.length > 0 && (studentAns === correctAns || acceptableAns.includes(studentAns))) {
+                evalItem.isCorrect = true;
+                evalItem.whyIncorrect = '';
+              }
+            }
+            if (evalItem.isCorrect) {
+              correctGapsCount += 1;
+            }
+          });
+        }
+
+        const recalculatedScore = Math.round(correctGapsCount * markEach * 10) / 10;
+        parsed.totalScore = recalculatedScore;
+        parsed.maxScore = maxMarks;
+        parsed.percentage = Math.round((recalculatedScore / maxMarks) * 100);
+        parsed.grade =
+          recalculatedScore >= maxMarks * 0.9
+            ? 'A+'
+            : recalculatedScore >= maxMarks * 0.8
+            ? 'A'
+            : recalculatedScore >= maxMarks * 0.6
+            ? 'B'
+            : recalculatedScore >= maxMarks * 0.4
+            ? 'C'
+            : 'Needs Practice';
+
+        if (correctGapsCount === totalExerciseItems) {
+          parsed.totalScore = maxMarks;
+          parsed.percentage = 100;
+          parsed.grade = 'A+';
+          parsed.overallFeedback =
+            `Outstanding morphology mastery! All ${totalExerciseItems} prefix and suffix questions answered with 100% precision (${maxMarks} out of ${maxMarks} marks).`;
         }
       }
 

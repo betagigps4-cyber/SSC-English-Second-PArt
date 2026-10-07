@@ -6,6 +6,71 @@ export interface SubstitutionSentenceTranslation {
 }
 
 export const SUBSTITUTION_SENTENCE_TRANSLATIONS: Record<string, SubstitutionSentenceTranslation[]> = {
+  // --- 2025 Board Questions ---
+  'sub-dhaka-2025': [
+    { en: 'The Taj is one of the most beautiful buildings in the world.', bn: 'তাজমহল বিশ্বের অন্যতম সুন্দরতম স্থাপত্য বা ভবন।' },
+    { en: 'It stands at Agra in India.', bn: 'এটি ভারতের আগ্রায় অবস্থিত।' },
+    { en: 'It is built on a strong base.', bn: 'এটি একটি অত্যন্ত মজবুত ভিত্তির ওপর নির্মিত।' },
+    { en: 'It is made of fine white marbles.', bn: 'এটি চমৎকার মসৃণ শ্বেত মার্বেল পাথর দিয়ে তৈরি।' },
+    { en: 'Emperor Shahjahan built it as a tomb for his wife.', bn: 'সম্রাট শাহজাহান তাঁর স্ত্রীর সমাধিসৌধ হিসেবে এটি নির্মাণ করেছিলেন।' },
+  ],
+
+  'sub-chattogram-2025': [
+    { en: 'Kazi Nazrul is our national poet.', bn: 'কাজী নজরুল ইসলাম আমাদের জাতীয় কবি।' },
+    { en: 'He was born in a small village in this sub-continent.', bn: 'তিনি এই উপমহাদেশের একটি ছোট্ট গ্রামে জন্মগ্রহণ করেছিলেন।' },
+    { en: 'He is known as a rebel poet.', bn: 'তিনি বিদ্রোহী কবি হিসেবে সমধিক পরিচিত।' },
+    { en: 'His writings inspired our freedom fighters.', bn: 'তাঁর লেখা আমাদের বীর মুক্তিযোদ্ধাদের গভীরভাবে অনুপ্রাণিত করেছিল।' },
+    { en: 'He explored almost all branches of literature.', bn: 'তিনি সাহিত্যের প্রায় সকল শাখায় বিচরণ করেছেন।' },
+  ],
+
+  'sub-sylhet-2025': [
+    { en: 'Bangladesh is a land of scenic beauty.', bn: 'বাংলাদেশ নয়নাভিরাম প্রাকৃতিক সৌন্দর্যের এক অনন্য লীলাভূমি।' },
+    { en: 'It is famous for its natural beauty.', bn: 'এটি তার অপরূপ প্রাকৃতিক সৌন্দর্যের জন্য বিশ্বজুড়ে সুপরিচিত।' },
+    { en: 'The land is full of green trees.', bn: 'এই দেশ শ্যামল সবুজ বৃক্ষরাজিতে পরিপূর্ণ।' },
+    { en: 'The rivers flow through the country.', bn: 'নদীগুলো এই দেশের বুকের ওপর দিয়ে বয়ে চলেছে।' },
+    { en: 'The people are very friendly.', bn: 'এখানকার মানুষ অত্যন্ত অমায়িক ও বন্ধুবৎসল।' },
+  ],
+
+  'sub-dinajpur-2025': [
+    { en: 'Emotion exists almost in everybody.', bn: 'আবেগ কমবেশি প্রায় প্রতিটি মানুষের মধ্যেই বিদ্যমান।' },
+    { en: 'It is a silent killer.', bn: 'অনিয়ন্ত্রিত আবেগ হলো এক নীরব ঘাতক।' },
+    { en: 'Nobody is above it.', bn: 'কেউই আবেগের ঊর্ধ্বে নয়।' },
+    { en: 'We all are subordinate to it.', bn: 'আমরা সকলেই কোনো না কোনোভাবে আবেগের অধীন বা বশীভূত।' },
+    { en: 'So it should be controlled to work properly.', bn: 'সুতরাং সঠিকভাবে কাজকর্ম পরিচালনার জন্য আবেগকে নিয়ন্ত্রণ করা উচিত।' },
+  ],
+
+  'sub-cumilla-2025': [
+    { en: 'Illiteracy is a curse for a nation.', bn: 'নিরক্ষরতা একটি জাতির জন্য মারাত্মক এক অভিশাপ।' },
+    { en: 'It means the inability to read and write.', bn: 'এর অর্থ হলো কোনো ভাষা পড়তে ও লিখতে না পারার অক্ষমতা।' },
+    { en: 'It hinders all the development works of a country.', bn: 'এটি একটি দেশের যাবতীয় উন্নয়নমূলক কর্মকাণ্ডকে চরমভাবে বাধাগ্রস্ত করে।' },
+    { en: 'An illiterate person is helpless.', bn: 'একজন নিরক্ষর ব্যক্তি সমাজ ও বাস্তব জীবনে অত্যন্ত অসহায়।' },
+    { en: 'An illiterate person is unable to contribute anything for his country.', bn: 'একজন নিরক্ষর ব্যক্তি তার নিজের দেশের জন্য অর্থপূর্ণ কোনো অবদান রাখতে অক্ষম।' },
+  ],
+
+  'sub-jessore-2025': [
+    { en: 'Books are the greatest friends.', bn: 'বই হলো মানুষের জীবনের সর্বশ্রেষ্ঠ ও বিশ্বস্ত বন্ধু।' },
+    { en: 'We should read books to acquire knowledge.', bn: 'জ্ঞান অর্জনের জন্য আমাদের সকলেরই নিয়মিত বই পড়া উচিত।' },
+    { en: 'Reading books is the noblest habit.', bn: 'বই পড়ার অভ্যাস হলো মানুষের অন্যতম শ্রেষ্ঠ ও মহৎ অভ্যাস।' },
+    { en: 'Books introduce us to the domain of knowledge.', bn: 'বই আমাদের অনন্ত জ্ঞানের রাজ্যের সাথে পরিচয় করিয়ে দেয়।' },
+    { en: 'Reading books gives us not only knowledge but also pleasure.', bn: 'বই পড়া আমাদের কেবল গভীর জ্ঞানই দেয় না, বরং নির্মল আনন্দও দান করে।' },
+  ],
+
+  'sub-barishal-2025': [
+    { en: 'Corruption may be defined as the abuse of entrusted power for the private gain.', bn: 'ব্যক্তিগত স্বার্থে অর্পিত ক্ষমতার অপব্যবহারকেই দুর্নীতি হিসেবে সংজ্ঞায়িত করা যেতে পারে।' },
+    { en: 'It occurs in both public and private sectors.', bn: 'সরকারি ও বেসরকারি উভয় খাতেই দুর্নীতির বিস্তার ঘটে।' },
+    { en: 'It is a curse not only to our nation but also all over the world.', bn: 'এটি কেবল আমাদের জাতির জন্যই নয়, সমগ্র বিশ্বের জন্যই এক বিরাট অভিশাপ।' },
+    { en: 'Our government is trying to control it with iron hand.', bn: 'আমাদের সরকার কঠোর হস্তে দুর্নীতি দমন করার আন্তরিক চেষ্টা চালিয়ে যাচ্ছে।' },
+    { en: "If we fail to remove it, we will not be able to build 'Sonar Bangla'.", bn: "আমরা যদি দুর্নীতি নির্মূল করতে ব্যর্থ হই, তবে কখনোই 'সোনার বাংলা' গড়ে তুলতে পারব না।" },
+  ],
+
+  'sub-mymensingh-2025': [
+    { en: 'I am not happy today.', bn: 'আজ আমার মন ভালো নেই (আমি আজ খুশি নই)।' },
+    { en: 'My mother gave me the water bottle but I forgot to put in my bag.', bn: 'আমার মা আমাকে পানির বোতলটি দিয়েছিলেন, কিন্তু আমি তা ব্যাগে ঢোকাতে ভুলে গিয়েছিলাম।' },
+    { en: 'Everyday I take a water bottle with me to school.', bn: 'প্রতিদিন আমি স্কুলে আমার সাথে একটি পানির বোতল নিয়ে যাই।' },
+    { en: 'I will surely take the water bottle tomorrow.', bn: 'আগামীকাল আমি অবশ্যই পানির বোতলটি সাথে নিয়ে যাব।' },
+    { en: 'I am sure I will not do the same mistake again.', bn: 'আমি নিশ্চিত যে আমি আর কখনোই একই ভুলের পুনরাবৃত্তি করব না।' },
+  ],
+
   // --- 2026 Board Questions ---
   'sub-rajshahi-2026': [
     { en: 'Earthquake is a natural disaster.', bn: 'ভূমিকম্প একটি আকস্মিক প্রাকৃতিক দুর্যোগ।' },

@@ -1250,7 +1250,506 @@ const JESSORE_BOARD_2026: SubstitutionExercise = {
     'Combine parts from each column to form five grammatically coherent sentences about the hazards of plastic pollution and individual responsibility for a clean environment.',
 };
 
+const DHAKA_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-dhaka-2025',
+  board: 'Dhaka Board 2025',
+  title: 'Dhaka Board 2025 - The Taj Mahal and Its Architectural Splendor',
+  columnA: [
+    'The Taj',
+    'It',
+    'It',
+    'It',
+    'Emperor Shahjahan',
+  ],
+  columnB: [
+    'is',
+    'stands',
+    'is built',
+    'is',
+    'built',
+  ],
+  columnC: [
+    'one of the most beautiful buildings in the world.',
+    'at Agra in India.',
+    'on a strong base.',
+    'made of fine white marbles.',
+    'it as a tomb for his wife.',
+  ],
+  validCombinations: [
+    {
+      partA: 'The Taj',
+      partB: 'is',
+      partC: 'one of the most beautiful buildings in the world.',
+      fullSentence: 'The Taj is one of the most beautiful buildings in the world.',
+    },
+    {
+      partA: 'It',
+      partB: 'stands',
+      partC: 'at Agra in India.',
+      fullSentence: 'It stands at Agra in India.',
+    },
+    {
+      partA: 'It',
+      partB: 'is built',
+      partC: 'on a strong base.',
+      fullSentence: 'It is built on a strong base.',
+    },
+    {
+      partA: 'It',
+      partB: 'is',
+      partC: 'made of fine white marbles.',
+      fullSentence: 'It is made of fine white marbles.',
+    },
+    {
+      partA: 'Emperor Shahjahan',
+      partB: 'built',
+      partC: 'it as a tomb for his wife.',
+      fullSentence: 'Emperor Shahjahan built it as a tomb for his wife.',
+    },
+  ],
+  explanation:
+    'Combine the parts from each column to form five grammatically sound sentences describing the Taj Mahal, its location, architecture, and historical background.',
+};
+
+const CHATTOGRAM_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-chattogram-2025',
+  board: 'Chattogram Board 2025',
+  title: 'Chattogram Board 2025 - National Poet Kazi Nazrul Islam',
+  columnA: [
+    'Kazi Nazrul',
+    'He',
+    'He',
+    'His writings',
+    'He',
+  ],
+  columnB: [
+    'is',
+    'was born',
+    'is known',
+    'inspired',
+    'explored',
+  ],
+  columnC: [
+    'our national poet.',
+    'in a small village in this sub-continent.',
+    'as a rebel poet.',
+    'our freedom fighters.',
+    'almost all branches of literature.',
+  ],
+  validCombinations: [
+    {
+      partA: 'Kazi Nazrul',
+      partB: 'is',
+      partC: 'our national poet.',
+      fullSentence: 'Kazi Nazrul is our national poet.',
+    },
+    {
+      partA: 'He',
+      partB: 'was born',
+      partC: 'in a small village in this sub-continent.',
+      fullSentence: 'He was born in a small village in this sub-continent.',
+    },
+    {
+      partA: 'He',
+      partB: 'is known',
+      partC: 'as a rebel poet.',
+      fullSentence: 'He is known as a rebel poet.',
+    },
+    {
+      partA: 'His writings',
+      partB: 'inspired',
+      partC: 'our freedom fighters.',
+      fullSentence: 'His writings inspired our freedom fighters.',
+    },
+    {
+      partA: 'He',
+      partB: 'explored',
+      partC: 'almost all branches of literature.',
+      fullSentence: 'He explored almost all branches of literature.',
+    },
+  ],
+  explanation:
+    'Combine the subject, verb phrase, and predicate complements to construct five coherent sentences about National Poet Kazi Nazrul Islam and his literary legacy.',
+};
+
+const SYLHET_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-sylhet-2025',
+  board: 'Sylhet Board 2025',
+  title: 'Sylhet Board 2025 - Scenic Beauty and Natural Charms of Bangladesh',
+  columnA: [
+    'Bangladesh',
+    'It',
+    'The land',
+    'The rivers',
+    'The people',
+  ],
+  columnB: [
+    'is',
+    'is',
+    'is',
+    'flow',
+    'are',
+  ],
+  columnC: [
+    'a land of scenic beauty.',
+    'famous for its natural beauty.',
+    'full of green trees.',
+    'through the country.',
+    'very friendly.',
+  ],
+  validCombinations: [
+    {
+      partA: 'Bangladesh',
+      partB: 'is',
+      partC: 'a land of scenic beauty.',
+      fullSentence: 'Bangladesh is a land of scenic beauty.',
+    },
+    {
+      partA: 'It',
+      partB: 'is',
+      partC: 'famous for its natural beauty.',
+      fullSentence: 'It is famous for its natural beauty.',
+    },
+    {
+      partA: 'The land',
+      partB: 'is',
+      partC: 'full of green trees.',
+      fullSentence: 'The land is full of green trees.',
+    },
+    {
+      partA: 'The rivers',
+      partB: 'flow',
+      partC: 'through the country.',
+      fullSentence: 'The rivers flow through the country.',
+    },
+    {
+      partA: 'The people',
+      partB: 'are',
+      partC: 'very friendly.',
+      fullSentence: 'The people are very friendly.',
+    },
+  ],
+  explanation:
+    'Match parts from each column to form five sentences depicting the panoramic natural landscape and friendly people of Bangladesh.',
+};
+
+const DINAJPUR_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-dinajpur-2025',
+  board: 'Dinajpur Board 2025',
+  title: 'Dinajpur Board 2025 - Emotion and Its Control in Human Life',
+  columnA: [
+    'Emotion',
+    'It',
+    'Nobody',
+    'We all',
+    'So it',
+  ],
+  columnB: [
+    'exists',
+    'is',
+    'is',
+    'are',
+    'should be',
+  ],
+  columnC: [
+    'almost in everybody.',
+    'a silent killer.',
+    'above it.',
+    'subordinate to it.',
+    'controlled to work properly.',
+  ],
+  validCombinations: [
+    {
+      partA: 'Emotion',
+      partB: 'exists',
+      partC: 'almost in everybody.',
+      fullSentence: 'Emotion exists almost in everybody.',
+    },
+    {
+      partA: 'It',
+      partB: 'is',
+      partC: 'a silent killer.',
+      fullSentence: 'It is a silent killer.',
+    },
+    {
+      partA: 'Nobody',
+      partB: 'is',
+      partC: 'above it.',
+      fullSentence: 'Nobody is above it.',
+    },
+    {
+      partA: 'We all',
+      partB: 'are',
+      partC: 'subordinate to it.',
+      fullSentence: 'We all are subordinate to it.',
+    },
+    {
+      partA: 'So it',
+      partB: 'should be',
+      partC: 'controlled to work properly.',
+      fullSentence: 'So it should be controlled to work properly.',
+    },
+  ],
+  explanation:
+    'Combine parts from each column to form five meaningful sentences emphasizing the ubiquity of human emotion and the importance of self-control.',
+};
+
+const CUMILLA_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-cumilla-2025',
+  board: 'Cumilla Board 2025',
+  title: 'Cumilla Board 2025 - Illiteracy as a Curse for National Progress',
+  columnA: [
+    'Illiteracy',
+    'It',
+    'It',
+    'An illiterate person',
+    'An illiterate person',
+  ],
+  columnB: [
+    'is',
+    'means',
+    'hinders',
+    'is',
+    'is',
+  ],
+  columnC: [
+    'a curse for a nation.',
+    'the inability to read and write.',
+    'all the development works of a country.',
+    'helpless.',
+    'unable to contribute anything for his country.',
+  ],
+  validCombinations: [
+    {
+      partA: 'Illiteracy',
+      partB: 'is',
+      partC: 'a curse for a nation.',
+      fullSentence: 'Illiteracy is a curse for a nation.',
+    },
+    {
+      partA: 'It',
+      partB: 'means',
+      partC: 'the inability to read and write.',
+      fullSentence: 'It means the inability to read and write.',
+    },
+    {
+      partA: 'It',
+      partB: 'hinders',
+      partC: 'all the development works of a country.',
+      fullSentence: 'It hinders all the development works of a country.',
+    },
+    {
+      partA: 'An illiterate person',
+      partB: 'is',
+      partC: 'helpless.',
+      fullSentence: 'An illiterate person is helpless.',
+    },
+    {
+      partA: 'An illiterate person',
+      partB: 'is',
+      partC: 'unable to contribute anything for his country.',
+      fullSentence: 'An illiterate person is unable to contribute anything for his country.',
+    },
+  ],
+  explanation:
+    'Combine parts from each column to produce five meaningful sentences highlighting how illiteracy impedes personal empowerment and national development.',
+};
+
+const JESSORE_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-jessore-2025',
+  board: 'Jessore Board 2025',
+  title: 'Jessore Board 2025 - The Value and Joy of Reading Books',
+  columnA: [
+    'Books',
+    'We',
+    'Reading books',
+    'Books',
+    'Reading books',
+  ],
+  columnB: [
+    'are',
+    'should read',
+    'is',
+    'introduce',
+    'gives',
+  ],
+  columnC: [
+    'the greatest friends.',
+    'books to acquire knowledge.',
+    'the noblest habit.',
+    'us to the domain of knowledge.',
+    'us not only knowledge but also pleasure.',
+  ],
+  validCombinations: [
+    {
+      partA: 'Books',
+      partB: 'are',
+      partC: 'the greatest friends.',
+      fullSentence: 'Books are the greatest friends.',
+    },
+    {
+      partA: 'We',
+      partB: 'should read',
+      partC: 'books to acquire knowledge.',
+      fullSentence: 'We should read books to acquire knowledge.',
+    },
+    {
+      partA: 'Reading books',
+      partB: 'is',
+      partC: 'the noblest habit.',
+      fullSentence: 'Reading books is the noblest habit.',
+    },
+    {
+      partA: 'Books',
+      partB: 'introduce',
+      partC: 'us to the domain of knowledge.',
+      fullSentence: 'Books introduce us to the domain of knowledge.',
+    },
+    {
+      partA: 'Reading books',
+      partB: 'gives',
+      partC: 'us not only knowledge but also pleasure.',
+      fullSentence: 'Reading books gives us not only knowledge but also pleasure.',
+    },
+  ],
+  explanation:
+    'Form five grammatically correct sentences demonstrating how books serve as lifelong companions and enrich human intellect and happiness.',
+};
+
+const BARISHAL_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-barishal-2025',
+  board: 'Barishal Board 2025',
+  title: 'Barishal Board 2025 - Corruption and the Threat to National Prosperity',
+  columnA: [
+    'Corruption',
+    'It',
+    'It',
+    'Our government',
+    'If we',
+  ],
+  columnB: [
+    'may be',
+    'occurs',
+    'is',
+    'is trying',
+    'fail',
+  ],
+  columnC: [
+    'defined as the abuse of entrusted power for the private gain.',
+    'in both public and private sectors.',
+    'a curse not only to our nation but also all over the world.',
+    'to control it with iron hand.',
+    "to remove it, we will not be able to build 'Sonar Bangla'.",
+  ],
+  validCombinations: [
+    {
+      partA: 'Corruption',
+      partB: 'may be',
+      partC: 'defined as the abuse of entrusted power for the private gain.',
+      fullSentence: 'Corruption may be defined as the abuse of entrusted power for the private gain.',
+    },
+    {
+      partA: 'It',
+      partB: 'occurs',
+      partC: 'in both public and private sectors.',
+      fullSentence: 'It occurs in both public and private sectors.',
+    },
+    {
+      partA: 'It',
+      partB: 'is',
+      partC: 'a curse not only to our nation but also all over the world.',
+      fullSentence: 'It is a curse not only to our nation but also all over the world.',
+    },
+    {
+      partA: 'Our government',
+      partB: 'is trying',
+      partC: 'to control it with iron hand.',
+      fullSentence: 'Our government is trying to control it with iron hand.',
+    },
+    {
+      partA: 'If we',
+      partB: 'fail',
+      partC: "to remove it, we will not be able to build 'Sonar Bangla'.",
+      fullSentence: "If we fail to remove it, we will not be able to build 'Sonar Bangla'.",
+    },
+  ],
+  explanation:
+    'Synthesize parts from each column to form five sentences describing the definition and prevalence of corruption and the necessity of eradicating it.',
+};
+
+const MYMENSINGH_BOARD_2025: SubstitutionExercise = {
+  id: 'sub-mymensingh-2025',
+  board: 'Mymensingh Board 2025',
+  title: 'Mymensingh Board 2025 - Daily Routine and Forgetting the Water Bottle',
+  columnA: [
+    'I',
+    'My mother',
+    'Everyday I',
+    'I',
+    'I',
+  ],
+  columnB: [
+    'am',
+    'gave',
+    'take',
+    'will surely take',
+    'am sure',
+  ],
+  columnC: [
+    'not happy today.',
+    'me the water bottle but I forgot to put in my bag.',
+    'a water bottle with me to school.',
+    'the water bottle tomorrow.',
+    'I will not do the same mistake again.',
+  ],
+  validCombinations: [
+    {
+      partA: 'I',
+      partB: 'am',
+      partC: 'not happy today.',
+      fullSentence: 'I am not happy today.',
+    },
+    {
+      partA: 'My mother',
+      partB: 'gave',
+      partC: 'me the water bottle but I forgot to put in my bag.',
+      fullSentence: 'My mother gave me the water bottle but I forgot to put in my bag.',
+    },
+    {
+      partA: 'Everyday I',
+      partB: 'take',
+      partC: 'a water bottle with me to school.',
+      fullSentence: 'Everyday I take a water bottle with me to school.',
+    },
+    {
+      partA: 'I',
+      partB: 'will surely take',
+      partC: 'the water bottle tomorrow.',
+      fullSentence: 'I will surely take the water bottle tomorrow.',
+    },
+    {
+      partA: 'I',
+      partB: 'am sure',
+      partC: 'I will not do the same mistake again.',
+      fullSentence: 'I am sure I will not do the same mistake again.',
+    },
+  ],
+  explanation:
+    'Combine parts from each column to construct five coherent sentences detailing the personal experience of forgetting a water bottle and resolving not to repeat the mistake.',
+};
+
 export const SUBSTITUTION_TABLE_MODEL_QUESTIONS: SubstitutionExercise[] = [
+  // 2025 Board Questions
+  DHAKA_BOARD_2025,
+  CHATTOGRAM_BOARD_2025,
+  SYLHET_BOARD_2025,
+  DINAJPUR_BOARD_2025,
+  CUMILLA_BOARD_2025,
+  JESSORE_BOARD_2025,
+  BARISHAL_BOARD_2025,
+  MYMENSINGH_BOARD_2025,
+
+  // 2026 Board Questions
   RAJSHAHI_BOARD_2026,
   MYMENSINGH_BOARD_2026,
   JESSORE_BOARD_2026,
