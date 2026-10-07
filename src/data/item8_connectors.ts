@@ -704,6 +704,319 @@ export const CONNECTORS_MODEL_QUESTIONS: ConnectorsExercise[] = [
       },
     ],
   },
+  // Board Questions 2024
+  {
+    id: 'conn-dhaka-2024',
+    board: 'Dhaka Board 2024',
+    title: 'Dhaka Board 2024 - Valuable Metal Gold & Moral Reality of People',
+    passageTemplate:
+      'It is known to all [a] gold is a valuable metal. There are many metals cheaper than gold though they look like it. [b] they glitter for sometimes, they fade away in the long run. In our society there are also many people [c] are outwardly very gentle and polished. Later on, their real identity is revealed [d] they do not exercise moral values. That’s why people say, "All [e] glitters is not gold."',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Subordinating conjunction "that" introducing the noun clause complement after "It is known to all".',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Though',
+        acceptableAnswers: ['Though', 'Although', 'Even though', 'though', 'although'],
+        explanation: 'Concessive subordinating conjunction "Though / Although" contrasting temporary glittering with long-term fading.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'who',
+        acceptableAnswers: ['who', 'that'],
+        explanation: 'Relative pronoun "who" referring to the antecedent plural personal noun "many people".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since', 'for'],
+        explanation: 'Causal subordinating conjunction "because / as / since" explaining why their actual hollow character is unmasked.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Relative pronoun "that" following indefinite pronoun "All" in the universal proverb ("All that glitters is not gold").',
+      },
+    ],
+  },
+  {
+    id: 'conn-rajshahi-2024',
+    board: 'Rajshahi Board 2024',
+    title: 'Rajshahi Board 2024 - Facebook Popularity, Misuse, and Social Peace',
+    passageTemplate:
+      'Facebook is a social medium [a] is very popular. [b] it provides the users with various information, all do not use it for positive purposes. Many Facebook users [c] some of the youngsters sometimes use it whimsically which creates [d] misunderstanding [e] destroys the social peace.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to antecedent "a social medium".',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Though',
+        acceptableAnswers: ['Though', 'Although', 'Even though', 'though', 'although'],
+        explanation: 'Concessive connector "Though / Although" contrasting informative benefits with negative utilization.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'especially',
+        acceptableAnswers: ['especially', 'particularly', 'and', 'mainly'],
+        explanation: 'Focusing adverbial connector "especially / particularly" emphasizing youth among general users.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'not only',
+        acceptableAnswers: ['not only', 'both', 'much'],
+        explanation: 'Correlative connector "not only" (paired with "but also") or "both" (paired with "and").',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'but also',
+        acceptableAnswers: ['but also', 'and'],
+        explanation: 'Correlative coordinator "but also" complementing "not only" to highlight dual negative consequences.',
+      },
+    ],
+  },
+  {
+    id: 'conn-cumilla-2024',
+    board: 'Cumilla Board 2024',
+    title: 'Cumilla Board 2024 - Women Rights, Motherhood, and Nation Building',
+    passageTemplate:
+      'It is known to all [a] about half of our population are women. They are entitled to equal rights and privileges [b] men enjoy. [c] in reality, they do not get their dues. For the true development of our country, they should be given proper education and training. [d] every woman is a potential mother and her influence on her children is very great. [e], we should pay proper attention to our women folk.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Subordinating conjunction "that" introducing the factual noun clause following "It is known to all".',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'as',
+        acceptableAnswers: ['as', 'which', 'that'],
+        explanation: 'Comparative/relative connector "as" (matching "equal privileges as...") or "which / that".',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'But',
+        acceptableAnswers: ['But', 'However', 'Yet', 'Unfortunately'],
+        explanation: 'Adversative transitional connector "But / However" contrasting rights in theory with deprivation in reality.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'Besides',
+        acceptableAnswers: ['Besides', 'Moreover', 'In addition', 'Because', 'In fact', 'Furthermore'],
+        explanation: 'Additive connector "Besides / Moreover" adding the vital maternal reason to educate women.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'Therefore',
+        acceptableAnswers: ['Therefore', 'So', 'Hence', 'Thus', 'That is why', 'Consequently'],
+        explanation: 'Conclusive connector "Therefore / So / Hence" introducing the concluding duty toward womenfolk.',
+      },
+    ],
+  },
+  {
+    id: 'conn-jashore-2024',
+    board: 'Jashore Board 2024',
+    title: 'Jashore Board 2024 - Indispensability of Trees and Urgent Plantation',
+    passageTemplate:
+      'We know that trees are very important [a] they produce oxygen [b] is a must for all living creatures. They are our best friends [c] we are not conscious of it. Time is coming [d] there will be no tree left for us. [e], we should plant more and more trees for our own sake.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since', 'for'],
+        explanation: 'Causal subordinating conjunction "because / as / since" stating why trees are crucial.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to antecedent noun "oxygen".',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'but',
+        acceptableAnswers: ['but', 'yet', 'though', 'although'],
+        explanation: 'Adversative connector "but / yet" contrasting friendship of trees with our lack of awareness.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'when',
+        acceptableAnswers: ['when'],
+        explanation: 'Temporal relative adverb "when" referring back to incoming time ("Time is coming when...").',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'Therefore',
+        acceptableAnswers: ['Therefore', 'So', 'Hence', 'Thus', 'Consequently'],
+        explanation: 'Conclusive transitional connector "Therefore / So / Hence" introducing the urgent call to action.',
+      },
+    ],
+  },
+  {
+    id: 'conn-sylhet-2024',
+    board: 'Sylhet Board 2024',
+    title: 'Sylhet Board 2024 - Curse of Unemployment and Causes in Bangladesh',
+    passageTemplate:
+      'Almost all countries of the world suffer from the curse of unemployment problem. [a] nowhere in the world this problem is so acute as in our country. There are many reasons behind it. [b] our country is industrially backward. [c] our system of education fails to give a student an independent start of life. It has little provision for vocational training. [d] our students and youths have a false sense of dignity. [e] they run after jobs only.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'But',
+        acceptableAnswers: ['But', 'However', 'Yet'],
+        explanation: 'Adversative connector "But / However" establishing contrast between worldwide prevalence and local severity.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Firstly',
+        acceptableAnswers: ['Firstly', 'First of all', 'At first', 'For example', 'In the first place'],
+        explanation: 'Enumerative sequence connector "Firstly / First of all" presenting the first primary cause.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'Secondly',
+        acceptableAnswers: ['Secondly', 'Besides', 'Moreover', 'In addition'],
+        explanation: 'Sequential connector "Secondly / Moreover" enumerating educational system shortcomings.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'Thirdly',
+        acceptableAnswers: ['Thirdly', 'Furthermore', 'Moreover', 'Besides', 'In addition'],
+        explanation: 'Sequential additive connector "Thirdly / Furthermore" introducing the psychological attitude barrier.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'So',
+        acceptableAnswers: ['So', 'Therefore', 'Consequently', 'As a result', 'That is why', 'That\'s why'],
+        explanation: 'Resultative connector "So / Therefore / Consequently" indicating why youth exclusively chase employment.',
+      },
+    ],
+  },
+  {
+    id: 'conn-barishal-2024',
+    board: 'Barishal Board 2024',
+    title: 'Barishal Board 2024 - Social Media, Misconceptions, and Peace',
+    passageTemplate:
+      'Facebook is a social medium [a] is very popular. [b] it provides the users with various information, all do not use it for positive purposes. Many Facebook users [c] some of the youngsters sometimes use it whimsically which creates [d] misunderstanding [e] destroys the social peace.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" relating back to "a social medium".',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'Though',
+        acceptableAnswers: ['Though', 'Although', 'Even though', 'though', 'although'],
+        explanation: 'Concessive connector "Though / Although" qualifying information benefits with negative usage.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'especially',
+        acceptableAnswers: ['especially', 'particularly', 'and', 'mainly'],
+        explanation: 'Focusing adverbial "especially / particularly" drawing attention to youngsters.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'not only',
+        acceptableAnswers: ['not only', 'both', 'much'],
+        explanation: 'Correlative connector "not only" expecting the paired connector "but also".',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'but also',
+        acceptableAnswers: ['but also', 'and'],
+        explanation: 'Correlative coordinator "but also" paired with "not only" demonstrating compounded social harm.',
+      },
+    ],
+  },
+  {
+    id: 'conn-mymensingh-2024',
+    board: 'Mymensingh Board 2024',
+    title: 'Mymensingh Board 2024 - Tree Plantation and Ecological Survival',
+    passageTemplate:
+      'We can\'t deny the importance of tree plantation [a] our lives on earth directly or indirectly depend on it. [b] it is a matter of sorrow that we are cutting down trees indiscriminately. [c] trees are planted more and more soon, our country will turn into a desert. [d], there will be harmful changes in the climate. [e] we must plant more trees for our own sake.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since', 'for'],
+        explanation: 'Causal subordinating conjunction "because / as / since" explaining why tree plantation is vital.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'But',
+        acceptableAnswers: ['But', 'However', 'Yet'],
+        explanation: 'Adversative coordinator "But / However" contrasting dependence on trees with indiscriminate logging.',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'Unless',
+        acceptableAnswers: ['Unless', 'If not'],
+        explanation: 'Negative conditional conjunction "Unless" expressing the disastrous condition if more trees are not planted.',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'Besides',
+        acceptableAnswers: ['Besides', 'Moreover', 'In addition', 'Furthermore', 'As a result'],
+        explanation: 'Additive connector "Besides / Moreover" highlighting further climatic perils.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'So',
+        acceptableAnswers: ['So', 'Therefore', 'Hence', 'Thus', 'That is why'],
+        explanation: 'Conclusive connector "So / Therefore / Hence" presenting the imperative conclusion.',
+      },
+    ],
+  },
+  {
+    id: 'conn-dinajpur-2024',
+    board: 'Dinajpur Board 2024',
+    title: 'Dinajpur Board 2024 - Oxygen Production, Carbon Dioxide, and Greenhouse Effect',
+    passageTemplate:
+      'Trees are very important [a] they produce oxygen [b] is essential for man and all living beings. We must realize [c] they help us in many ways. [d] trees are less in number, there will be an increased amount of carbon dioxide in the atmosphere. [e], it will enhance the greenhouse effect.',
+    items: [
+      {
+        label: 'a',
+        correctAnswer: 'because',
+        acceptableAnswers: ['because', 'as', 'since', 'for'],
+        explanation: 'Causal subordinating conjunction "because / as / since" explaining the reason trees are important.',
+      },
+      {
+        label: 'b',
+        correctAnswer: 'which',
+        acceptableAnswers: ['which', 'that'],
+        explanation: 'Relative pronoun "which / that" referring back to "oxygen".',
+      },
+      {
+        label: 'c',
+        correctAnswer: 'that',
+        acceptableAnswers: ['that'],
+        explanation: 'Subordinating conjunction "that" introducing the complement clause after verb "realize".',
+      },
+      {
+        label: 'd',
+        correctAnswer: 'If',
+        acceptableAnswers: ['If', 'When', 'As'],
+        explanation: 'Conditional conjunction "If / When" describing the scenario of diminished tree population.',
+      },
+      {
+        label: 'e',
+        correctAnswer: 'Consequently',
+        acceptableAnswers: ['Consequently', 'As a result', 'Therefore', 'Eventually', 'Thus'],
+        explanation: 'Resultative transitional connector "Consequently / As a result" stating the exacerbation of the greenhouse effect.',
+      },
+    ],
+  },
   {
     id: 'conn-model-1',
     board: 'Model Question 1',

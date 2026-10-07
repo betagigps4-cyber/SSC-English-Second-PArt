@@ -176,7 +176,7 @@ export const ConnectorsItem: React.FC<ConnectorsItemProps> = ({ onBackToMenu }) 
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          itemNumber: 7,
+          itemNumber: 8,
           itemTitle: 'Sentence Connectors',
           provider,
           exerciseContext: {
@@ -196,8 +196,24 @@ export const ConnectorsItem: React.FC<ConnectorsItemProps> = ({ onBackToMenu }) 
 
       const data = await response.json();
       if (data && data.evaluation) {
-        setAiEvaluation(data.evaluation);
-        setScore(data.evaluation.totalScore || 0);
+        const evalData = { ...data.evaluation };
+        const totalItemsCount = (exercise?.items || []).length;
+        if (evalData.gapEvaluations && Array.isArray(evalData.gapEvaluations)) {
+          const correctCount = evalData.gapEvaluations.filter((g: any) => g.isCorrect).length;
+          const markWeight = totalItemsCount === 5 ? 1.0 : 5.0 / (totalItemsCount || 5);
+          evalData.totalScore = Math.round(correctCount * markWeight * 10) / 10;
+          evalData.maxScore = 5;
+          evalData.percentage = Math.round((evalData.totalScore / 5) * 100);
+          if (correctCount === totalItemsCount) {
+            evalData.totalScore = 5;
+            evalData.percentage = 100;
+            evalData.grade = 'A+';
+            evalData.overallFeedback =
+              'Outstanding logical cohesion! All connectors and linking words correctly placed (5 out of 5 marks).';
+          }
+        }
+        setAiEvaluation(evalData);
+        setScore(evalData.totalScore ?? 0);
       } else {
         handleQuickCheck();
       }
